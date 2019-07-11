@@ -43,6 +43,26 @@ namespace BLL
             return paso;
         }
 
+        public virtual bool NoDuplicadoUsuario(string descripcion)
+        {
+
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Usuarios.Any(p => p.Usuario.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
 
         public virtual bool Modificar(T entity)
         {

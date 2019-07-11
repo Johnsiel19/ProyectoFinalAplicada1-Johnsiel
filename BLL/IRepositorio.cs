@@ -14,7 +14,9 @@ namespace BLL
         bool Guardar(T entity);
         bool Modificar(T entity);
         bool Eliminar(int id);
-
+        bool NoDuplicadoUsuario( string descripcion);
+        
+ 
 
     }
 }

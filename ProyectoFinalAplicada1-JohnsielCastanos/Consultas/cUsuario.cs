@@ -19,59 +19,119 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
         public cUsuario()
         {
             InitializeComponent();
+            FiltrocomboBox.Text = "Todo";
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Usuarios> db = new RepositorioBase<Usuarios>();
             var listado = new List<Usuarios>();
-
-            if (CriteriotextBox.Text.Trim().Length > 0)
+            if (FiltroFecha.Checked == true)
             {
-                switch (FiltrocomboBox.Text)
+                try
                 {
-                    case "Todo":
+                    if (CriteriotextBox.Text.Trim().Length > 0)
+                    {
+                        switch (FiltrocomboBox.Text)
+                        {
+                            case "Todo":
+                                listado = db.GetList(p => true);
+                                break;
+
+                            case "Id":
+                                int id = Convert.ToInt32(CriteriotextBox.Text);
+                                listado = db.GetList(p => p.UsuarioId == id);
+                                break;
+
+                            case "Nombre":
+                                listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
+                                break;
+
+                            case "Usuario":
+                                listado = db.GetList(p => p.Usuario.Contains(CriteriotextBox.Text));
+                                break;
+                            case "NivelUsuario":
+                                listado = db.GetList(p => p.NivelUsuario.Contains(CriteriotextBox.Text));
+                                break;
+                            default:
+                                break;
+                        }
+                        listado = listado.Where(c => c.FechaIngreso.Date >= DesdedateTimePicker.Value.Date && c.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
+                    }
+                    else
+                    {
+
                         listado = db.GetList(p => true);
-                        break;
+                        listado = listado.Where(c => c.FechaIngreso.Date >= DesdedateTimePicker.Value.Date && c.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
+                    }
 
-                    case "Id":
-                        int id = Convert.ToInt32(CriteriotextBox.Text);
-                        listado = db.GetList(p => p.UsuarioId == id);
-                        break;
+                    ListaUsuarios = listado;
+                    ConsultadataGridView.DataSource = ListaUsuarios;
 
-                    case "Nombre":
-                        listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
-                        break;
-
-                    case "Usuario":
-                        listado = db.GetList(p => p.Usuario.Contains(CriteriotextBox.Text));
-                        break;
-                    default:
-                        break;
                 }
-                listado = listado.Where(c => c.FechaIngreso.Date >= DesdedateTimePicker.Value.Date && c.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
+                catch (Exception)
+                {
+                    MessageBox.Show("Introdujo un dato incorrecto");
+
+                }
+
+
             }
             else
             {
-                listado = db.GetList(p => true);
+                if (CriteriotextBox.Text.Trim().Length > 0)
+                {
+                    switch (FiltrocomboBox.Text)
+                    {
+                        case "Todo":
+                            listado = db.GetList(p => true);
+                            break;
+
+                        case "Id":
+                            int id = Convert.ToInt32(CriteriotextBox.Text);
+                            listado = db.GetList(p => p.UsuarioId == id);
+                            break;
+
+                        case "Nombre":
+                            listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
+                            break;
+
+                        case "Usuario":
+                            listado = db.GetList(p => p.Usuario.Contains(CriteriotextBox.Text));
+                            break;
+                        case "NivelUsuario":
+                            listado = db.GetList(p => p.NivelUsuario.Contains(CriteriotextBox.Text));
+                            break;
+                        default:
+                            break;
+                    }
+                    listado = listado.Where(c => c.FechaIngreso.Date >= DesdedateTimePicker.Value.Date && c.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
+                }
+                else
+                {
+                    listado = db.GetList(p => true);
+                }
+
+                ListaUsuarios = listado;
+                ConsultadataGridView.DataSource = ListaUsuarios;
             }
-
-            ListaUsuarios = listado;
-            ConsultadataGridView.DataSource = ListaUsuarios;
-
             
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (ListaUsuarios.Count == 0)
+            if (ConsultadataGridView ==null)
             {
                 MessageBox.Show("No hay Datos Para Imprimir");
                 return;
             }
-            Reporte reporte = new Reporte(ListaUsuarios);
-            reporte.ShowDialog();
+            else
+            {
+
             
+                UsuarioReport reporte = new UsuarioReport(ListaUsuarios);
+                reporte.ShowDialog();
+            }
         }
     }
 }

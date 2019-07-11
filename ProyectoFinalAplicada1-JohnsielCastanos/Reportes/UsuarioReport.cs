@@ -13,10 +13,10 @@ using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.Reportes
 {
-    public partial class Reporte : Form
+    public partial class UsuarioReport : Form
     {
         private List<Usuarios> ListaUsuarios;
-        public Reporte(List<Usuarios> usuarios)
+        public UsuarioReport(List<Usuarios> usuarios)
         {
             this.ListaUsuarios = usuarios;
             InitializeComponent();

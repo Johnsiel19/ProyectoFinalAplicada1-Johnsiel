@@ -276,6 +276,7 @@
             this.Controls.Add(this.EmailtextBox);
             this.Controls.Add(this.NombretextBox);
             this.Name = "rUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioIdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();

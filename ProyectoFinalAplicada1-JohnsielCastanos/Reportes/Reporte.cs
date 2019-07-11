@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
 
+
 namespace ProyectoFinalAplicada1_JohnsielCastanos.Reportes
 {
     public partial class Reporte : Form
@@ -21,9 +22,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Reportes
             InitializeComponent();
         }
 
-        private void CrystalReportViewer1_Load(object sender, EventArgs e)
+
+        private void Reporte_Load(object sender, EventArgs e)
         {
-            Lista
+            ListadoUsuarios listadoUsuarios = new ListadoUsuarios();
+            listadoUsuarios.SetDataSource(ListaUsuarios);
+
+            crystalReportViewer1.ReportSource = listadoUsuarios;
+            crystalReportViewer1.Refresh();
         }
     }
 }

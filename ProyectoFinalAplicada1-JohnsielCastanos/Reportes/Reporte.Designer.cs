@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.reporteUsuarios1 = new ProyectoFinalAplicada1_JohnsielCastanos.Reportes.reporteUsuarios();
+
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -43,7 +43,7 @@
             this.crystalReportViewer1.ReportSource = this.reporteUsuarios1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(878, 484);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.CrystalReportViewer1_Load);
+
             // 
             // Reporte
             // 
@@ -53,6 +53,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Reporte";
             this.Text = "Reporte";
+            this.Load += new System.EventHandler(this.Reporte_Load);
             this.ResumeLayout(false);
 
         }
@@ -60,6 +61,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private reporteUsuarios reporteUsuarios1;
+        private ListadoUsuarios reporteUsuarios1;
     }
 }

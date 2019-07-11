@@ -86,10 +86,10 @@
     <Compile Include="Reportes\Reporte.Designer.cs">
       <DependentUpon>Reporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\reporteUsuarios.cs">
+    <Compile Include="Reportes\ListadoUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>reporteUsuarios.rpt</DependentUpon>
+      <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Consultas\cUsuario.resx">
@@ -114,9 +114,9 @@
     <EmbeddedResource Include="Reportes\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\reporteUsuarios.rpt">
+    <EmbeddedResource Include="Reportes\ListadoUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>reporteUsuarios.cs</LastGenOutput>
+      <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

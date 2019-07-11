@@ -16,14 +16,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class reporteUsuarios : ReportClass {
+    public class ListadoUsuarios : ReportClass {
         
-        public reporteUsuarios() {
+        public ListadoUsuarios() {
         }
         
         public override string ResourceName {
             get {
-                return "reporteUsuarios.rpt";
+                return "ListadoUsuarios.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Reportes {
         
         public override string FullResourceName {
             get {
-                return "ProyectoFinalAplicada1_JohnsielCastanos.Reportes.reporteUsuarios.rpt";
+                return "ProyectoFinalAplicada1_JohnsielCastanos.Reportes.ListadoUsuarios.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedreporteUsuarios : Component, ICachedReport {
+    public class CachedListadoUsuarios : Component, ICachedReport {
         
-        public CachedreporteUsuarios() {
+        public CachedListadoUsuarios() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            reporteUsuarios rpt = new reporteUsuarios();
+            ListadoUsuarios rpt = new ListadoUsuarios();
             rpt.Site = this.Site;
             return rpt;
         }

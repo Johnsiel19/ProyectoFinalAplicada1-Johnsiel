@@ -113,6 +113,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
 
             }
 
+        
+
 
             if (NivelUsuariocomboBox.Text == string.Empty)
             {
@@ -145,12 +147,16 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 paso = false;
 
             }
-            if (db.NoDuplicadoUsuario(UsuariotextBox.Text))
+            if (UsuarioIdnumericUpDown.Value == 0)
             {
-                errorProvider.SetError(UsuariotextBox, "El nombre del usuario no debe ser igual a ningun otro");
-                paso = false;
+                if (db.NoDuplicadoUsuario(UsuariotextBox.Text))
+                {
+                    errorProvider.SetError(UsuariotextBox, "El nombre del usuario no debe ser igual a ningun otro");
+                    paso = false;
 
+                }
             }
+            
 
             return paso;
 

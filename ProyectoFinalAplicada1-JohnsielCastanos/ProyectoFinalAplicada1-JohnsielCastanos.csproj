@@ -60,10 +60,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas\cUsuario.cs">
+    <Compile Include="UI\Consultas\cUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\cUsuario.Designer.cs">
+    <Compile Include="UI\Consultas\cUsuario.Designer.cs">
       <DependentUpon>cUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -74,25 +74,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registros\rUsuario.cs">
+    <Compile Include="UI\Registros\rUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\rUsuario.Designer.cs">
+    <Compile Include="UI\Registros\rUsuario.Designer.cs">
       <DependentUpon>rUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\UsuarioReport.cs">
+    <Compile Include="UI\Reportes\UsuarioReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\UsuarioReport.Designer.cs">
+    <Compile Include="UI\Reportes\UsuarioReport.Designer.cs">
       <DependentUpon>UsuarioReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ListadoUsuarios.cs">
+    <Compile Include="UI\Reportes\ListadoUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Consultas\cUsuario.resx">
+    <EmbeddedResource Include="UI\Consultas\cUsuario.resx">
       <DependentUpon>cUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -108,13 +108,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registros\rUsuario.resx">
+    <EmbeddedResource Include="UI\Registros\rUsuario.resx">
       <DependentUpon>rUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\UsuarioReport.resx">
+    <EmbeddedResource Include="UI\Reportes\UsuarioReport.resx">
       <DependentUpon>UsuarioReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ListadoUsuarios.rpt">
+    <EmbeddedResource Include="UI\Reportes\ListadoUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
     </EmbeddedResource>

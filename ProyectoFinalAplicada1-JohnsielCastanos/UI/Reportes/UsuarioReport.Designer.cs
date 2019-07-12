@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(1189, 674);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "UsuarioReport";
-            this.Text = "Reporte";
+            this.Text = "Reporte de usuarios";
             this.Load += new System.EventHandler(this.Reporte_Load);
             this.ResumeLayout(false);
 
@@ -58,6 +58,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private ListadoUsuarios ListadoUsuarios;
+
     }
 }

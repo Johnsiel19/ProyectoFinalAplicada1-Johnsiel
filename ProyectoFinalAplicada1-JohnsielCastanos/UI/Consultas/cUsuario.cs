@@ -120,15 +120,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (ConsultadataGridView ==null)
+            if (ConsultadataGridView.RowCount ==0)
             {
                 MessageBox.Show("No hay Datos Para Imprimir");
                 return;
             }
             else
             {
-
-            
                 UsuarioReport reporte = new UsuarioReport(ListaUsuarios);
                 reporte.ShowDialog();
             }

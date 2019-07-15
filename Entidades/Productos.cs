@@ -18,7 +18,7 @@ namespace Entidades
         public double Existencia { get; set; }
         public double Costo { get; set; }
         public double Precio { get; set; }
-        public int ProductoITBIS { get; set; }
+        public int ProductoItbis { get; set; }
         public DateTime Fecha { get; set; }
 
         public Productos()

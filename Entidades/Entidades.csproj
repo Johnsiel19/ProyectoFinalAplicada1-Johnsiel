@@ -51,6 +51,7 @@
     <Compile Include="Clientes.cs" />
     <Compile Include="Cobros.cs" />
     <Compile Include="Compras.cs" />
+    <Compile Include="ComprasDetalle.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Proveedores.cs" />
     <Compile Include="Usuarios.cs" />

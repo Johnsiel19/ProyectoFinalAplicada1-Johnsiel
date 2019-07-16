@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoFinalAplicada1_JohnsielCastanos.Registros;
 using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros;
+
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos
 {
@@ -30,6 +32,26 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
         {
             cUsuario frm = new cUsuario();
             frm.Show();
+        }
+
+        private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCliente frm = new rCliente();
+            frm.Show();
+        }
+
+        private void ProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rProducto frm = new rProducto();
+            frm.Show();
+            
+        }
+
+        private void ProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rProveedor frm = new rProveedor();
+            frm.Show();
+            
         }
     }
 }

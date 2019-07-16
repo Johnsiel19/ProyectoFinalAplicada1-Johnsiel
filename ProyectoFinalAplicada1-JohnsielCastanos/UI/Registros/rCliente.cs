@@ -16,5 +16,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             InitializeComponent();
         }
+
+       
     }
 }

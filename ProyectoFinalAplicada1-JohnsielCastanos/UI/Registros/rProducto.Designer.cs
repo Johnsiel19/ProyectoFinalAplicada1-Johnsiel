@@ -48,6 +48,7 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
@@ -59,8 +60,8 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(137, 84);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 22);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.Size = new System.Drawing.Size(291, 22);
+            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -103,14 +104,14 @@
             this.numericUpDown1.Location = new System.Drawing.Point(137, 25);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(88, 22);
-            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.TabIndex = 0;
             // 
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(137, 198);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(88, 22);
-            this.numericUpDown2.TabIndex = 6;
+            this.numericUpDown2.TabIndex = 3;
             // 
             // label5
             // 
@@ -142,7 +143,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 435);
+            this.label8.Location = new System.Drawing.Point(133, 433);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 17);
             this.label8.TabIndex = 10;
@@ -153,38 +154,38 @@
             this.numericUpDown5.Location = new System.Drawing.Point(137, 310);
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(88, 22);
-            this.numericUpDown5.TabIndex = 13;
+            this.numericUpDown5.TabIndex = 5;
             // 
             // numericUpDown6
             // 
             this.numericUpDown6.Location = new System.Drawing.Point(137, 368);
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(88, 22);
-            this.numericUpDown6.TabIndex = 14;
+            this.numericUpDown6.TabIndex = 6;
             // 
             // numericUpDown7
             // 
             this.numericUpDown7.Location = new System.Drawing.Point(137, 253);
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(88, 22);
-            this.numericUpDown7.TabIndex = 15;
+            this.numericUpDown7.TabIndex = 4;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(136, 139);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(222, 24);
-            this.comboBox1.TabIndex = 16;
+            this.comboBox1.Size = new System.Drawing.Size(292, 24);
+            this.comboBox1.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 430);
+            this.dateTimePicker1.Location = new System.Drawing.Point(136, 428);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(222, 22);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.Size = new System.Drawing.Size(292, 22);
+            this.dateTimePicker1.TabIndex = 7;
             // 
             // Nuevobutton
             // 
@@ -193,7 +194,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(29, 498);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 71);
-            this.Nuevobutton.TabIndex = 50;
+            this.Nuevobutton.TabIndex = 9;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -202,9 +203,9 @@
             // 
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(264, 17);
+            this.Buscarbutton.Location = new System.Drawing.Point(334, 15);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(94, 37);
+            this.Buscarbutton.Size = new System.Drawing.Size(94, 44);
             this.Buscarbutton.TabIndex = 52;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,10 +215,10 @@
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(278, 498);
+            this.Eliminarbutton.Location = new System.Drawing.Point(348, 498);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 71);
-            this.Eliminarbutton.TabIndex = 51;
+            this.Eliminarbutton.TabIndex = 10;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -226,19 +227,29 @@
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(155, 498);
+            this.Guardarbutton.Location = new System.Drawing.Point(188, 498);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
-            this.Guardarbutton.TabIndex = 49;
+            this.Guardarbutton.TabIndex = 8;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 433);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 17);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "Fecha";
             // 
             // rProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 593);
+            this.ClientSize = new System.Drawing.Size(470, 593);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -260,7 +271,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "rProducto";
-            this.Text = "rProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro Producto";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
@@ -293,5 +305,6 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -30,7 +30,7 @@ namespace Entidades
             Existencia = 0;
             Costo = 0;
             Precio = 0;
-            ProductoITBIS = 0;
+            ProductoItbis = 0;
             Fecha = DateTime.Now;
         }
     }

@@ -73,16 +73,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             TotalTextBox.Text = string.Empty;
             ItbisTextBox.Text = string.Empty;
 
-
-
-            
-
-
         }
 
         private Ventas LlenaClase()
         {
-
 
             Ventas venta = new Ventas();
             venta.VentasId = Convert.ToInt32(VentaIdnumericUpDown.Value);
@@ -94,14 +88,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             venta.Total = Convert.ToDouble(TotalTextBox.Text);
             venta.UsuarioId = 0;
             venta.Productos = this.Detalle;
-                return venta;
+            venta.Balance = Convert.ToDouble(TotalTextBox.Text);
+            return venta;
 
         }
 
         private void LlenaCampo (Ventas v)
         {
-
-
 
             VentaIdnumericUpDown.Value = v.VentasId;
             ClientecomboBox.SelectedValue = v.ClienteId;
@@ -129,7 +122,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private bool Validar()
         {
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
-
             bool paso = true;
 
 
@@ -294,6 +286,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
                     errorProvider.SetError(PrecionumericUpDown, "El precio de venta debe ser mayor al precio del costo");
                     PrecionumericUpDown.Focus();
+                } 
+                if(producto.Existencia - Convert.ToDouble( CantidadnumericUpDown.Value) < 0)
+                {
+                    errorProvider.SetError(CantidadnumericUpDown, "El almacen del producto no es suficiente ");
+                    CantidadnumericUpDown.Focus();
+
                 }
                 else
                 {

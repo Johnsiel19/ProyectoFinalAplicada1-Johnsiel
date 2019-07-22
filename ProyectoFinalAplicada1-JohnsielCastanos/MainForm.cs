@@ -71,5 +71,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
             cCliente frm = new cCliente();
             frm.Show();
         }
+
+        private void UsuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cProductos frm = new cProductos();
+            frm.Show();
+        }
     }
 }

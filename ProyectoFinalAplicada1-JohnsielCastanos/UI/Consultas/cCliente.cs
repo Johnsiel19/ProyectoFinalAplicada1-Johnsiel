@@ -51,7 +51,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                                 listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
                                 break;
                             case "Direccion":
-                                listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
+                                listado = db.GetList(p => p.Direccion.Contains(CriteriotextBox.Text));
                                 break;
 
                             default:
@@ -102,7 +102,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                             listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
                             break;
                         case "Direccion":
-                            listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
+                            listado = db.GetList(p => p.Direccion.Contains(CriteriotextBox.Text));
                             break;
 
                         default:
@@ -118,6 +118,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                 ListaClientes = listado;
                 ConsultadataGridView.DataSource = ListaClientes;
             }
+        }
+
+        private void Consultarbutton_TextChanged(object sender, EventArgs e)
+        {
+            Consultarbutton_Click(sender, e);
         }
     }
 }

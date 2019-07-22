@@ -71,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 47);
+            this.label1.Location = new System.Drawing.Point(26, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
@@ -80,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 90);
+            this.label2.Location = new System.Drawing.Point(26, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 1;
@@ -89,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(645, 94);
+            this.label4.Location = new System.Drawing.Point(682, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 17);
             this.label4.TabIndex = 3;
@@ -98,7 +98,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(722, 155);
+            this.label5.Location = new System.Drawing.Point(682, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 4;
@@ -107,7 +107,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(530, 155);
+            this.label6.Location = new System.Drawing.Point(507, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 5;
@@ -116,7 +116,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(362, 155);
+            this.label7.Location = new System.Drawing.Point(340, 149);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 6;
@@ -125,7 +125,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(645, 47);
+            this.label8.Location = new System.Drawing.Point(682, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 17);
             this.label8.TabIndex = 7;
@@ -134,7 +134,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(63, 150);
+            this.label9.Location = new System.Drawing.Point(30, 141);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 17);
             this.label9.TabIndex = 8;
@@ -144,9 +144,9 @@
             // 
             this.ClientecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClientecomboBox.FormattingEnabled = true;
-            this.ClientecomboBox.Location = new System.Drawing.Point(185, 83);
+            this.ClientecomboBox.Location = new System.Drawing.Point(101, 84);
             this.ClientecomboBox.Name = "ClientecomboBox";
-            this.ClientecomboBox.Size = new System.Drawing.Size(121, 24);
+            this.ClientecomboBox.Size = new System.Drawing.Size(186, 24);
             this.ClientecomboBox.TabIndex = 9;
             // 
             // FormaPagocomboBox
@@ -156,7 +156,7 @@
             this.FormaPagocomboBox.Items.AddRange(new object[] {
             "Contado",
             "Credito"});
-            this.FormaPagocomboBox.Location = new System.Drawing.Point(787, 102);
+            this.FormaPagocomboBox.Location = new System.Drawing.Point(788, 91);
             this.FormaPagocomboBox.Name = "FormaPagocomboBox";
             this.FormaPagocomboBox.Size = new System.Drawing.Size(121, 24);
             this.FormaPagocomboBox.TabIndex = 11;
@@ -165,29 +165,29 @@
             // 
             this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductocomboBox.FormattingEnabled = true;
-            this.ProductocomboBox.Location = new System.Drawing.Point(185, 152);
+            this.ProductocomboBox.Location = new System.Drawing.Point(101, 140);
             this.ProductocomboBox.Name = "ProductocomboBox";
-            this.ProductocomboBox.Size = new System.Drawing.Size(121, 24);
+            this.ProductocomboBox.Size = new System.Drawing.Size(186, 24);
             this.ProductocomboBox.TabIndex = 12;
             this.ProductocomboBox.SelectedValueChanged += new System.EventHandler(this.ProductocomboBox_SelectedValueChanged);
             // 
             // VentaIdnumericUpDown
             // 
-            this.VentaIdnumericUpDown.Location = new System.Drawing.Point(185, 47);
+            this.VentaIdnumericUpDown.Location = new System.Drawing.Point(101, 33);
             this.VentaIdnumericUpDown.Name = "VentaIdnumericUpDown";
-            this.VentaIdnumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.VentaIdnumericUpDown.Size = new System.Drawing.Size(76, 22);
             this.VentaIdnumericUpDown.TabIndex = 13;
             // 
             // PrecionumericUpDown
             // 
-            this.PrecionumericUpDown.Location = new System.Drawing.Point(610, 153);
+            this.PrecionumericUpDown.Location = new System.Drawing.Point(570, 147);
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
-            this.PrecionumericUpDown.Size = new System.Drawing.Size(70, 22);
+            this.PrecionumericUpDown.Size = new System.Drawing.Size(89, 22);
             this.PrecionumericUpDown.TabIndex = 14;
             // 
             // CantidadnumericUpDown
             // 
-            this.CantidadnumericUpDown.Location = new System.Drawing.Point(432, 150);
+            this.CantidadnumericUpDown.Location = new System.Drawing.Point(410, 147);
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(72, 22);
             this.CantidadnumericUpDown.TabIndex = 15;
@@ -196,15 +196,15 @@
             // 
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechadateTimePicker.Location = new System.Drawing.Point(725, 42);
+            this.FechadateTimePicker.Location = new System.Drawing.Point(759, 38);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
-            this.FechadateTimePicker.Size = new System.Drawing.Size(183, 22);
+            this.FechadateTimePicker.Size = new System.Drawing.Size(150, 22);
             this.FechadateTimePicker.TabIndex = 57;
             // 
             // detalleDataGridView
             // 
             this.detalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detalleDataGridView.Location = new System.Drawing.Point(48, 199);
+            this.detalleDataGridView.Location = new System.Drawing.Point(29, 187);
             this.detalleDataGridView.Name = "detalleDataGridView";
             this.detalleDataGridView.RowTemplate.Height = 24;
             this.detalleDataGridView.Size = new System.Drawing.Size(880, 349);
@@ -212,7 +212,7 @@
             // 
             // TotalTextBox
             // 
-            this.TotalTextBox.Location = new System.Drawing.Point(799, 612);
+            this.TotalTextBox.Location = new System.Drawing.Point(780, 605);
             this.TotalTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TotalTextBox.Name = "TotalTextBox";
             this.TotalTextBox.ReadOnly = true;
@@ -221,7 +221,7 @@
             // 
             // ItbisTextBox
             // 
-            this.ItbisTextBox.Location = new System.Drawing.Point(799, 588);
+            this.ItbisTextBox.Location = new System.Drawing.Point(780, 578);
             this.ItbisTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ItbisTextBox.Name = "ItbisTextBox";
             this.ItbisTextBox.ReadOnly = true;
@@ -230,7 +230,7 @@
             // 
             // SubTotalTextBox
             // 
-            this.SubTotalTextBox.Location = new System.Drawing.Point(799, 565);
+            this.SubTotalTextBox.Location = new System.Drawing.Point(780, 550);
             this.SubTotalTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SubTotalTextBox.Name = "SubTotalTextBox";
             this.SubTotalTextBox.ReadOnly = true;
@@ -240,7 +240,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(732, 620);
+            this.label12.Location = new System.Drawing.Point(713, 608);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 17);
@@ -250,17 +250,17 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(732, 593);
+            this.label11.Location = new System.Drawing.Point(713, 581);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.Size = new System.Drawing.Size(41, 17);
             this.label11.TabIndex = 94;
-            this.label11.Text = "ITBIS%";
+            this.label11.Text = "ITBIS";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(732, 570);
+            this.label10.Location = new System.Drawing.Point(713, 550);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 17);
@@ -269,10 +269,10 @@
             // 
             // ExistenciatextBox
             // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(801, 158);
+            this.ExistenciatextBox.Location = new System.Drawing.Point(759, 146);
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.ReadOnly = true;
-            this.ExistenciatextBox.Size = new System.Drawing.Size(72, 22);
+            this.ExistenciatextBox.Size = new System.Drawing.Size(95, 22);
             this.ExistenciatextBox.TabIndex = 99;
             // 
             // errorProvider
@@ -284,7 +284,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.DeleteEntry;
-            this.button4.Location = new System.Drawing.Point(27, 557);
+            this.button4.Location = new System.Drawing.Point(8, 545);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 49);
             this.button4.TabIndex = 62;
@@ -295,7 +295,7 @@
             this.AgragraAlGrid.FlatAppearance.BorderSize = 0;
             this.AgragraAlGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AgragraAlGrid.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.AddEntry;
-            this.AgragraAlGrid.Location = new System.Drawing.Point(868, 140);
+            this.AgragraAlGrid.Location = new System.Drawing.Point(849, 128);
             this.AgragraAlGrid.Name = "AgragraAlGrid";
             this.AgragraAlGrid.Size = new System.Drawing.Size(75, 49);
             this.AgragraAlGrid.TabIndex = 60;
@@ -308,7 +308,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(312, 141);
+            this.button2.Location = new System.Drawing.Point(293, 129);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(41, 44);
             this.button2.TabIndex = 59;
@@ -320,7 +320,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.add_insert_plus_1588;
-            this.button1.Location = new System.Drawing.Point(373, 94);
+            this.button1.Location = new System.Drawing.Point(288, 76);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 39);
             this.button1.TabIndex = 58;
@@ -330,7 +330,7 @@
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(258, 653);
+            this.Nuevobutton.Location = new System.Drawing.Point(220, 645);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 71);
             this.Nuevobutton.TabIndex = 54;
@@ -344,7 +344,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(373, 44);
+            this.Buscarbutton.Location = new System.Drawing.Point(194, 23);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(46, 44);
             this.Buscarbutton.TabIndex = 56;
@@ -356,7 +356,7 @@
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(573, 653);
+            this.Eliminarbutton.Location = new System.Drawing.Point(555, 645);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 71);
             this.Eliminarbutton.TabIndex = 55;
@@ -369,7 +369,7 @@
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(401, 653);
+            this.Guardarbutton.Location = new System.Drawing.Point(382, 645);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
             this.Guardarbutton.TabIndex = 53;
@@ -382,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 728);
+            this.ClientSize = new System.Drawing.Size(937, 755);
             this.Controls.Add(this.detalleDataGridView);
             this.Controls.Add(this.ExistenciatextBox);
             this.Controls.Add(this.TotalTextBox);

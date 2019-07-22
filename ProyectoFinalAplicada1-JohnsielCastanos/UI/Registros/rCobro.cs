@@ -41,7 +41,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             string cliente = ClientecomboBox.SelectedValue.ToString();
           
 
-            listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente) );
+            listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente));
             VentacomboBox.DataSource = listado;
             VentacomboBox.DisplayMember = "VentasId";
             VentacomboBox.ValueMember = "VentasId";

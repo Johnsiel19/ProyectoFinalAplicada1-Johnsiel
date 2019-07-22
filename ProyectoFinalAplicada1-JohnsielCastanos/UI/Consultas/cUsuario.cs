@@ -139,7 +139,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
 
         private void CriteriotextBox_TextChanged(object sender, EventArgs e)
         {
-
+            Consultarbutton_Click( sender,  e);
         }
 
         private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)

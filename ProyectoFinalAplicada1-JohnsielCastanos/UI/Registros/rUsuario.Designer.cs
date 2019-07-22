@@ -75,12 +75,7 @@
             this.NivelUsuariocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.NivelUsuariocomboBox.FormattingEnabled = true;
             this.NivelUsuariocomboBox.Items.AddRange(new object[] {
-            "Gerente",
-            "Secretario/a",
-            "Cajero/a",
-            "Contador/a",
-            "Auditor/a",
-            "Asistente",
+            "Usuario",
             "Administrador"});
             this.NivelUsuariocomboBox.Location = new System.Drawing.Point(148, 168);
             this.NivelUsuariocomboBox.Name = "NivelUsuariocomboBox";

@@ -52,7 +52,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         private void LlenaCampo(Clientes cliente)
         {
-            ClientenumericUpDown.Value = cliente.UsuarioId;
+            ClientenumericUpDown.Value = cliente.ClienteId;
             NombrestextBox.Text = cliente.Nombre;
             EmailtextBox.Text = cliente.Email;
             TelefonomaskedTextBox.Text = cliente.Telefono;
@@ -124,7 +124,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             }
 
-            if (CelularmaskedTextBox.Text.Length > 10)
+            if (CelularmaskedTextBox.Text.Length < 10)
             {
                 errorProvider.SetError(CelularmaskedTextBox, "El celular esta incompleto");
                 CelularmaskedTextBox.Focus();

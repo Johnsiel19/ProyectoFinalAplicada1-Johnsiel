@@ -17,6 +17,19 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         public rProducto()
         {
             InitializeComponent();
+            LlenarComboBoxProveedores();
+            ProveedorcomboBox.Text = null;
+        }
+
+        private void LlenarComboBoxProveedores()
+        {
+            RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
+            var listado = new List<Proveedores>();
+            listado = db.GetList(p => true);
+            ProveedorcomboBox.DataSource = listado;
+            ProveedorcomboBox.DisplayMember = "Nombre";
+            ProveedorcomboBox.ValueMember = "ProveedorId";
+
         }
 
 
@@ -45,7 +58,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             producto.Precio = Convert.ToDouble(PrecionumericUpDown.Value);
             producto.Costo = Convert.ToDouble( CostonumericUpDown.Value);
             producto.ProductoItbis = Convert.ToInt32(ProductoItbisnumericUpDown.Value);
-            producto.ProveedorId = Convert.ToInt32(ProveedorcomboBox.Text);
+            producto.ProveedorId = Convert.ToInt32(ProveedorcomboBox.SelectedValue);
             producto.UsuarioId = 0;
             producto.Fecha = FechadateTimePicker.Value;
             return producto;
@@ -192,6 +205,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 MessageBox.Show("No se pudo eliminar", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            rProveedor frm = new rProveedor();
+            frm.Show();
         }
     }
 }

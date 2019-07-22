@@ -45,13 +45,13 @@
             this.ProveedorcomboBox = new System.Windows.Forms.ComboBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.ExistenciatextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.ExistenciatextBox = new System.Windows.Forms.TextBox();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProductoIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
@@ -169,6 +169,7 @@
             // 
             // ProveedorcomboBox
             // 
+            this.ProveedorcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProveedorcomboBox.FormattingEnabled = true;
             this.ProveedorcomboBox.Location = new System.Drawing.Point(136, 139);
             this.ProveedorcomboBox.Name = "ProveedorcomboBox";
@@ -193,6 +194,17 @@
             this.label9.TabIndex = 53;
             this.label9.Text = "Fecha";
             // 
+            // ExistenciatextBox
+            // 
+            this.ExistenciatextBox.Location = new System.Drawing.Point(140, 209);
+            this.ExistenciatextBox.Name = "ExistenciatextBox";
+            this.ExistenciatextBox.Size = new System.Drawing.Size(100, 22);
+            this.ExistenciatextBox.TabIndex = 55;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
@@ -203,6 +215,7 @@
             this.button1.Size = new System.Drawing.Size(46, 39);
             this.button1.TabIndex = 54;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Nuevobutton
             // 
@@ -256,17 +269,6 @@
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // ExistenciatextBox
-            // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(140, 209);
-            this.ExistenciatextBox.Name = "ExistenciatextBox";
-            this.ExistenciatextBox.Size = new System.Drawing.Size(100, 22);
-            this.ExistenciatextBox.TabIndex = 55;
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // rProducto
             // 

@@ -53,5 +53,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
             frm.Show();
             
         }
+
+        private void VentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVentas frm = new rVentas();
+            frm.Show();
+        }
+
+        private void CobroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCobro frm = new rCobro();
+            frm.Show();
+        }
     }
 }

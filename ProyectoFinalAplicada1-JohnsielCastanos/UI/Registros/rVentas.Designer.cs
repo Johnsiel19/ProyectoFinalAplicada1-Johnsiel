@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,15 +43,15 @@
             this.VentaIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.FechaIngresodateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.AgragraAlGrid = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.DetalleProductodataGridView = new System.Windows.Forms.DataGridView();
+            this.detalleDataGridView = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.ItbisTextBox = new System.Windows.Forms.TextBox();
@@ -58,11 +59,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ExistenciatextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.VentaIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalleProductodataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,6 +142,7 @@
             // 
             // ClientecomboBox
             // 
+            this.ClientecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClientecomboBox.FormattingEnabled = true;
             this.ClientecomboBox.Location = new System.Drawing.Point(185, 83);
             this.ClientecomboBox.Name = "ClientecomboBox";
@@ -147,6 +151,7 @@
             // 
             // FormaPagocomboBox
             // 
+            this.FormaPagocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FormaPagocomboBox.FormattingEnabled = true;
             this.FormaPagocomboBox.Items.AddRange(new object[] {
             "Contado",
@@ -158,11 +163,13 @@
             // 
             // ProductocomboBox
             // 
+            this.ProductocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductocomboBox.FormattingEnabled = true;
             this.ProductocomboBox.Location = new System.Drawing.Point(185, 152);
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(121, 24);
             this.ProductocomboBox.TabIndex = 12;
+            this.ProductocomboBox.SelectedValueChanged += new System.EventHandler(this.ProductocomboBox_SelectedValueChanged);
             // 
             // VentaIdnumericUpDown
             // 
@@ -185,25 +192,26 @@
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(72, 22);
             this.CantidadnumericUpDown.TabIndex = 15;
             // 
-            // FechaIngresodateTimePicker
+            // FechadateTimePicker
             // 
-            this.FechaIngresodateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.FechaIngresodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaIngresodateTimePicker.Location = new System.Drawing.Point(725, 42);
-            this.FechaIngresodateTimePicker.Name = "FechaIngresodateTimePicker";
-            this.FechaIngresodateTimePicker.Size = new System.Drawing.Size(183, 22);
-            this.FechaIngresodateTimePicker.TabIndex = 57;
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(725, 42);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(183, 22);
+            this.FechadateTimePicker.TabIndex = 57;
             // 
-            // button3
+            // AgragraAlGrid
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.AddEntry;
-            this.button3.Location = new System.Drawing.Point(868, 140);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 49);
-            this.button3.TabIndex = 60;
-            this.button3.UseVisualStyleBackColor = true;
+            this.AgragraAlGrid.FlatAppearance.BorderSize = 0;
+            this.AgragraAlGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AgragraAlGrid.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.AddEntry;
+            this.AgragraAlGrid.Location = new System.Drawing.Point(868, 140);
+            this.AgragraAlGrid.Name = "AgragraAlGrid";
+            this.AgragraAlGrid.Size = new System.Drawing.Size(75, 49);
+            this.AgragraAlGrid.TabIndex = 60;
+            this.AgragraAlGrid.UseVisualStyleBackColor = true;
+            this.AgragraAlGrid.Click += new System.EventHandler(this.AgragraAlGrid_Click);
             // 
             // button2
             // 
@@ -253,6 +261,7 @@
             this.Buscarbutton.TabIndex = 56;
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -265,6 +274,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -277,15 +287,16 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // DetalleProductodataGridView
+            // detalleDataGridView
             // 
-            this.DetalleProductodataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalleProductodataGridView.Location = new System.Drawing.Point(48, 199);
-            this.DetalleProductodataGridView.Name = "DetalleProductodataGridView";
-            this.DetalleProductodataGridView.RowTemplate.Height = 24;
-            this.DetalleProductodataGridView.Size = new System.Drawing.Size(880, 349);
-            this.DetalleProductodataGridView.TabIndex = 61;
+            this.detalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detalleDataGridView.Location = new System.Drawing.Point(48, 199);
+            this.detalleDataGridView.Name = "detalleDataGridView";
+            this.detalleDataGridView.RowTemplate.Height = 24;
+            this.detalleDataGridView.Size = new System.Drawing.Size(880, 349);
+            this.detalleDataGridView.TabIndex = 61;
             // 
             // button4
             // 
@@ -303,7 +314,6 @@
             this.TotalTextBox.Location = new System.Drawing.Point(799, 612);
             this.TotalTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TotalTextBox.Name = "TotalTextBox";
-            this.TotalTextBox.ReadOnly = true;
             this.TotalTextBox.Size = new System.Drawing.Size(132, 22);
             this.TotalTextBox.TabIndex = 98;
             // 
@@ -312,7 +322,6 @@
             this.ItbisTextBox.Location = new System.Drawing.Point(799, 588);
             this.ItbisTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.ItbisTextBox.Name = "ItbisTextBox";
-            this.ItbisTextBox.ReadOnly = true;
             this.ItbisTextBox.Size = new System.Drawing.Size(132, 22);
             this.ItbisTextBox.TabIndex = 97;
             // 
@@ -321,7 +330,6 @@
             this.SubTotalTextBox.Location = new System.Drawing.Point(799, 565);
             this.SubTotalTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SubTotalTextBox.Name = "SubTotalTextBox";
-            this.SubTotalTextBox.ReadOnly = true;
             this.SubTotalTextBox.Size = new System.Drawing.Size(132, 22);
             this.SubTotalTextBox.TabIndex = 96;
             // 
@@ -338,7 +346,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(735, 573);
+            this.label11.Location = new System.Drawing.Point(732, 593);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 17);
@@ -348,27 +356,32 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(732, 597);
+            this.label10.Location = new System.Drawing.Point(732, 570);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(69, 17);
             this.label10.TabIndex = 93;
             this.label10.Text = "Sub Total";
             // 
-            // textBox1
+            // ExistenciatextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(801, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(72, 22);
-            this.textBox1.TabIndex = 99;
+            this.ExistenciatextBox.Location = new System.Drawing.Point(801, 158);
+            this.ExistenciatextBox.Name = "ExistenciatextBox";
+            this.ExistenciatextBox.ReadOnly = true;
+            this.ExistenciatextBox.Size = new System.Drawing.Size(72, 22);
+            this.ExistenciatextBox.TabIndex = 99;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // rVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 728);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.detalleDataGridView);
+            this.Controls.Add(this.ExistenciatextBox);
             this.Controls.Add(this.TotalTextBox);
             this.Controls.Add(this.ItbisTextBox);
             this.Controls.Add(this.SubTotalTextBox);
@@ -376,11 +389,10 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.DetalleProductodataGridView);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.AgragraAlGrid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.FechaIngresodateTimePicker);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
@@ -404,7 +416,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.VentaIdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalleProductodataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detalleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,11 +443,11 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.DateTimePicker FechaIngresodateTimePicker;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView DetalleProductodataGridView;
+        private System.Windows.Forms.Button AgragraAlGrid;
+        private System.Windows.Forms.DataGridView detalleDataGridView;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox TotalTextBox;
         private System.Windows.Forms.TextBox ItbisTextBox;
@@ -442,6 +455,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ExistenciatextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

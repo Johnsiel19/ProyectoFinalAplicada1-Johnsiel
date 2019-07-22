@@ -10,6 +10,7 @@ namespace Entidades
 {
     public class Ventas
     {
+        
         [Key]
         public int VentasId { get; set; }
         public int ClienteId { get; set; }
@@ -20,6 +21,9 @@ namespace Entidades
         public double Total { get; set; }
         public double Balance { get; set; }
         public DateTime Fecha { get; set; }
+
+        public virtual List<VentasDetalle> Productos { get; set; }
+
 
         public Ventas()
         {
@@ -32,6 +36,8 @@ namespace Entidades
             Total = 0;
             Balance = 0;
             Fecha = DateTime.Now;
+            Productos = new List<VentasDetalle>();
+
         }
     }
 }

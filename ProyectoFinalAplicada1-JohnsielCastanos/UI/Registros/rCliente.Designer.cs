@@ -45,11 +45,11 @@
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ClientenumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -192,6 +192,10 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(308, 22);
             this.FechadateTimePicker.TabIndex = 6;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.nuevo;
@@ -207,13 +211,14 @@
             // 
             // Buscarbutton
             // 
+            this.Buscarbutton.FlatAppearance.BorderSize = 0;
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(345, 15);
+            this.Buscarbutton.Location = new System.Drawing.Point(258, 15);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(94, 44);
+            this.Buscarbutton.Size = new System.Drawing.Size(45, 44);
             this.Buscarbutton.TabIndex = 52;
-            this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click_1);
@@ -243,10 +248,6 @@
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click_1);
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // rCliente
             // 

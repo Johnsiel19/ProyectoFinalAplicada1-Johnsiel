@@ -80,6 +80,12 @@
     <Compile Include="UI\Registros\rCliente.Designer.cs">
       <DependentUpon>rCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCobro.Designer.cs">
+      <DependentUpon>rCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Registros\rCliente.resx">
       <DependentUpon>rCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCobro.resx">
+      <DependentUpon>rCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rProducto.resx">
       <DependentUpon>rProducto.cs</DependentUpon>

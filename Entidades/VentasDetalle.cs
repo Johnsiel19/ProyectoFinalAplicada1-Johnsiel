@@ -14,8 +14,20 @@ namespace Entidades
         public int VentaDetalleId { get; set; }
         public int VentaId { get; set; }
         public int ProductoId { get; set; }
-        public int Cantidad { get; set; }
+        public double Cantidad { get; set; }
         public double Precio { get; set; }
+        public double Itbis { get; set; }
+        public double Importe { get; set; }
+        
+
+        public VentasDetalle(int ventaDetalleId, int ventaId, int productoId, int cantidad, double precio)
+        {
+            VentaDetalleId = ventaDetalleId;
+            VentaId = ventaId;
+            ProductoId = productoId;
+            Cantidad = cantidad;
+            Precio = precio;
+        }
 
         public VentasDetalle()
         {
@@ -24,6 +36,8 @@ namespace Entidades
             ProductoId = 0;
             Cantidad = 0;
             Precio = 0;
+            Itbis = 0;
+            Importe = 0;
         }
     }
 }

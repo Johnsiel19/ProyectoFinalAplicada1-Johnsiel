@@ -44,15 +44,7 @@
             this.PrecionumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.AgragraAlGrid = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
             this.detalleDataGridView = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.ItbisTextBox = new System.Windows.Forms.TextBox();
             this.SubTotalTextBox = new System.Windows.Forms.TextBox();
@@ -61,6 +53,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.ExistenciatextBox = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.AgragraAlGrid = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.VentaIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
@@ -201,6 +201,95 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(183, 22);
             this.FechadateTimePicker.TabIndex = 57;
             // 
+            // detalleDataGridView
+            // 
+            this.detalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detalleDataGridView.Location = new System.Drawing.Point(48, 199);
+            this.detalleDataGridView.Name = "detalleDataGridView";
+            this.detalleDataGridView.RowTemplate.Height = 24;
+            this.detalleDataGridView.Size = new System.Drawing.Size(880, 349);
+            this.detalleDataGridView.TabIndex = 61;
+            // 
+            // TotalTextBox
+            // 
+            this.TotalTextBox.Location = new System.Drawing.Point(799, 612);
+            this.TotalTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.TotalTextBox.Name = "TotalTextBox";
+            this.TotalTextBox.ReadOnly = true;
+            this.TotalTextBox.Size = new System.Drawing.Size(132, 22);
+            this.TotalTextBox.TabIndex = 98;
+            // 
+            // ItbisTextBox
+            // 
+            this.ItbisTextBox.Location = new System.Drawing.Point(799, 588);
+            this.ItbisTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ItbisTextBox.Name = "ItbisTextBox";
+            this.ItbisTextBox.ReadOnly = true;
+            this.ItbisTextBox.Size = new System.Drawing.Size(132, 22);
+            this.ItbisTextBox.TabIndex = 97;
+            // 
+            // SubTotalTextBox
+            // 
+            this.SubTotalTextBox.Location = new System.Drawing.Point(799, 565);
+            this.SubTotalTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.SubTotalTextBox.Name = "SubTotalTextBox";
+            this.SubTotalTextBox.ReadOnly = true;
+            this.SubTotalTextBox.Size = new System.Drawing.Size(132, 22);
+            this.SubTotalTextBox.TabIndex = 96;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(732, 620);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 17);
+            this.label12.TabIndex = 95;
+            this.label12.Text = "Total";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(732, 593);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.TabIndex = 94;
+            this.label11.Text = "ITBIS%";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(732, 570);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 17);
+            this.label10.TabIndex = 93;
+            this.label10.Text = "Sub Total";
+            // 
+            // ExistenciatextBox
+            // 
+            this.ExistenciatextBox.Location = new System.Drawing.Point(801, 158);
+            this.ExistenciatextBox.Name = "ExistenciatextBox";
+            this.ExistenciatextBox.ReadOnly = true;
+            this.ExistenciatextBox.Size = new System.Drawing.Size(72, 22);
+            this.ExistenciatextBox.TabIndex = 99;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.DeleteEntry;
+            this.button4.Location = new System.Drawing.Point(27, 557);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 49);
+            this.button4.TabIndex = 62;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // AgragraAlGrid
             // 
             this.AgragraAlGrid.FlatAppearance.BorderSize = 0;
@@ -288,92 +377,6 @@
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // detalleDataGridView
-            // 
-            this.detalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detalleDataGridView.Location = new System.Drawing.Point(48, 199);
-            this.detalleDataGridView.Name = "detalleDataGridView";
-            this.detalleDataGridView.RowTemplate.Height = 24;
-            this.detalleDataGridView.Size = new System.Drawing.Size(880, 349);
-            this.detalleDataGridView.TabIndex = 61;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.DeleteEntry;
-            this.button4.Location = new System.Drawing.Point(27, 557);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 49);
-            this.button4.TabIndex = 62;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // TotalTextBox
-            // 
-            this.TotalTextBox.Location = new System.Drawing.Point(799, 612);
-            this.TotalTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.TotalTextBox.Name = "TotalTextBox";
-            this.TotalTextBox.Size = new System.Drawing.Size(132, 22);
-            this.TotalTextBox.TabIndex = 98;
-            // 
-            // ItbisTextBox
-            // 
-            this.ItbisTextBox.Location = new System.Drawing.Point(799, 588);
-            this.ItbisTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ItbisTextBox.Name = "ItbisTextBox";
-            this.ItbisTextBox.Size = new System.Drawing.Size(132, 22);
-            this.ItbisTextBox.TabIndex = 97;
-            // 
-            // SubTotalTextBox
-            // 
-            this.SubTotalTextBox.Location = new System.Drawing.Point(799, 565);
-            this.SubTotalTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.SubTotalTextBox.Name = "SubTotalTextBox";
-            this.SubTotalTextBox.Size = new System.Drawing.Size(132, 22);
-            this.SubTotalTextBox.TabIndex = 96;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(732, 620);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 17);
-            this.label12.TabIndex = 95;
-            this.label12.Text = "Total";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(732, 593);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 17);
-            this.label11.TabIndex = 94;
-            this.label11.Text = "ITBIS%";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(732, 570);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 17);
-            this.label10.TabIndex = 93;
-            this.label10.Text = "Sub Total";
-            // 
-            // ExistenciatextBox
-            // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(801, 158);
-            this.ExistenciatextBox.Name = "ExistenciatextBox";
-            this.ExistenciatextBox.ReadOnly = true;
-            this.ExistenciatextBox.Size = new System.Drawing.Size(72, 22);
-            this.ExistenciatextBox.TabIndex = 99;
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // rVentas
             // 

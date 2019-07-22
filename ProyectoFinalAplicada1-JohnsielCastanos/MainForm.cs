@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ProyectoFinalAplicada1_JohnsielCastanos.Registros;
 using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros;
-
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos
 {
@@ -63,6 +63,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
         private void CobroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rCobro frm = new rCobro();
+            frm.Show();
+        }
+
+        private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cCliente frm = new cCliente();
             frm.Show();
         }
     }

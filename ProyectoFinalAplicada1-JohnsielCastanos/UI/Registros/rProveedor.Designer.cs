@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -38,13 +39,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.NombrestextBox = new System.Windows.Forms.TextBox();
+            this.ProveedorIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.EmailtextBox = new System.Windows.Forms.TextBox();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedorIdnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Nuevobutton
@@ -58,6 +61,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -70,6 +74,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -82,6 +87,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Guardarbutton
             // 
@@ -94,6 +100,7 @@
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // label1
             // 
@@ -149,63 +156,70 @@
             this.label7.TabIndex = 59;
             this.label7.Text = "Nombres";
             // 
-            // maskedTextBox1
+            // CelularmaskedTextBox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(134, 191);
-            this.maskedTextBox1.Mask = "000-000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(81, 22);
-            this.maskedTextBox1.TabIndex = 3;
+            this.CelularmaskedTextBox.Location = new System.Drawing.Point(134, 191);
+            this.CelularmaskedTextBox.Mask = "000-000-0000";
+            this.CelularmaskedTextBox.Name = "CelularmaskedTextBox";
+            this.CelularmaskedTextBox.Size = new System.Drawing.Size(97, 22);
+            this.CelularmaskedTextBox.TabIndex = 3;
+            this.CelularmaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelularmaskedTextBox_KeyPress);
             // 
-            // maskedTextBox2
+            // TelefonomaskedTextBox
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(134, 133);
-            this.maskedTextBox2.Mask = "000-000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(82, 22);
-            this.maskedTextBox2.TabIndex = 2;
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(134, 133);
+            this.TelefonomaskedTextBox.Mask = "000-000-0000";
+            this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
+            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(98, 22);
+            this.TelefonomaskedTextBox.TabIndex = 2;
+            this.TelefonomaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonomaskedTextBox_KeyPress);
             // 
-            // textBox1
+            // NombrestextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 22);
-            this.textBox1.TabIndex = 1;
+            this.NombrestextBox.Location = new System.Drawing.Point(134, 79);
+            this.NombrestextBox.Name = "NombrestextBox";
+            this.NombrestextBox.Size = new System.Drawing.Size(261, 22);
+            this.NombrestextBox.TabIndex = 1;
+            this.NombrestextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrestextBox_KeyPress);
             // 
-            // numericUpDown1
+            // ProveedorIdnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(134, 32);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(82, 22);
-            this.numericUpDown1.TabIndex = 0;
+            this.ProveedorIdnumericUpDown.Location = new System.Drawing.Point(134, 32);
+            this.ProveedorIdnumericUpDown.Name = "ProveedorIdnumericUpDown";
+            this.ProveedorIdnumericUpDown.Size = new System.Drawing.Size(82, 22);
+            this.ProveedorIdnumericUpDown.TabIndex = 0;
             // 
-            // textBox2
+            // EmailtextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(134, 254);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 22);
-            this.textBox2.TabIndex = 4;
+            this.EmailtextBox.Location = new System.Drawing.Point(134, 254);
+            this.EmailtextBox.Name = "EmailtextBox";
+            this.EmailtextBox.Size = new System.Drawing.Size(261, 22);
+            this.EmailtextBox.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // FechadateTimePicker
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(134, 311);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(261, 22);
-            this.dateTimePicker2.TabIndex = 5;
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(134, 311);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(261, 22);
+            this.FechadateTimePicker.TabIndex = 5;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // rProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 496);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.FechadateTimePicker);
+            this.Controls.Add(this.EmailtextBox);
+            this.Controls.Add(this.ProveedorIdnumericUpDown);
+            this.Controls.Add(this.NombrestextBox);
+            this.Controls.Add(this.TelefonomaskedTextBox);
+            this.Controls.Add(this.CelularmaskedTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -219,7 +233,8 @@
             this.Name = "rProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Proveedor";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedorIdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,11 +252,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.MaskedTextBox CelularmaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox;
+        private System.Windows.Forms.TextBox NombrestextBox;
+        private System.Windows.Forms.NumericUpDown ProveedorIdnumericUpDown;
+        private System.Windows.Forms.TextBox EmailtextBox;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

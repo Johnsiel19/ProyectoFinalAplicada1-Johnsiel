@@ -44,7 +44,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             cliente.Direccion = DirecciontextBox.Text;
             cliente.Telefono = TelefonomaskedTextBox.Text;
             cliente.Cedula = CelularmaskedTextBox.Text;
-            cliente.Cedula = CedulamaskedTextBox.Text;
             cliente.UsuarioId = 0;
             cliente.Fecha = FechadateTimePicker.Value;
             return cliente;

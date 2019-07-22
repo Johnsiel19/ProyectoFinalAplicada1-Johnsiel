@@ -95,7 +95,15 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             if (CedulamaskedTextBox.Text == string.Empty)
             {
-                errorProvider.SetError(CedulamaskedTextBox, "El campo Email no puede estar vacio");
+                errorProvider.SetError(CedulamaskedTextBox, "El campo Cedula no puede estar vacio");
+                CedulamaskedTextBox.Focus();
+                paso = false;
+
+            }
+
+            if (CedulamaskedTextBox.Text.Length < 11)
+            {
+                errorProvider.SetError(CedulamaskedTextBox, "El campo Cedula  esta incompleto");
                 CedulamaskedTextBox.Focus();
                 paso = false;
 
@@ -103,14 +111,22 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             if (TelefonomaskedTextBox.Text == string.Empty)
             {
-                errorProvider.SetError(TelefonomaskedTextBox, "El campo Email no puede estar vacio");
+                errorProvider.SetError(TelefonomaskedTextBox, "El campo telefono no puede estar vacio");
                 TelefonomaskedTextBox.Focus();
                 paso = false;
 
             }
             if (CelularmaskedTextBox.Text == string.Empty)
             {
-                errorProvider.SetError(CelularmaskedTextBox, "El campo Email no puede estar vacio");
+                errorProvider.SetError(CelularmaskedTextBox, "El campo celular no puede estar vacio");
+                CelularmaskedTextBox.Focus();
+                paso = false;
+
+            }
+
+            if (CelularmaskedTextBox.Text.Length > 10)
+            {
+                errorProvider.SetError(CelularmaskedTextBox, "El celular esta incompleto");
                 CelularmaskedTextBox.Focus();
                 paso = false;
 

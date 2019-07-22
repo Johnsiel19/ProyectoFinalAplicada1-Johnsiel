@@ -196,5 +196,8 @@
   <ItemGroup>
     <None Include="Resources\Logotipo-foto-1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_insert_plus_1588.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

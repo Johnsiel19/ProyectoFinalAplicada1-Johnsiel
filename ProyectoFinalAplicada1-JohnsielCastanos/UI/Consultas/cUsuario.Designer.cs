@@ -62,7 +62,7 @@
             this.FiltroFecha.TabIndex = 52;
             this.FiltroFecha.Text = "Filtrar Fecha";
             this.FiltroFecha.UseVisualStyleBackColor = true;
-            this.FiltroFecha.CheckedChanged += new System.EventHandler(this.FiltroFecha_CheckedChanged);
+
             // 
             // ConsultadataGridView
             // 
@@ -100,7 +100,7 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(121, 24);
             this.FiltrocomboBox.TabIndex = 49;
-            this.FiltrocomboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrocomboBox_SelectedIndexChanged);
+
             // 
             // HastadateTimePicker
             // 
@@ -110,7 +110,7 @@
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(108, 22);
             this.HastadateTimePicker.TabIndex = 48;
-            this.HastadateTimePicker.ValueChanged += new System.EventHandler(this.HastadateTimePicker_ValueChanged);
+
             // 
             // DesdedateTimePicker
             // 
@@ -120,7 +120,7 @@
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(106, 22);
             this.DesdedateTimePicker.TabIndex = 47;
-            this.DesdedateTimePicker.ValueChanged += new System.EventHandler(this.DesdedateTimePicker_ValueChanged);
+
             // 
             // label4
             // 
@@ -130,7 +130,7 @@
             this.label4.Size = new System.Drawing.Size(53, 17);
             this.label4.TabIndex = 46;
             this.label4.Text = "Criterio";
-            this.label4.Click += new System.EventHandler(this.Label4_Click);
+
             // 
             // label3
             // 
@@ -140,7 +140,7 @@
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 45;
             this.label3.Text = "Filtro";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
+
             // 
             // label2
             // 
@@ -150,7 +150,7 @@
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 44;
             this.label2.Text = "Hasta";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
+
             // 
             // label1
             // 
@@ -160,7 +160,7 @@
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 43;
             this.label1.Text = "Desde";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
+
             // 
             // Consultarbutton
             // 

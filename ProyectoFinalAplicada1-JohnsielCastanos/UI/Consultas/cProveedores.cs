@@ -12,21 +12,21 @@ using BLL;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
-    public partial class cCliente : Form
+    public partial class cProveedores : Form
     {
-
-        public List<Clientes> ListaClientes;
-        public cCliente()
+        public List<Proveedores> ListaProveedores;
+        public cProveedores()
         {
             InitializeComponent();
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
-            var listado = new List<Clientes>();
+            RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
+            var listado = new List<Proveedores>();
             if (FiltroFecha.Checked == true)
             {
+                int criterio;
                 try
                 {
                     if (CriteriotextBox.Text.Trim().Length > 0)
@@ -38,21 +38,19 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                                 break;
 
                             case "Id":
-                                int id = Convert.ToInt32(CriteriotextBox.Text);
-                                listado = db.GetList(p => p.ClienteId == id);
+                                criterio = Convert.ToInt32(CriteriotextBox.Text);
+                                listado = db.GetList(p => p.ProveedorId == criterio);
                                 break;
 
                             case "UsuarioId":
-                                int UsuarioId = Convert.ToInt32(CriteriotextBox.Text);
-                                listado = db.GetList(p => p.UsuarioId == UsuarioId);
+                                criterio = Convert.ToInt32(CriteriotextBox.Text);
+                                listado = db.GetList(p => p.UsuarioId == criterio);
                                 break;
 
                             case "Nombre":
                                 listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
                                 break;
-                            case "Direccion":
-                                listado = db.GetList(p => p.Direccion.Contains(CriteriotextBox.Text));
-                                break;
+                        
 
                             default:
                                 break;
@@ -66,8 +64,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                         listado = listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
                     }
 
-                    ListaClientes = listado;
-                    ConsultadataGridView.DataSource = ListaClientes;
+                    ListaProveedores = listado;
+                    ConsultadataGridView.DataSource = ListaProveedores;
 
                 }
                 catch (Exception)
@@ -82,6 +80,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             {
                 if (CriteriotextBox.Text.Trim().Length > 0)
                 {
+                    int criterio;
                     switch (FiltrocomboBox.Text)
                     {
                         case "Todo":
@@ -89,34 +88,31 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                             break;
 
                         case "Id":
-                            int id = Convert.ToInt32(CriteriotextBox.Text);
-                            listado = db.GetList(p => p.ClienteId == id);
+                            criterio = Convert.ToInt32(CriteriotextBox.Text);
+                            listado = db.GetList(p => p.ProveedorId == criterio);
                             break;
 
                         case "UsuarioId":
-                            int UsuarioId = Convert.ToInt32(CriteriotextBox.Text);
-                            listado = db.GetList(p => p.UsuarioId == UsuarioId);
+                            criterio = Convert.ToInt32(CriteriotextBox.Text);
+                            listado = db.GetList(p => p.UsuarioId == criterio);
                             break;
 
                         case "Nombre":
                             listado = db.GetList(p => p.Nombre.Contains(CriteriotextBox.Text));
                             break;
-                        case "Direccion":
-                            listado = db.GetList(p => p.Direccion.Contains(CriteriotextBox.Text));
-                            break;
 
                         default:
                             break;
                     }
-                   
+
                 }
                 else
                 {
                     listado = db.GetList(p => true);
                 }
 
-                ListaClientes = listado;
-                ConsultadataGridView.DataSource = ListaClientes;
+                ListaProveedores = listado;
+                ConsultadataGridView.DataSource = ListaProveedores;
             }
         }
 
@@ -124,7 +120,5 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             Consultarbutton_Click(sender, e);
         }
-
-     
     }
 }

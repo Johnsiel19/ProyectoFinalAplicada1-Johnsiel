@@ -105,7 +105,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
                         default:
                             break;
                     }
-                    listado = listado.Where(c => c.FechaIngreso.Date >= DesdedateTimePicker.Value.Date && c.FechaIngreso.Date <= HastadateTimePicker.Value.Date).ToList();
+                   
                 }
                 else
                 {
@@ -142,44 +142,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
             Consultarbutton_Click( sender,  e);
         }
 
-        private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HastadateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DesdedateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FiltroFecha_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

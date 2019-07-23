@@ -45,6 +45,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             ExistenciatextBox.Text = string.Empty;
             ProductoItbisnumericUpDown.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
+            errorProvider.Clear();
 
 
         }

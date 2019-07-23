@@ -72,6 +72,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             SubTotalTextBox.Text = string.Empty;
             TotalTextBox.Text = string.Empty;
             ItbisTextBox.Text = string.Empty;
+            errorProvider.Clear();
 
         }
 

@@ -31,6 +31,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             TelefonomaskedTextBox.Text = string.Empty;
             CelularmaskedTextBox.Text = string.Empty;
             DirecciontextBox.Text = string.Empty;
+            errorProvider.Clear();
 
 
         }

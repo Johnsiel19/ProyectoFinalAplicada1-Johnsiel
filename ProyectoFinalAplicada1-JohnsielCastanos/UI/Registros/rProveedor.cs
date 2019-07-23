@@ -25,10 +25,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             ProveedorIdnumericUpDown.Value = 0;
             NombrestextBox.Text = string.Empty;
-   
             EmailtextBox.Text = string.Empty;
             TelefonomaskedTextBox.Text = string.Empty;
             CelularmaskedTextBox.Text = string.Empty;
+            errorProvider.Clear();
 
 
 
@@ -41,9 +41,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             proveedor.Nombre = NombrestextBox.Text;
             proveedor.Email = EmailtextBox.Text;
             proveedor.Celular = CelularmaskedTextBox.Text;
-
             proveedor.Telefono = TelefonomaskedTextBox.Text;
-
             proveedor.UsuarioId = 0;
             proveedor.Fecha = FechadateTimePicker.Value;
             return proveedor;

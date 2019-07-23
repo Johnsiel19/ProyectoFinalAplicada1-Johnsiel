@@ -59,6 +59,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             UsuariotextBox.Text = usuario.Usuario;
             FechaIngresodateTimePicker.Value = usuario.FechaIngreso;
 
+
         }
         private bool ExisteEnLaBaseDeDatos()
         {

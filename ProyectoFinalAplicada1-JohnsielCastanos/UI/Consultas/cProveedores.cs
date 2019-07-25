@@ -116,7 +116,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             }
         }
 
-        private void Consultarbutton_TextChanged(object sender, EventArgs e)
+  
+
+        private void CriteriotextBox_TextChanged(object sender, EventArgs e)
         {
             Consultarbutton_Click(sender, e);
         }

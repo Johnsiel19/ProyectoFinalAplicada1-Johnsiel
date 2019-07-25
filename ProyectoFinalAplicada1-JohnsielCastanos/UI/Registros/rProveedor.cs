@@ -190,7 +190,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
             else
             {
-                MessageBox.Show("Usuario no existe");
+                MessageBox.Show("El Proveesor no existe");
             }
         }
 

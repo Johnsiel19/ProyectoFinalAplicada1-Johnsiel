@@ -184,7 +184,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificar una persona que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar una Usuario que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 paso = db.Modificar(usuario);
@@ -248,7 +248,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             }
             else
             {
-                MessageBox.Show("Usuario no existe");
+                MessageBox.Show("El Usuario no existe");
             }
         }
 

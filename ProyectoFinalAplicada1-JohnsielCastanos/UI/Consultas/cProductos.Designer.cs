@@ -76,6 +76,7 @@
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(239, 22);
             this.CriteriotextBox.TabIndex = 74;
+            this.CriteriotextBox.TextChanged += new System.EventHandler(this.CriteriotextBox_TextChanged);
             // 
             // FiltrocomboBox
             // 
@@ -187,6 +188,7 @@
             this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
             this.Imprimirbutton.TabIndex = 66;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Consultarbutton
             // 
@@ -199,7 +201,6 @@
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
-            this.Consultarbutton.TextChanged += new System.EventHandler(this.Consultarbutton_TextChanged);
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // cProductos

@@ -52,7 +52,6 @@
             this.FiltroFecha.TabIndex = 64;
             this.FiltroFecha.Text = "Filtrar Fecha";
             this.FiltroFecha.UseVisualStyleBackColor = true;
-
             // 
             // ConsultadataGridView
             // 
@@ -66,7 +65,6 @@
             this.ConsultadataGridView.RowTemplate.Height = 24;
             this.ConsultadataGridView.Size = new System.Drawing.Size(841, 302);
             this.ConsultadataGridView.TabIndex = 63;
-    
             // 
             // CriteriotextBox
             // 
@@ -74,7 +72,7 @@
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(239, 22);
             this.CriteriotextBox.TabIndex = 62;
-
+            this.CriteriotextBox.TextChanged += new System.EventHandler(this.CriteriotextBox_TextChanged);
             // 
             // FiltrocomboBox
             // 
@@ -90,7 +88,6 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(121, 24);
             this.FiltrocomboBox.TabIndex = 61;
-
             // 
             // HastadateTimePicker
             // 
@@ -100,7 +97,6 @@
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(108, 22);
             this.HastadateTimePicker.TabIndex = 60;
-
             // 
             // DesdedateTimePicker
             // 
@@ -110,7 +106,6 @@
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(106, 22);
             this.DesdedateTimePicker.TabIndex = 59;
-
             // 
             // label4
             // 
@@ -120,7 +115,6 @@
             this.label4.Size = new System.Drawing.Size(53, 17);
             this.label4.TabIndex = 58;
             this.label4.Text = "Criterio";
-
             // 
             // label3
             // 
@@ -130,7 +124,6 @@
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 57;
             this.label3.Text = "Filtro";
-
             // 
             // label2
             // 
@@ -140,7 +133,6 @@
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 56;
             this.label2.Text = "Hasta";
-
             // 
             // label1
             // 
@@ -150,7 +142,6 @@
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 55;
             this.label1.Text = "Desde";
-
             // 
             // button1
             // 
@@ -160,7 +151,6 @@
             this.button1.Size = new System.Drawing.Size(58, 49);
             this.button1.TabIndex = 54;
             this.button1.UseVisualStyleBackColor = true;
-
             // 
             // Consultarbutton
             // 
@@ -173,7 +163,7 @@
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
-            this.Consultarbutton.TextChanged += new System.EventHandler(this.Consultarbutton_TextChanged);
+
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // cCliente

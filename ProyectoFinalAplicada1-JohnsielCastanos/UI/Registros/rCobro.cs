@@ -41,13 +41,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             if (ClientecomboBox.SelectedValue != null)
             {
                 string cliente = ClientecomboBox.SelectedValue.ToString();
-                listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente));
+                listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente) & p.Balance >0);
                 VentacomboBox.DataSource = listado;
                 VentacomboBox.DisplayMember = "VentasId";
                 VentacomboBox.ValueMember = "VentasId";
+          
 
 
             }
+      
+
+        
      
            
 
@@ -209,7 +213,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
             else
             {
-                MessageBox.Show("Usuario no existe");
+                MessageBox.Show("El Cobro no existe");
             }
         }
 

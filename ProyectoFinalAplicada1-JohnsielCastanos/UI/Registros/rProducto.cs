@@ -55,7 +55,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             Productos producto = new Productos();
             producto.ProductoId = Convert.ToInt32(ProductoIdnumericUpDown.Value);
             producto.Descripcion = DescripciontextBox.Text;
-            producto.Existencia = Convert.ToDouble( ExistenciatextBox.Text);
+          
             producto.Precio = Convert.ToDouble(PrecionumericUpDown.Value);
             producto.Costo = Convert.ToDouble( CostonumericUpDown.Value);
             producto.ProductoItbis = Convert.ToInt32(ProductoItbisnumericUpDown.Value);
@@ -173,7 +173,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
             else
             {
-                MessageBox.Show("Usuario no existe");
+                MessageBox.Show("El Producto no existe");
             }
         }
 

@@ -272,23 +272,47 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             CantidadnumericUpDown.Value = 0;
             errorProvider.Clear();
         }
+
+        private bool ExisteEnGrid()
+        {
+            bool paso = true;
+
+            string id_prod =  ProductocomboBox.SelectedValue.ToString();
+     
+            if (detalleDataGridView.RowCount > 0)
+            {
+                for (int i = 0; i < detalleDataGridView.RowCount; i++)
+                {
+                    if (Convert.ToInt16(detalleDataGridView.Rows[i].Cells["ProductoId"].Value) == Convert.ToInt16(id_prod))
+                    {
+                        MessageBox.Show("El producto ya ha sido ingresado");
+                    }
+                    paso = false;
+               
+                }
+            }
+      
+
+            return paso;
+        }
         private void AgragraAlGrid_Click(object sender, EventArgs e)
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
+            Productos producto = db.Buscar((int)ProductocomboBox.SelectedValue);
             if (ProductocomboBox.Text == "")
             {
                 errorProvider.SetError(ProductocomboBox, "Debe elegir una asignatura");
                 ProductocomboBox.Focus();
 
             }
-            else
-            {
+           
 
-                Productos producto = db.Buscar((int)ProductocomboBox.SelectedValue);
+               
                 if (PrecionumericUpDown.Value < Convert.ToDecimal(producto.Costo)){
 
                     errorProvider.SetError(PrecionumericUpDown, "El precio de venta debe ser mayor al precio del costo");
                     PrecionumericUpDown.Focus();
+                    
                 } 
                 if(producto.Existencia - Convert.ToDouble( CantidadnumericUpDown.Value) < 0)
                 {
@@ -296,6 +320,20 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                     CantidadnumericUpDown.Focus();
 
                 }
+                if(ExisteEnGrid() == false)
+                {
+                    errorProvider.SetError(ProductocomboBox, "El Producto ya existe en el Grid");
+                    ProductocomboBox.Focus();
+
+                }
+            if (CantidadnumericUpDown.Value < 1)
+            {
+                errorProvider.SetError(CantidadnumericUpDown, "El almacen del producto no es suficiente ");
+                CantidadnumericUpDown.Focus();
+
+            }
+
+
                 else
                 {
 
@@ -323,17 +361,15 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                     CalcularSubtotal();
                     CalcularTotal();
 
-
-
                 }
 
-            }
+            
   
         }
 
         private void RemoverLienabutton_Click(object sender, EventArgs e)
         {
-            int codigo_hab = Convert.ToInt32(detalleDataGridView.CurrentRow.Cells["Id"].Value.ToString());
+           
         }
 
         private void Button2_Click(object sender, EventArgs e)

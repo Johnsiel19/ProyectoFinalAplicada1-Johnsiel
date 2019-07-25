@@ -42,6 +42,7 @@
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             this.productosToolStripMenuItem,
             this.proveedorToolStripMenuItem,
             this.ventasToolStripMenuItem,
-            this.cobroToolStripMenuItem});
+            this.cobroToolStripMenuItem,
+            this.entradasToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -159,6 +161,13 @@
             this.ventasToolStripMenuItem1.Text = "Ventas";
             this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.VentasToolStripMenuItem1_Click);
             // 
+            // entradasToolStripMenuItem
+            // 
+            this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.entradasToolStripMenuItem.Text = "Entradas";
+            this.entradasToolStripMenuItem.Click += new System.EventHandler(this.EntradasToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,6 +202,7 @@
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem entradasToolStripMenuItem;
     }
 }
 

@@ -100,30 +100,27 @@ namespace BLL
             Contexto db = new Contexto();
             try
             {
-                RepositorioBase<Productos> prod = new RepositorioBase<Productos>(new DAL.Contexto());
-                Productos producto;
-                
+                RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
+                RepositorioBase<Clientes> client = new RepositorioBase<Clientes>();
+
+
 
                 if (db.Ventas.Add(venta) != null)
                 {
 
-                    
-                  
-
-      
-      
-                    paso = db.SaveChanges() > 0;
-
-
                     foreach (var item in venta.Productos)
                     {
-                        producto = prod.Buscar(item.ProductoId);
-
+                        var producto = prod.Buscar(item.ProductoId);
                         producto.Existencia = producto.Existencia - item.Cantidad;
                         prod.Modificar(producto);
 
-
                     }
+
+                    var cliente = client.Buscar(venta.ClienteId);
+                    cliente.Balance = cliente.Balance + venta.Balance;
+                    client.Modificar(cliente);
+
+                    paso = db.SaveChanges() > 0;
                 }
 
             }

@@ -25,7 +25,7 @@ namespace BLL
 
                 if (db.Entradas.Add(entrada) != null)
                 {
-                    var producto = prod.Buscar(entrada.EntradaId);
+                    var producto = prod.Buscar(entrada.ProductoId);
                     producto.Existencia= producto.Existencia + entrada.Entrada;
                     prod.Modificar(producto);
 

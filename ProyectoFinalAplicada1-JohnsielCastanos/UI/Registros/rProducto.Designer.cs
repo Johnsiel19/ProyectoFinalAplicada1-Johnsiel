@@ -196,8 +196,9 @@
             // 
             // ExistenciatextBox
             // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(140, 209);
+            this.ExistenciatextBox.Location = new System.Drawing.Point(140, 199);
             this.ExistenciatextBox.Name = "ExistenciatextBox";
+            this.ExistenciatextBox.ReadOnly = true;
             this.ExistenciatextBox.Size = new System.Drawing.Size(100, 22);
             this.ExistenciatextBox.TabIndex = 55;
             // 

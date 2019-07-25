@@ -89,5 +89,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
             cProveedores frm = new cProveedores();
             frm.Show();
         }
+
+        private void EntradasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEntradas frm = new rEntradas();
+            frm.Show();
+        }
     }
 }

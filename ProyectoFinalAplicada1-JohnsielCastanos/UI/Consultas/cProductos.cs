@@ -19,11 +19,15 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             InitializeComponent();
             FiltrocomboBox.Text = "Todo";
+            
 
-            if(valor == 1)
+            if (valor == 1)
             {
+                
                 Elegirbutton.Visible = true;
                 Imprimirbutton.Visible = false;
+                
+
 
             }
         }
@@ -155,16 +159,34 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             }
         }
 
-        private void Consultarbutton_TextChanged(object sender, EventArgs e)
+  
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+
+            Consultarbutton.PerformClick();
+               if (ConsultadataGridView.CurrentRow.Cells["ProductoId"] != null)
+              {
+                  codigoProducto = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ProductoId"].Value.ToString());
+                  Close();
+              }
+              else
+              {
+
+                  MessageBox.Show("Elija un Producto");
+
+              }
+        }
+        public int codigoProducto;
+
+        private void CriteriotextBox_TextChanged(object sender, EventArgs e)
         {
             Consultarbutton_Click(sender, e);
         }
 
-        private void Elegirbutton_Click(object sender, EventArgs e)
+        private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-             codigoProducto = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ProductoId"].Value.ToString());
-            Close();
+           
         }
-        public int codigoProducto;
     }
 }

@@ -16,7 +16,7 @@ namespace DAL
         public DbSet<Proveedores> Proveedores { get; set; }
         public DbSet<Cobros> Cobros { get; set; }
         public DbSet<Ventas> Ventas { get; set; }
-        public DbSet<Compras> Compras { get; set; }
+        public DbSet<Entradas> Entradas { get; set; }
 
         public Contexto() : base("ConStr")
         { }

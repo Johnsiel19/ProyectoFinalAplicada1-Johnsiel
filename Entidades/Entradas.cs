@@ -8,21 +8,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entidades
 {
-    public class Compras
+    public class Entradas
     {
         [Key]
-        public int CompraId { get; set; }
-        public int ProveedorId { get; set; }
+        public int EntradaId { get; set; }
+        public int ProductoId { get; set; }
+        public double Entrada { get; set; }
         public int UsuarioId { get; set; }
-        public double Total { get; set; }
         public DateTime Fecha { get; set; }
 
-        public Compras()
+        public Entradas()
         {
-            CompraId = 0;
-            ProveedorId = 0;
+            EntradaId = 0;
+            ProductoId = 0;
+            Entrada = 0;
             UsuarioId = 0;
-            Total = 0;
             Fecha = DateTime.Now;
         }
     }

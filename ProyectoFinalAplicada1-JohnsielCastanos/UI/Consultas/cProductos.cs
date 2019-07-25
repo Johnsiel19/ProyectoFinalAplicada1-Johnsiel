@@ -15,10 +15,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
     public partial class cProductos : Form
     {
         public List<Productos> ListaClientes;
-        public cProductos()
+        public cProductos(int valor)
         {
             InitializeComponent();
-            CriteriotextBox.Text = null;
+            FiltrocomboBox.Text = "Todo";
+
+            if(valor == 1)
+            {
+                Elegirbutton.Visible = true;
+                Imprimirbutton.Visible = false;
+
+            }
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -152,5 +159,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             Consultarbutton_Click(sender, e);
         }
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+             codigoProducto = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ProductoId"].Value.ToString());
+            Close();
+        }
+        public int codigoProducto;
     }
 }

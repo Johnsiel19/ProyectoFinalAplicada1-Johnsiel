@@ -153,6 +153,16 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap one_finger_click_black_hand_symbol_icon_icons_com_64350 {
+            get {
+                object obj = ResourceManager.GetObject("one-finger-click-black-hand-symbol_icon-icons.com_64350", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap print_102332 {
             get {
                 object obj = ResourceManager.GetObject("print_102332", resourceCulture);

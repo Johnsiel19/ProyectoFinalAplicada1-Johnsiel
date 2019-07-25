@@ -53,7 +53,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.ExistenciatextBox = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button4 = new System.Windows.Forms.Button();
+            this.RemoverLienabutton = new System.Windows.Forms.Button();
             this.AgragraAlGrid = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -279,16 +279,17 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // button4
+            // RemoverLienabutton
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.DeleteEntry;
-            this.button4.Location = new System.Drawing.Point(8, 545);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 49);
-            this.button4.TabIndex = 62;
-            this.button4.UseVisualStyleBackColor = true;
+            this.RemoverLienabutton.FlatAppearance.BorderSize = 0;
+            this.RemoverLienabutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoverLienabutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.DeleteEntry;
+            this.RemoverLienabutton.Location = new System.Drawing.Point(8, 545);
+            this.RemoverLienabutton.Name = "RemoverLienabutton";
+            this.RemoverLienabutton.Size = new System.Drawing.Size(75, 49);
+            this.RemoverLienabutton.TabIndex = 62;
+            this.RemoverLienabutton.UseVisualStyleBackColor = true;
+            this.RemoverLienabutton.Click += new System.EventHandler(this.RemoverLienabutton_Click);
             // 
             // AgragraAlGrid
             // 
@@ -314,6 +315,7 @@
             this.button2.TabIndex = 59;
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -325,6 +327,7 @@
             this.button1.Size = new System.Drawing.Size(46, 39);
             this.button1.TabIndex = 58;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Nuevobutton
             // 
@@ -391,7 +394,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.RemoverLienabutton);
             this.Controls.Add(this.AgragraAlGrid);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -451,7 +454,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button AgragraAlGrid;
         private System.Windows.Forms.DataGridView detalleDataGridView;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button RemoverLienabutton;
         private System.Windows.Forms.TextBox TotalTextBox;
         private System.Windows.Forms.TextBox ItbisTextBox;
         private System.Windows.Forms.TextBox SubTotalTextBox;

@@ -62,6 +62,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             CelularmaskedTextBox.Text = cliente.Celular;
             FechadateTimePicker.Value = cliente.Fecha;
             DirecciontextBox.Text = cliente.Direccion;
+            BalancetextBox.Text = cliente.Balance.ToString();
        
         }
         private bool ExisteEnLaBaseDeDatos()

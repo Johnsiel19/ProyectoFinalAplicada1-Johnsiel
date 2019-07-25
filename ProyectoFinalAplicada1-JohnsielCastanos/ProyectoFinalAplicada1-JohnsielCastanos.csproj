@@ -268,5 +268,8 @@
   <ItemGroup>
     <None Include="Resources\DeleteEntry.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\one-finger-click-black-hand-symbol_icon-icons.com_64350.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

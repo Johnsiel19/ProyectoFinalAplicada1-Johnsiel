@@ -38,10 +38,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Consultarbutton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Elegirbutton = new System.Windows.Forms.Button();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Consultarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -146,29 +147,6 @@
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 67;
             // 
-            // button1
-            // 
-            this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.button1.Location = new System.Drawing.Point(801, 416);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 49);
-            this.button1.TabIndex = 66;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Consultarbutton
-            // 
-            this.Consultarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
-            this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(750, 58);
-            this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(109, 33);
-            this.Consultarbutton.TabIndex = 65;
-            this.Consultarbutton.Text = "Consultar";
-            this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Consultarbutton.UseVisualStyleBackColor = true;
-            this.Consultarbutton.TextChanged += new System.EventHandler(this.Consultarbutton_TextChanged);
-            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -190,11 +168,46 @@
             this.groupBox1.TabIndex = 78;
             this.groupBox1.TabStop = false;
             // 
+            // Elegirbutton
+            // 
+            this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
+            this.Elegirbutton.Location = new System.Drawing.Point(18, 417);
+            this.Elegirbutton.Name = "Elegirbutton";
+            this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Elegirbutton.TabIndex = 79;
+            this.Elegirbutton.UseVisualStyleBackColor = true;
+            this.Elegirbutton.Visible = false;
+            this.Elegirbutton.Click += new System.EventHandler(this.Elegirbutton_Click);
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
+            this.Imprimirbutton.Location = new System.Drawing.Point(801, 416);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Imprimirbutton.TabIndex = 66;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            // 
+            // Consultarbutton
+            // 
+            this.Consultarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
+            this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Consultarbutton.Location = new System.Drawing.Point(750, 58);
+            this.Consultarbutton.Name = "Consultarbutton";
+            this.Consultarbutton.Size = new System.Drawing.Size(109, 33);
+            this.Consultarbutton.TabIndex = 65;
+            this.Consultarbutton.Text = "Consultar";
+            this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.TextChanged += new System.EventHandler(this.Consultarbutton_TextChanged);
+            this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
+            // 
             // cProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 478);
+            this.Controls.Add(this.Elegirbutton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.FiltroFecha);
             this.Controls.Add(this.ConsultadataGridView);
@@ -203,7 +216,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cProductos";
             this.Text = "cProductos";
@@ -227,9 +240,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.Button Consultarbutton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Elegirbutton;
     }
 }

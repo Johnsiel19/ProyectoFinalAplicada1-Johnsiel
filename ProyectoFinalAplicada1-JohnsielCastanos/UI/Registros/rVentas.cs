@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -328,6 +329,25 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             }
   
+        }
+
+        private void RemoverLienabutton_Click(object sender, EventArgs e)
+        {
+            int codigo_hab = Convert.ToInt32(detalleDataGridView.CurrentRow.Cells["Id"].Value.ToString());
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            cProductos frm = new cProductos(1);
+            frm.ShowDialog();
+            ProductocomboBox.SelectedValue = frm.codigoProducto;
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            rCliente frm = new rCliente();
+            frm.ShowDialog();
         }
     }
 }

@@ -50,6 +50,8 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BalancetextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClientenumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -200,7 +202,7 @@
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(34, 505);
+            this.Nuevobutton.Location = new System.Drawing.Point(34, 523);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 71);
             this.Nuevobutton.TabIndex = 9;
@@ -227,7 +229,7 @@
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(359, 505);
+            this.Eliminarbutton.Location = new System.Drawing.Point(359, 523);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 71);
             this.Eliminarbutton.TabIndex = 51;
@@ -240,7 +242,7 @@
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(188, 505);
+            this.Guardarbutton.Location = new System.Drawing.Point(188, 523);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
             this.Guardarbutton.TabIndex = 8;
@@ -249,11 +251,30 @@
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click_1);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 475);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 17);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Balance";
+            // 
+            // BalancetextBox
+            // 
+            this.BalancetextBox.Location = new System.Drawing.Point(131, 475);
+            this.BalancetextBox.Name = "BalancetextBox";
+            this.BalancetextBox.ReadOnly = true;
+            this.BalancetextBox.Size = new System.Drawing.Size(100, 22);
+            this.BalancetextBox.TabIndex = 64;
+            // 
             // rCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 612);
+            this.Controls.Add(this.BalancetextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.CelularmaskedTextBox);
             this.Controls.Add(this.TelefonomaskedTextBox);
@@ -307,5 +328,7 @@
         private System.Windows.Forms.MaskedTextBox CelularmaskedTextBox;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.TextBox BalancetextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

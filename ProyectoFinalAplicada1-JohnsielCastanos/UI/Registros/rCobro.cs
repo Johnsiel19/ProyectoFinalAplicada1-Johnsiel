@@ -179,7 +179,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                     MessageBox.Show("No se puede modificar un Cobro que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                //paso = db.Modificar(cobro);
+                paso = CobroBLL.Modificar(cobro);
 
             }
 

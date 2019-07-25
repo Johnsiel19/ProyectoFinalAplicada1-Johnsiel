@@ -94,30 +94,31 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
 
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
+     
+        private void Guardarbutton_Click_1(object sender, EventArgs e)
         {
 
-            Ventas venta;
+            Entradas entrada;
             bool paso = false;
 
             if (!Validar())
                 return;
 
-            venta = LlenaClase();
+            entrada = LlenaClase();
 
 
-            if (VentaIdnumericUpDown.Value == 0)
+            if (EntradaIdnumericUpDown.Value == 0)
             {
-                paso = VentaBLL.Guardar(venta);
+                paso = EntradaBLL.Guardar(entrada);
             }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificar una venta que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar una Entrada que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                //paso = db.Modificar(venta);
+                paso = EntradaBLL.Modificar(entrada);
 
             }
 
@@ -128,14 +129,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             Limpiar();
         }
 
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void Eliminarbutton_Click_1(object sender, EventArgs e)
         {
-            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
+            RepositorioBase<Entradas> db = new RepositorioBase<Entradas>();
             try
             {
-                if (VentaIdnumericUpDown.Value > 0)
+                if (EntradaIdnumericUpDown.Value > 0)
                 {
-                    if (db.Eliminar((int)VentaIdnumericUpDown.Value))
+                    if (db.Eliminar((int)EntradaIdnumericUpDown.Value))
                     {
                         MessageBox.Show("Eliminado", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
@@ -157,24 +158,29 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int id;
-            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
-            Ventas venta = new Ventas();
+            RepositorioBase<Entradas> db = new RepositorioBase<Entradas>();
+            Entradas entrada = new Entradas();
 
-            int.TryParse(VentaIdnumericUpDown.Text, out id);
+            int.TryParse(EntradaIdnumericUpDown.Text, out id);
             Limpiar();
 
-            venta = db.Buscar(id);
+            entrada = db.Buscar(id);
 
-            if (venta != null)
+            if (entrada != null)
             {
 
-                LlenaCampo(venta);
+                LlenaCampo(entrada);
 
             }
             else
             {
-                MessageBox.Show("Usuario no existe");
+                MessageBox.Show("Entrada no encontrada");
             }
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

@@ -349,5 +349,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             rCliente frm = new rCliente();
             frm.ShowDialog();
         }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             CostonumericUpDown.Value = Convert.ToDecimal( producto.Costo);
             ProductoItbisnumericUpDown.Value = Convert.ToDecimal(producto.ProductoItbis);
             FechadateTimePicker.Value = producto.Fecha;
-            ProveedorcomboBox.Text = producto.ProveedorId.ToString();
+            ProveedorcomboBox.SelectedValue = producto.ProveedorId;
  
 
         }

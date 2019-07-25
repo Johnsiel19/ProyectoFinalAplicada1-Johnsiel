@@ -104,7 +104,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             ItbisTextBox.Text = v.Itbis.ToString();
             SubTotalTextBox.Text = v.SubTotal.ToString();
             TotalTextBox.Text = v.Total.ToString();
-
+            this.Detalle = v.Productos;
+            CargarGrid();
         }
 
         private void CargarGrid()
@@ -218,7 +219,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
       
         private void ProductocomboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-
+            
             Productos p = ProductocomboBox.SelectedItem as Productos;
             if (p != null)
             {

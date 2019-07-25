@@ -18,6 +18,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             InitializeComponent();
             LlenarComboBoxCliente();
+            ClientecomboBox.Text = null;
         
         }
 
@@ -35,13 +36,20 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
             var listado = new List<Ventas>();
-            string cliente = ClientecomboBox.SelectedValue.ToString();
+            
           
+            if (ClientecomboBox.SelectedValue != null)
+            {
+                string cliente = ClientecomboBox.SelectedValue.ToString();
+                listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente));
+                VentacomboBox.DataSource = listado;
+                VentacomboBox.DisplayMember = "VentasId";
+                VentacomboBox.ValueMember = "VentasId";
 
-            listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente));
-            VentacomboBox.DataSource = listado;
-            VentacomboBox.DisplayMember = "VentasId";
-            VentacomboBox.ValueMember = "VentasId";
+
+            }
+     
+           
 
         }
 
@@ -49,58 +57,76 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
 
             LlenarComboBoxVenta();
+            
         }
 
- 
 
-        /*
+
+        private void VentacomboBox_TextChanged(object sender, EventArgs e)
+        {
+            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
+            Ventas venta;
+            if (db.Buscar(Convert.ToInt32(VentacomboBox.SelectedValue)) != null)
+            {
+                venta = db.Buscar(Convert.ToInt32(VentacomboBox.SelectedValue));
+                MontoFacturatextBox.Text = venta.Balance.ToString();
+
+
+            }
+        }
+
+
+
+
         private void Limpiar()
         {
 
-            ProductoIdnumericUpDown.Value = 0;
-            DescripciontextBox.Text = string.Empty;
-            ProveedorcomboBox.Text = string.Empty;
-            PrecionumericUpDown.Value = 0;
-            CostonumericUpDown.Value = 0;
-            ExistenciatextBox.Text = string.Empty;
-            ProductoItbisnumericUpDown.Value = 0;
+            CobroIdnumericUpDown.Value = 0;
+            ClientecomboBox.Text = string.Empty;
+            VentacomboBox.Text = string.Empty;
+            MontoPagarnumericUpDown.Value = 0;
+            MontoFacturatextBox.Text = string.Empty;
+            BalancetextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
+            VentaFechadateTimePicker.Value = DateTime.Now;
 
         }
 
-        private Productos LlenaClase()
+        private Cobros LlenaClase()
         {
-            Productos producto = new Productos();
-            producto.ProductoId = Convert.ToInt32(ProductoIdnumericUpDown.Value);
-            producto.Descripcion = DescripciontextBox.Text;
-            producto.Existencia = Convert.ToDouble(ExistenciatextBox.Text);
-            producto.Precio = Convert.ToDouble(PrecionumericUpDown.Value);
-            producto.Costo = Convert.ToDouble(CostonumericUpDown.Value);
-            producto.ProductoItbis = Convert.ToInt32(ProductoItbisnumericUpDown.Value);
-            producto.ProveedorId = Convert.ToInt32(ProveedorcomboBox.SelectedValue);
-            producto.UsuarioId = 0;
-            producto.Fecha = FechadateTimePicker.Value;
-            return producto;
+            Cobros cobro = new Cobros();
+            cobro.CobroId = Convert.ToInt32(CobroIdnumericUpDown.Value);
+            cobro.ClienteId = Convert.ToInt32(ClientecomboBox.SelectedValue);
+            cobro.VentaId = Convert.ToInt32(VentacomboBox.SelectedValue);
+            cobro.MontoPagado = Convert.ToDouble(MontoPagarnumericUpDown.Value);
+            cobro.Observacion = ObservaciontextBox.Text;
+            cobro.UsuarioId = 0;
+            cobro.Fecha = FechadateTimePicker.Value;
+            return cobro;
 
         }
 
-        private void LlenaCampo(Productos producto)
+        private void LlenaCampo(Cobros cobro)
         {
-            ProductoIdnumericUpDown.Value = producto.UsuarioId;
-            DescripciontextBox.Text = producto.Descripcion;
-            ExistenciatextBox.Text = producto.Existencia.ToString();
-            PrecionumericUpDown.Value = Convert.ToDecimal(producto.Precio);
-            CostonumericUpDown.Value = Convert.ToDecimal(producto.Costo);
-            ProductoItbisnumericUpDown.Value = Convert.ToDecimal(producto.ProductoItbis);
-            FechadateTimePicker.Value = producto.Fecha;
-            ProveedorcomboBox.Text = producto.ProveedorId.ToString();
-
+            CobroIdnumericUpDown.Value = cobro.CobroId;
+            ClientecomboBox.SelectedValue = cobro.ClienteId;
+            VentacomboBox.SelectedValue = cobro.VentaId;
+            MontoPagarnumericUpDown.Value = Convert.ToDecimal( cobro.MontoPagado);
+            ObservaciontextBox.Text = cobro.Observacion;
+            FechadateTimePicker.Value = cobro.Fecha;
+            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
+            Ventas venta;
+            if(db.Buscar(cobro.VentaId) != null)
+            {
+                venta = db.Buscar(cobro.VentaId);
+                MontoFacturatextBox.Text = venta.Balance.ToString();
+            }
 
         }
         private bool ExisteEnLaBaseDeDatos()
         {
-            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
-            Productos producto = db.Buscar((int)ProductoIdnumericUpDown.Value);
+            RepositorioBase<Cobros> db = new RepositorioBase<Cobros>();
+            Cobros producto = db.Buscar((int)CobroIdnumericUpDown.Value);
             return (producto != null);
 
         }
@@ -111,51 +137,49 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             bool paso = true;
 
-
-
-            if (DescripciontextBox.Text == string.Empty)
-            {
-                errorProvider.SetError(DescripciontextBox, "El campo Nombre no puede estar vacio");
-                DescripciontextBox.Focus();
-                paso = false;
-            }
-
-            if (ProveedorcomboBox.Text == string.Empty)
-            {
-                errorProvider.SetError(ProveedorcomboBox, "El proveedor no puede estra vacio");
-                ProveedorcomboBox.Focus();
-                paso = false;
-            }
-
             return paso;
 
         }
 
 
-        private void Guardarbutton_Click(object sender, EventArgs e)
+
+        private void DescripciontextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
-            Productos producto;
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                e.Handled = true;
+        }
+
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+ 
+        private void Guardarbutton_Click_1(object sender, EventArgs e)
+        {
+            
+            Cobros cobro;
             bool paso = false;
 
             if (!Validar())
                 return;
 
-            producto = LlenaClase();
+            cobro = LlenaClase();
 
 
-            if (ProductoIdnumericUpDown.Value == 0)
+            if (CobroIdnumericUpDown.Value == 0)
             {
-                paso = db.Guardar(producto);
+                paso = CobroBLL.Guardar(cobro);
             }
             else
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificar un Producto que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede modificar un Cobro que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = db.Modificar(producto);
+                //paso = db.Modificar(cobro);
 
             }
 
@@ -166,27 +190,21 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             Limpiar();
         }
 
-        private void DescripciontextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-                e.Handled = true;
-        }
-
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
             int id;
-            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
-            Productos producto = new Productos();
+            RepositorioBase<Cobros> db = new RepositorioBase<Cobros>();
+            Cobros cobro = new Cobros();
 
-            int.TryParse(ProductoIdnumericUpDown.Text, out id);
+            int.TryParse(CobroIdnumericUpDown.Text, out id);
             Limpiar();
 
-            producto = db.Buscar(id);
+            cobro = db.Buscar(id);
 
-            if (producto != null)
+            if (cobro != null)
             {
 
-                LlenaCampo(producto);
+                LlenaCampo(cobro);
 
             }
             else
@@ -195,19 +213,19 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click_1(object sender, EventArgs e)
         {
             Limpiar();
         }
 
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void Eliminarbutton_Click_1(object sender, EventArgs e)
         {
-            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
+         
             try
             {
-                if (ProductoIdnumericUpDown.Value > 0)
+                if (CobroIdnumericUpDown.Value > 0)
                 {
-                    if (db.Eliminar((int)ProductoIdnumericUpDown.Value))
+                    if (CobroBLL.Eliminar((int)CobroIdnumericUpDown.Value))
                     {
                         MessageBox.Show("Eliminado", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
@@ -224,6 +242,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 MessageBox.Show("No se pudo eliminar", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }*/
+        }
     }
 }

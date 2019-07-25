@@ -31,9 +31,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.VentacomboBox = new System.Windows.Forms.ComboBox();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
-            this.DechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.MontoPagarnumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.CrobroIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CobroIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,12 +44,14 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.VentaFechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.BalancetextBox = new System.Windows.Forms.TextBox();
+            this.ObservaciontextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MontoPagarnumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CrobroIdnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CobroIdnumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -68,6 +70,7 @@
             this.VentacomboBox.Name = "VentacomboBox";
             this.VentacomboBox.Size = new System.Drawing.Size(163, 24);
             this.VentacomboBox.TabIndex = 108;
+            this.VentacomboBox.TextChanged += new System.EventHandler(this.VentacomboBox_TextChanged);
             // 
             // ClientecomboBox
             // 
@@ -78,14 +81,14 @@
             this.ClientecomboBox.TabIndex = 107;
             this.ClientecomboBox.SelectedIndexChanged += new System.EventHandler(this.ClientecomboBox_SelectedIndexChanged);
             // 
-            // DechadateTimePicker
+            // FechadateTimePicker
             // 
-            this.DechadateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.DechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DechadateTimePicker.Location = new System.Drawing.Point(420, 31);
-            this.DechadateTimePicker.Name = "DechadateTimePicker";
-            this.DechadateTimePicker.Size = new System.Drawing.Size(177, 22);
-            this.DechadateTimePicker.TabIndex = 105;
+            this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(420, 31);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(177, 22);
+            this.FechadateTimePicker.TabIndex = 105;
             // 
             // MontoPagarnumericUpDown
             // 
@@ -94,12 +97,12 @@
             this.MontoPagarnumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.MontoPagarnumericUpDown.TabIndex = 104;
             // 
-            // CrobroIdnumericUpDown
+            // CobroIdnumericUpDown
             // 
-            this.CrobroIdnumericUpDown.Location = new System.Drawing.Point(92, 34);
-            this.CrobroIdnumericUpDown.Name = "CrobroIdnumericUpDown";
-            this.CrobroIdnumericUpDown.Size = new System.Drawing.Size(73, 22);
-            this.CrobroIdnumericUpDown.TabIndex = 103;
+            this.CobroIdnumericUpDown.Location = new System.Drawing.Point(92, 34);
+            this.CobroIdnumericUpDown.Name = "CobroIdnumericUpDown";
+            this.CobroIdnumericUpDown.Size = new System.Drawing.Size(73, 22);
+            this.CobroIdnumericUpDown.TabIndex = 103;
             // 
             // label6
             // 
@@ -158,13 +161,14 @@
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(24, 282);
+            this.Nuevobutton.Location = new System.Drawing.Point(29, 380);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 71);
             this.Nuevobutton.TabIndex = 112;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click_1);
             // 
             // Buscarbutton
             // 
@@ -178,39 +182,42 @@
             this.Buscarbutton.TabIndex = 114;
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click_1);
             // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(517, 282);
+            this.Eliminarbutton.Location = new System.Drawing.Point(517, 380);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 71);
             this.Eliminarbutton.TabIndex = 113;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click_1);
             // 
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(260, 282);
+            this.Guardarbutton.Location = new System.Drawing.Point(258, 380);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
             this.Guardarbutton.TabIndex = 111;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click_1);
             // 
-            // dateTimePicker1
+            // VentaFechadateTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(420, 145);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(177, 22);
-            this.dateTimePicker1.TabIndex = 118;
+            this.VentaFechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.VentaFechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.VentaFechadateTimePicker.Location = new System.Drawing.Point(420, 145);
+            this.VentaFechadateTimePicker.Name = "VentaFechadateTimePicker";
+            this.VentaFechadateTimePicker.Size = new System.Drawing.Size(177, 22);
+            this.VentaFechadateTimePicker.TabIndex = 118;
             // 
             // label8
             // 
@@ -230,22 +237,41 @@
             this.label9.TabIndex = 120;
             this.label9.Text = "Balance Total";
             // 
-            // textBox2
+            // BalancetextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(474, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(123, 22);
-            this.textBox2.TabIndex = 119;
+            this.BalancetextBox.Location = new System.Drawing.Point(474, 88);
+            this.BalancetextBox.Name = "BalancetextBox";
+            this.BalancetextBox.ReadOnly = true;
+            this.BalancetextBox.Size = new System.Drawing.Size(123, 22);
+            this.BalancetextBox.TabIndex = 119;
+            // 
+            // ObservaciontextBox
+            // 
+            this.ObservaciontextBox.Location = new System.Drawing.Point(135, 252);
+            this.ObservaciontextBox.Multiline = true;
+            this.ObservaciontextBox.Name = "ObservaciontextBox";
+            this.ObservaciontextBox.Size = new System.Drawing.Size(462, 66);
+            this.ObservaciontextBox.TabIndex = 121;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 252);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.TabIndex = 122;
+            this.label4.Text = "Observacion";
             // 
             // rCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 391);
+            this.ClientSize = new System.Drawing.Size(638, 490);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ObservaciontextBox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.BalancetextBox);
+            this.Controls.Add(this.VentaFechadateTimePicker);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.MontoFacturatextBox);
@@ -256,9 +282,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.VentacomboBox);
             this.Controls.Add(this.ClientecomboBox);
-            this.Controls.Add(this.DechadateTimePicker);
+            this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.MontoPagarnumericUpDown);
-            this.Controls.Add(this.CrobroIdnumericUpDown);
+            this.Controls.Add(this.CobroIdnumericUpDown);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -266,7 +292,7 @@
             this.Name = "rCobro";
             this.Text = "rCobro";
             ((System.ComponentModel.ISupportInitialize)(this.MontoPagarnumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CrobroIdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CobroIdnumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,9 +302,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox VentacomboBox;
         private System.Windows.Forms.ComboBox ClientecomboBox;
-        private System.Windows.Forms.DateTimePicker DechadateTimePicker;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.NumericUpDown MontoPagarnumericUpDown;
-        private System.Windows.Forms.NumericUpDown CrobroIdnumericUpDown;
+        private System.Windows.Forms.NumericUpDown CobroIdnumericUpDown;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -289,9 +315,11 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox MontoFacturatextBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker VentaFechadateTimePicker;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox BalancetextBox;
+        private System.Windows.Forms.TextBox ObservaciontextBox;
+        private System.Windows.Forms.Label label4;
     }
 }

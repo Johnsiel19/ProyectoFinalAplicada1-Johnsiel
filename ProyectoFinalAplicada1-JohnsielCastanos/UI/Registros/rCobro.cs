@@ -29,9 +29,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             ClientecomboBox.DataSource = listado;
             ClientecomboBox.DisplayMember = "Nombre";
             ClientecomboBox.ValueMember = "ClienteId";
-
-          
-
         }
 
         private void LlenarComboBoxVenta()

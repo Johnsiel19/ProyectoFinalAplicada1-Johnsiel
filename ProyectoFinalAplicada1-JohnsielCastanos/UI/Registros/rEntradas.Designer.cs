@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ProductocomboBox = new System.Windows.Forms.ComboBox();
-            this.EntradanumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.EntradaIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ProductoEntradanumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -40,8 +41,10 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.EntradanumericUpDown)).BeginInit();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.EntradaIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoEntradanumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,12 +73,12 @@
             this.ProductocomboBox.Size = new System.Drawing.Size(230, 24);
             this.ProductocomboBox.TabIndex = 2;
             // 
-            // EntradanumericUpDown
+            // EntradaIdnumericUpDown
             // 
-            this.EntradanumericUpDown.Location = new System.Drawing.Point(124, 38);
-            this.EntradanumericUpDown.Name = "EntradanumericUpDown";
-            this.EntradanumericUpDown.Size = new System.Drawing.Size(92, 22);
-            this.EntradanumericUpDown.TabIndex = 3;
+            this.EntradaIdnumericUpDown.Location = new System.Drawing.Point(124, 38);
+            this.EntradaIdnumericUpDown.Name = "EntradaIdnumericUpDown";
+            this.EntradaIdnumericUpDown.Size = new System.Drawing.Size(92, 22);
+            this.EntradaIdnumericUpDown.TabIndex = 3;
             // 
             // ProductoEntradanumericUpDown
             // 
@@ -160,6 +163,10 @@
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // rEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,14 +180,15 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ProductoEntradanumericUpDown);
-            this.Controls.Add(this.EntradanumericUpDown);
+            this.Controls.Add(this.EntradaIdnumericUpDown);
             this.Controls.Add(this.ProductocomboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "rEntradas";
             this.Text = "rEntradas";
-            ((System.ComponentModel.ISupportInitialize)(this.EntradanumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EntradaIdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoEntradanumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +199,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ProductocomboBox;
-        private System.Windows.Forms.NumericUpDown EntradanumericUpDown;
+        private System.Windows.Forms.NumericUpDown EntradaIdnumericUpDown;
         private System.Windows.Forms.NumericUpDown ProductoEntradanumericUpDown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
@@ -200,5 +208,6 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

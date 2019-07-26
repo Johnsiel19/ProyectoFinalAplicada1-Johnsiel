@@ -211,7 +211,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private void Button1_Click(object sender, EventArgs e)
         {
             rProveedor frm = new rProveedor();
-            frm.Show();
+            frm.ShowDialog();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
         public MainForm()
         {
             InitializeComponent();
+
         }
 
         private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cCliente frm = new cCliente();
+            cCliente frm = new cCliente(0);
             frm.Show();
         }
 

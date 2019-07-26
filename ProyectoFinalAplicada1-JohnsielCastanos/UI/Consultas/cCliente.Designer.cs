@@ -38,8 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
+            this.Elegirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,14 +144,14 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Desde";
             // 
-            // button1
+            // Imprimirbutton
             // 
-            this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.button1.Location = new System.Drawing.Point(796, 394);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 49);
-            this.button1.TabIndex = 54;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
+            this.Imprimirbutton.Location = new System.Drawing.Point(796, 394);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Imprimirbutton.TabIndex = 54;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
             // Consultarbutton
             // 
@@ -163,14 +164,25 @@
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
-
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
+            // 
+            // Elegirbutton
+            // 
+            this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
+            this.Elegirbutton.Location = new System.Drawing.Point(12, 389);
+            this.Elegirbutton.Name = "Elegirbutton";
+            this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Elegirbutton.TabIndex = 80;
+            this.Elegirbutton.UseVisualStyleBackColor = true;
+            this.Elegirbutton.Visible = false;
+            this.Elegirbutton.Click += new System.EventHandler(this.Elegirbutton_Click);
             // 
             // cCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 450);
+            this.Controls.Add(this.Elegirbutton);
             this.Controls.Add(this.FiltroFecha);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.CriteriotextBox);
@@ -181,7 +193,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cCliente";
             this.Text = "cCliente";
@@ -203,7 +215,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.Button Consultarbutton;
+        private System.Windows.Forms.Button Elegirbutton;
     }
 }

@@ -79,7 +79,8 @@
             this.ClientecomboBox.Name = "ClientecomboBox";
             this.ClientecomboBox.Size = new System.Drawing.Size(163, 24);
             this.ClientecomboBox.TabIndex = 107;
-            this.ClientecomboBox.SelectedIndexChanged += new System.EventHandler(this.ClientecomboBox_SelectedIndexChanged);
+            this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
+            this.ClientecomboBox.TextChanged += new System.EventHandler(this.ClientecomboBox_TextChanged);
             // 
             // FechadateTimePicker
             // 
@@ -93,6 +94,11 @@
             // MontoPagarnumericUpDown
             // 
             this.MontoPagarnumericUpDown.Location = new System.Drawing.Point(135, 199);
+            this.MontoPagarnumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.MontoPagarnumericUpDown.Name = "MontoPagarnumericUpDown";
             this.MontoPagarnumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.MontoPagarnumericUpDown.TabIndex = 104;

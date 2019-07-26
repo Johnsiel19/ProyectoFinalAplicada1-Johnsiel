@@ -18,7 +18,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             InitializeComponent();
             LlenarComboBoxCliente();
-            ClientecomboBox.Text = null;
+      
+
+           
         
         }
 
@@ -26,7 +28,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
             var listado = new List<Clientes>();
-            listado = db.GetList(p => true);
+            listado = db.GetList(p => p.Balance>0);
             ClientecomboBox.DataSource = listado;
             ClientecomboBox.DisplayMember = "Nombre";
             ClientecomboBox.ValueMember = "ClienteId";
@@ -36,9 +38,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
             var listado = new List<Ventas>();
-            
-          
-            if (ClientecomboBox.SelectedValue != null)
+
+
+            if (ClientecomboBox.SelectedValue != null )
             {
                 string cliente = ClientecomboBox.SelectedValue.ToString();
                 listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente) & p.Balance >0);
@@ -57,13 +59,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         }
 
-        private void ClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            LlenarComboBoxVenta();
-            
-        }
-
 
 
         private void VentacomboBox_TextChanged(object sender, EventArgs e)
@@ -77,6 +72,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
 
             }
+
+           
+
         }
 
 
@@ -246,6 +244,23 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 MessageBox.Show("No se pudo eliminar", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ClientecomboBox_TextChanged(object sender, EventArgs e)
+        {
+           
+            LlenarComboBoxVenta();
+          
+
+
+
+
+        }
+
+        private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LlenarComboBoxVenta();
+      
         }
     }
 }

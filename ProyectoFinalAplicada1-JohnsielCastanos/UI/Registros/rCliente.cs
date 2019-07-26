@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
-
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -216,22 +216,40 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int id;
             RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
             Clientes cliente = new Clientes();
-
-            int.TryParse(ClientenumericUpDown.Text, out id);
-            Limpiar();
-
-            cliente = db.Buscar(id);
-
-            if (cliente != null)
+            if (ClientenumericUpDown.Value == 0)
             {
 
+                cCliente frm = new cCliente(1);
+                frm.ShowDialog();
+
+                cliente = db.Buscar(frm.codigoCliente);
+
+
+
                 LlenaCampo(cliente);
+
+
 
             }
             else
             {
-                MessageBox.Show("El Cliente no existe");
+                int.TryParse(ClientenumericUpDown.Text, out id);
+                Limpiar();
+
+                cliente = db.Buscar(id);
+
+                if (cliente != null)
+                {
+
+                    LlenaCampo(cliente);
+
+                }
+                else
+                {
+                    MessageBox.Show("El Cliente no existe");
+                }
             }
+           
         }
 
         private void NombrestextBox_KeyPress(object sender, KeyPressEventArgs e)

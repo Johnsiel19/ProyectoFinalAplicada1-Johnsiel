@@ -137,7 +137,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 if (EntradaIdnumericUpDown.Value > 0)
                 {
-                    if (db.Eliminar((int)EntradaIdnumericUpDown.Value))
+                    if (EntradaBLL.Eliminar((int)EntradaIdnumericUpDown.Value))
                     {
                         MessageBox.Show("Eliminado", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();

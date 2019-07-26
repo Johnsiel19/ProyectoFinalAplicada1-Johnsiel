@@ -16,9 +16,18 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
     {
 
         public List<Clientes> ListaClientes;
-        public cCliente()
+        public cCliente(int valor)
         {
             InitializeComponent();
+            FiltrocomboBox.Text = null;
+
+            if (valor == 1)
+            {
+
+                Elegirbutton.Visible = true;
+                Imprimirbutton.Visible = false;
+
+            }
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -125,5 +134,23 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             Consultarbutton_Click(sender, e);
         }
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+            if (ConsultadataGridView.CurrentRow.Cells["ClienteId"] != null)
+            {
+                codigoCliente = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ClienteId"].Value.ToString());
+                Close();
+            }
+            else
+            {
+
+                MessageBox.Show("Elija un Cliente");
+
+            }
+            
+        }
+        public int codigoCliente;
     }
 }

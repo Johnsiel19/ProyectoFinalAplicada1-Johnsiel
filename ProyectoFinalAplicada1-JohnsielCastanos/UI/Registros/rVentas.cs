@@ -157,7 +157,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                     MessageBox.Show("No se puede modificar una venta que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-               //paso = db.Modificar(venta);
+               paso = VentaBLL.Modificar(venta);
 
             }
 
@@ -175,7 +175,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 if (VentaIdnumericUpDown.Value > 0)
                 {
-                    if (db.Eliminar((int)VentaIdnumericUpDown.Value))
+                    if (VentaBLL.Eliminar((int)VentaIdnumericUpDown.Value))
                     {
                         MessageBox.Show("Eliminado", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();

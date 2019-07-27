@@ -24,7 +24,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             LlenarComboBoxProducto();
             Detalle = new List<VentasDetalle>();
             FuncionDeInicio();
-          
+
         }
 
         private void FuncionDeInicio()
@@ -73,6 +73,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             SubTotalTextBox.Text = string.Empty;
             TotalTextBox.Text = string.Empty;
             ItbisTextBox.Text = string.Empty;
+            this.Detalle = new List<VentasDetalle>();
+            CargarGrid();
             errorProvider.Clear();
 
         }
@@ -95,7 +97,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         }
 
-        private void LlenaCampo (Ventas v)
+        private void LlenaCampo(Ventas v)
         {
 
             VentaIdnumericUpDown.Value = v.VentasId;
@@ -126,6 +128,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
             bool paso = true;
+   
 
 
             return paso;
@@ -136,7 +139,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-           
+
             Ventas venta;
             bool paso = false;
 
@@ -157,7 +160,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                     MessageBox.Show("No se puede modificar una venta que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-               paso = VentaBLL.Modificar(venta);
+                paso = VentaBLL.Modificar(venta);
 
             }
 
@@ -200,7 +203,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
             Ventas venta = new Ventas();
 
-            int.TryParse(VentaIdnumericUpDown.Text, out id);
+            int.TryParse( VentaIdnumericUpDown.Value.ToString(), out id);
             Limpiar();
 
             venta = db.Buscar(id);
@@ -217,10 +220,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
         }
 
-      
+
         private void ProductocomboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
             Productos p = ProductocomboBox.SelectedItem as Productos;
             if (p != null)
             {
@@ -259,7 +262,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             double subtotal = 0;
             foreach (var item in Detalle)
             {
-                subtotal +=  item.Importe;
+                subtotal += item.Importe;
             }
             SubTotalTextBox.Text = subtotal.ToString();
         }
@@ -272,104 +275,127 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             CantidadnumericUpDown.Value = 0;
             errorProvider.Clear();
         }
-
+        public string id_prod;
         private bool ExisteEnGrid()
         {
             bool paso = true;
 
-            string id_prod =  ProductocomboBox.SelectedValue.ToString();
-     
+
+
             if (detalleDataGridView.RowCount > 0)
             {
+                 id_prod = ProductocomboBox.SelectedValue.ToString();
                 for (int i = 0; i < detalleDataGridView.RowCount; i++)
                 {
                     if (Convert.ToInt16(detalleDataGridView.Rows[i].Cells["ProductoId"].Value) == Convert.ToInt16(id_prod))
                     {
                         MessageBox.Show("El producto ya ha sido ingresado");
+                        paso = false;
                     }
-                    paso = false;
-               
+                    
+
                 }
             }
-      
+
 
             return paso;
         }
         private void AgragraAlGrid_Click(object sender, EventArgs e)
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
+
             Productos producto = db.Buscar((int)ProductocomboBox.SelectedValue);
             if (ProductocomboBox.Text == "")
             {
-                errorProvider.SetError(ProductocomboBox, "Debe elegir una asignatura");
+                errorProvider.SetError(ProductocomboBox, "Debe elegir un Producto");
                 ProductocomboBox.Focus();
+                return;
 
             }
-           
 
-               
-                if (PrecionumericUpDown.Value < Convert.ToDecimal(producto.Costo)){
 
-                    errorProvider.SetError(PrecionumericUpDown, "El precio de venta debe ser mayor al precio del costo");
-                    PrecionumericUpDown.Focus();
-                    
-                } 
-                if(producto.Existencia - Convert.ToDouble( CantidadnumericUpDown.Value) < 0)
-                {
-                    errorProvider.SetError(CantidadnumericUpDown, "El almacen del producto no es suficiente ");
-                    CantidadnumericUpDown.Focus();
+            if (PrecionumericUpDown.Value < Convert.ToDecimal(producto.Costo))
+            {
 
-                }
-                if(ExisteEnGrid() == false)
-                {
-                    errorProvider.SetError(ProductocomboBox, "El Producto ya existe en el Grid");
-                    ProductocomboBox.Focus();
+                errorProvider.SetError(PrecionumericUpDown, "El precio de venta debe ser mayor al precio del costo");
+                PrecionumericUpDown.Focus();
+                return;
 
-                }
-            if (CantidadnumericUpDown.Value < 1)
+            }
+            if (producto.Existencia - Convert.ToDouble(CantidadnumericUpDown.Value) < 0)
             {
                 errorProvider.SetError(CantidadnumericUpDown, "El almacen del producto no es suficiente ");
                 CantidadnumericUpDown.Focus();
+                return;
+
+
+            }
+            if (ExisteEnGrid() == false)
+            {
+                errorProvider.SetError(ProductocomboBox, "El Producto ya existe en el Grid");
+                ProductocomboBox.Focus();
+                return;
+
+            }
+            if (CantidadnumericUpDown.Value < 1)
+            {
+                errorProvider.SetError(CantidadnumericUpDown, "Debe elegir una cantidad ");
+                CantidadnumericUpDown.Focus();
+                return;
 
             }
 
 
-                else
-                {
-
-                    double import = Convert.ToDouble(PrecionumericUpDown.Value * CantidadnumericUpDown.Value);
 
 
+            double import = Convert.ToDouble(PrecionumericUpDown.Value * CantidadnumericUpDown.Value);
 
-                    if (detalleDataGridView.DataSource != null)
-                        this.Detalle = (List<VentasDetalle>)detalleDataGridView.DataSource;
 
-                    this.Detalle.Add(new VentasDetalle()
-                    {
-                        VentaId = Convert.ToInt32(VentaIdnumericUpDown.Value),
-                        ProductoId = Convert.ToInt32(ProductocomboBox.SelectedValue),
-                        Cantidad = Convert.ToDouble(CantidadnumericUpDown.Value),
-                        Precio = Convert.ToDouble(PrecionumericUpDown.Value),
-                        Importe = import,
-                        Itbis = (producto.ProductoItbis * import) / 100
 
-                    });
+            if (detalleDataGridView.DataSource != null)
+                this.Detalle = (List<VentasDetalle>)detalleDataGridView.DataSource;
 
-                    LimpiaProducto();
-                    CargarGrid();
-                    CalcularItbis();
-                    CalcularSubtotal();
-                    CalcularTotal();
+            this.Detalle.Add(new VentasDetalle()
+            {
+                VentaId = Convert.ToInt32(VentaIdnumericUpDown.Value),
+                ProductoId = Convert.ToInt32(ProductocomboBox.SelectedValue),
+                Cantidad = Convert.ToDouble(CantidadnumericUpDown.Value),
+                Precio = Convert.ToDouble(PrecionumericUpDown.Value),
+                Importe = import,
+                Itbis = (producto.ProductoItbis * import) / 100
 
-                }
+            });
 
-            
-  
+            LimpiaProducto();
+            CargarGrid();
+            CalcularItbis();
+            CalcularSubtotal();
+            CalcularTotal();
+
         }
+
+    
+  
+        
 
         private void RemoverLienabutton_Click(object sender, EventArgs e)
         {
-           
+
+            Productos p = ProductocomboBox.SelectedItem as Productos;
+            if (detalleDataGridView.Rows.Count > 0 && detalleDataGridView.CurrentRow != null)
+            {
+                Detalle.RemoveAt(detalleDataGridView.CurrentRow.Index);
+                CargarGrid();
+
+               
+          
+                CalcularItbis();
+                CalcularSubtotal();
+                CalcularTotal();
+                 LimpiaProducto();
+
+            }
+
         }
 
         private void Button2_Click(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             Proveedores proveedor = new Proveedores();
             proveedor.ProveedorId = Convert.ToInt32(ProveedorIdnumericUpDown.Value);
-            proveedor.Nombre = NombrestextBox.Text;
+            proveedor.Nombre = NombrestextBox.Text.Trim();
             proveedor.Email = EmailtextBox.Text;
             proveedor.Celular = CelularmaskedTextBox.Text;
             proveedor.Telefono = TelefonomaskedTextBox.Text;

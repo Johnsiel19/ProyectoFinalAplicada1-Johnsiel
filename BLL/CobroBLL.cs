@@ -28,7 +28,7 @@ namespace BLL
                     client.Modificar(cliente);
 
                     
-                    var Venta = vent.Buscar(cobro.ClienteId);
+                    var Venta = vent.Buscar(cobro.VentaId);
                     Venta.Balance = Venta.Balance - cobro.MontoPagado;
                     vent.Modificar(Venta);
 

@@ -18,44 +18,47 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             InitializeComponent();
             LlenarComboBoxCliente();
-      
-
-           
-        
+          
+     
+    
         }
 
         private void LlenarComboBoxCliente()
         {
-            RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
-            var listado = new List<Clientes>();
-            listado = db.GetList(p => p.Balance>0);
-            ClientecomboBox.DataSource = listado;
-            ClientecomboBox.DisplayMember = "Nombre";
-            ClientecomboBox.ValueMember = "ClienteId";
+            if(CobroIdnumericUpDown.Value == 0)
+            {
+
+                RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
+                var listado = new List<Clientes>();
+                listado = db.GetList(p => p.Balance > 0);
+                ClientecomboBox.DataSource = listado;
+                ClientecomboBox.DisplayMember = "Nombre";
+                ClientecomboBox.ValueMember = "ClienteId";
+
+            }
+         
         }
 
         private void LlenarComboBoxVenta()
         {
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
             var listado = new List<Ventas>();
-
-
-            if (ClientecomboBox.SelectedValue != null )
+            if (CobroIdnumericUpDown.Value == 0)
             {
-                string cliente = ClientecomboBox.SelectedValue.ToString();
-                listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente) & p.Balance >0);
-                VentacomboBox.DataSource = listado;
-                VentacomboBox.DisplayMember = "VentasId";
-                VentacomboBox.ValueMember = "VentasId";
-          
+                if (ClientecomboBox.SelectedValue != null)
+                {
+                    string cliente = ClientecomboBox.SelectedValue.ToString();
+                    listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente) & p.Balance > 0);
+                    VentacomboBox.DataSource = listado;
+                    VentacomboBox.DisplayMember = "VentasId";
+                    VentacomboBox.ValueMember = "VentasId";
+
+                }
+
 
 
             }
-      
 
-        
-     
-           
 
         }
 
@@ -69,11 +72,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 venta = db.Buscar(Convert.ToInt32(VentacomboBox.SelectedValue));
                 MontoFacturatextBox.Text = venta.Balance.ToString();
-
-
             }
-
-           
 
         }
 
@@ -88,7 +87,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             VentacomboBox.Text = string.Empty;
             MontoPagarnumericUpDown.Value = 0;
             MontoFacturatextBox.Text = string.Empty;
-            BalancetextBox.Text = string.Empty;
+            BalanceClientetextBox.Text = string.Empty;
             FechadateTimePicker.Value = DateTime.Now;
             VentaFechadateTimePicker.Value = DateTime.Now;
 
@@ -111,19 +110,21 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private void LlenaCampo(Cobros cobro)
         {
             CobroIdnumericUpDown.Value = cobro.CobroId;
-            ClientecomboBox.SelectedValue = cobro.ClienteId;
-            VentacomboBox.SelectedValue = cobro.VentaId;
+           
+        
             MontoPagarnumericUpDown.Value = Convert.ToDecimal( cobro.MontoPagado);
             ObservaciontextBox.Text = cobro.Observacion;
             FechadateTimePicker.Value = cobro.Fecha;
+            ClientecomboBox.SelectedValue = cobro.ClienteId;
+            VentacomboBox.SelectedValue = cobro.VentaId;
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
-            Ventas venta;
+            
             if(db.Buscar(cobro.VentaId) != null)
             {
-                venta = db.Buscar(cobro.VentaId);
+                var venta = db.Buscar(cobro.VentaId);
                 MontoFacturatextBox.Text = venta.Balance.ToString();
             }
-
+           
         }
         private bool ExisteEnLaBaseDeDatos()
         {
@@ -136,8 +137,55 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private bool Validar()
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
-
             bool paso = true;
+
+
+            errorProvider.Clear();
+            if (string.IsNullOrWhiteSpace(ClientecomboBox.Text))
+            {
+                errorProvider.SetError(ClientecomboBox, "La direccion no puede esta vacia");
+                ClientecomboBox.Focus();
+                paso = false;
+            }
+
+            /*
+
+      
+
+            if (!TelefonomaskedTextBox.MaskCompleted)
+            {
+                errorProvider.SetError(TelefonomaskedTextBox, "No puede estar vacio");
+                TelefonomaskedTextBox.Focus();
+                paso = false;
+            }
+
+
+
+
+            if (FechadateTimePicker.Value > DateTime.Now)
+            {
+                errorProvider.SetError(FechadateTimePicker, "La fecha Debe ser igual a hoy");
+                EmailtextBox.Focus();
+                paso = false;
+
+            }
+
+
+            if (string.IsNullOrWhiteSpace(DirecciontextBox.Text))
+            {
+                errorProvider.SetError(DirecciontextBox, "No puede haber espacios en blanco");
+                DirecciontextBox.Focus();
+                paso = false;
+            }
+
+            if (ValidarEmail(EmailtextBox.Text) == false)
+            {
+                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                EmailtextBox.Focus();
+                paso = false;
+            }
+            */
+
 
             return paso;
 
@@ -246,21 +294,26 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
         }
 
-        private void ClientecomboBox_TextChanged(object sender, EventArgs e)
-        {
-           
-            LlenarComboBoxVenta();
-          
-
-
-
-
-        }
+  
 
         private void ClientecomboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            LlenarComboBoxVenta();
-      
+
+            if (CobroIdnumericUpDown.Value == 0)
+            {
+
+                LlenarComboBoxVenta();
+                Clientes p = ClientecomboBox.SelectedItem as Clientes;
+                BalanceClientetextBox.Text = Convert.ToString(p.Balance);
+
+
+            }
+
+
+
+
         }
+
+   
     }
 }

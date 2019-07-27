@@ -38,11 +38,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
         {
             Usuarios usuario = new Usuarios();
             usuario.UsuarioId = Convert.ToInt32(UsuarioIdnumericUpDown.Value);
-            usuario.Nombre = NombretextBox.Text;
+            usuario.Nombre = NombretextBox.Text.Trim();
             usuario.Email = EmailtextBox.Text;
             usuario.NivelUsuario = NivelUsuariocomboBox.Text;
-            usuario.Clave = ClavetextBox.Text;
-            usuario.Usuario = UsuariotextBox.Text;
+            usuario.Clave = ClavetextBox.Text.Trim();
+            usuario.Usuario = UsuariotextBox.Text.Trim();
             usuario.FechaIngreso = FechaIngresodateTimePicker.Value;
             return usuario;
 

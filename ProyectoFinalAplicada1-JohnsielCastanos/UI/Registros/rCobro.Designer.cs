@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.VentacomboBox = new System.Windows.Forms.ComboBox();
             this.ClientecomboBox = new System.Windows.Forms.ComboBox();
@@ -47,11 +48,13 @@
             this.VentaFechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.BalancetextBox = new System.Windows.Forms.TextBox();
+            this.BalanceClientetextBox = new System.Windows.Forms.TextBox();
             this.ObservaciontextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MontoPagarnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CobroIdnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -80,7 +83,6 @@
             this.ClientecomboBox.Size = new System.Drawing.Size(163, 24);
             this.ClientecomboBox.TabIndex = 107;
             this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
-            this.ClientecomboBox.TextChanged += new System.EventHandler(this.ClientecomboBox_TextChanged);
             // 
             // FechadateTimePicker
             // 
@@ -243,13 +245,13 @@
             this.label9.TabIndex = 120;
             this.label9.Text = "Balance Total";
             // 
-            // BalancetextBox
+            // BalanceClientetextBox
             // 
-            this.BalancetextBox.Location = new System.Drawing.Point(474, 88);
-            this.BalancetextBox.Name = "BalancetextBox";
-            this.BalancetextBox.ReadOnly = true;
-            this.BalancetextBox.Size = new System.Drawing.Size(123, 22);
-            this.BalancetextBox.TabIndex = 119;
+            this.BalanceClientetextBox.Location = new System.Drawing.Point(474, 88);
+            this.BalanceClientetextBox.Name = "BalanceClientetextBox";
+            this.BalanceClientetextBox.ReadOnly = true;
+            this.BalanceClientetextBox.Size = new System.Drawing.Size(123, 22);
+            this.BalanceClientetextBox.TabIndex = 119;
             // 
             // ObservaciontextBox
             // 
@@ -268,6 +270,10 @@
             this.label4.TabIndex = 122;
             this.label4.Text = "Observacion";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // rCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,7 +282,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ObservaciontextBox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.BalancetextBox);
+            this.Controls.Add(this.BalanceClientetextBox);
             this.Controls.Add(this.VentaFechadateTimePicker);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -299,6 +305,7 @@
             this.Text = "rCobro";
             ((System.ComponentModel.ISupportInitialize)(this.MontoPagarnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CobroIdnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,8 +331,9 @@
         private System.Windows.Forms.DateTimePicker VentaFechadateTimePicker;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox BalancetextBox;
+        private System.Windows.Forms.TextBox BalanceClientetextBox;
         private System.Windows.Forms.TextBox ObservaciontextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

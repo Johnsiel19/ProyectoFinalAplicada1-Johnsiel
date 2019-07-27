@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using BLL;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
+using System.Text.RegularExpressions;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -40,9 +41,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             Clientes cliente = new Clientes();
             cliente.ClienteId = Convert.ToInt32(ClientenumericUpDown.Value);
-            cliente.Nombre = NombrestextBox.Text;
+            cliente.Nombre = NombrestextBox.Text.Trim();
             cliente.Email = EmailtextBox.Text;
-            cliente.Direccion = DirecciontextBox.Text;
+            cliente.Direccion = DirecciontextBox.Text.Trim();
             cliente.Telefono = TelefonomaskedTextBox.Text;
             cliente.Cedula = CedulamaskedTextBox.Text;
             cliente.Celular = CelularmaskedTextBox.Text;
@@ -78,62 +79,45 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
 
             bool paso = true;
-  
 
 
-            if (NombrestextBox.Text == string.Empty)
+            errorProvider.Clear();
+            if (string.IsNullOrWhiteSpace(NombrestextBox.Text))
             {
-                errorProvider.SetError(NombrestextBox, "El campo Nombre no puede estar vacio");
+                errorProvider.SetError(NombrestextBox, "La direccion no puede esta vacia");
                 NombrestextBox.Focus();
                 paso = false;
             }
 
-            if (EmailtextBox.Text == string.Empty)
-            {
-                errorProvider.SetError(EmailtextBox, "El campo Email no puede estar vacio");
-                EmailtextBox.Focus();
-                paso = false;
 
-            }
 
-            if (CedulamaskedTextBox.Text == string.Empty)
+
+    
+            if (!CedulamaskedTextBox.MaskCompleted)
             {
-                errorProvider.SetError(CedulamaskedTextBox, "El campo Cedula no puede estar vacio");
+                errorProvider.SetError(CedulamaskedTextBox, "No puede estar vacio");
                 CedulamaskedTextBox.Focus();
                 paso = false;
-
             }
 
-            if (CedulamaskedTextBox.Text.Length < 11)
+
+            if (!CelularmaskedTextBox.MaskCompleted)
             {
-                errorProvider.SetError(CedulamaskedTextBox, "El campo Cedula  esta incompleto");
-                CedulamaskedTextBox.Focus();
+                errorProvider.SetError(CelularmaskedTextBox, "No puede estar vacio");
+                CelularmaskedTextBox.Focus();
                 paso = false;
-
             }
 
-            if (TelefonomaskedTextBox.Text == string.Empty)
+
+            if (!TelefonomaskedTextBox.MaskCompleted)
             {
-                errorProvider.SetError(TelefonomaskedTextBox, "El campo telefono no puede estar vacio");
+                errorProvider.SetError(TelefonomaskedTextBox, "No puede estar vacio");
                 TelefonomaskedTextBox.Focus();
                 paso = false;
-
-            }
-            if (CelularmaskedTextBox.Text == string.Empty)
-            {
-                errorProvider.SetError(CelularmaskedTextBox, "El campo celular no puede estar vacio");
-                CelularmaskedTextBox.Focus();
-                paso = false;
-
             }
 
-            if (CelularmaskedTextBox.Text.Length < 10)
-            {
-                errorProvider.SetError(CelularmaskedTextBox, "El celular esta incompleto");
-                CelularmaskedTextBox.Focus();
-                paso = false;
 
-            }
+
 
             if (FechadateTimePicker.Value > DateTime.Now)
             {
@@ -142,9 +126,48 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
 
             }
+
+
+            if (string.IsNullOrWhiteSpace(DirecciontextBox.Text))
+            {
+                errorProvider.SetError(DirecciontextBox, "No puede haber espacios en blanco");
+                DirecciontextBox.Focus();
+                paso = false;
+            }
+      
+            if (ValidarEmail(EmailtextBox.Text) == false)
+            {
+                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                EmailtextBox.Focus();
+                paso = false;
+            }
+ 
             return paso;
 
         }
+
+        private Boolean ValidarEmail(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Expresion regural para validar el Email
+  
 
         private void Guardarbutton_Click_1(object sender, EventArgs e)
         {

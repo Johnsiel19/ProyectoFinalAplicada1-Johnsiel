@@ -69,7 +69,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private void LlenaCampo(Productos producto)
         {
             ProductoIdnumericUpDown.Value = producto.UsuarioId;
-            DescripciontextBox.Text = producto.Descripcion;
+            DescripciontextBox.Text = producto.Descripcion.Trim();
             ExistenciatextBox.Text = producto.Existencia.ToString();
             PrecionumericUpDown.Value = Convert.ToDecimal( producto.Precio);
             CostonumericUpDown.Value = Convert.ToDecimal( producto.Costo);

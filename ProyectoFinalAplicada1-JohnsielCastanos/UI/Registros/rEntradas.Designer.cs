@@ -189,7 +189,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "rEntradas";
-            this.Text = "rEntradas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro Entradas";
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoEntradanumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();

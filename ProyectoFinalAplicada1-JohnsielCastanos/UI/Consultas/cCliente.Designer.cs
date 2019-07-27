@@ -200,7 +200,9 @@
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cCliente";
-            this.Text = "cCliente";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -44,7 +44,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             usuario.Nombre = NombretextBox.Text.Trim();
             usuario.Email = EmailtextBox.Text;
             usuario.NivelUsuario = NivelUsuariocomboBox.Text;
-            usuario.Clave = ClavetextBox.Text.Trim();
+            usuario.Clave = Eramake.eCryptography.Encrypt(ClavetextBox.Text.Trim());;
             usuario.Usuario = UsuariotextBox.Text.Trim();
             usuario.FechaIngreso = FechaIngresodateTimePicker.Value;
             return usuario;

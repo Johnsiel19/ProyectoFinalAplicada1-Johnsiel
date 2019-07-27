@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
-    partial class cVentas
+    partial class cEntradas
     {
         /// <summary>
         /// Required designer variable.
@@ -54,10 +54,10 @@
             this.groupBox1.Controls.Add(this.FiltroFecha);
             this.groupBox1.Controls.Add(this.DesdedateTimePicker);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(25, 25);
+            this.groupBox1.Location = new System.Drawing.Point(17, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(282, 67);
-            this.groupBox1.TabIndex = 88;
+            this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             // 
             // label5
@@ -112,20 +112,19 @@
             this.ConsultadataGridView.AllowUserToDeleteRows = false;
             this.ConsultadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultadataGridView.Location = new System.Drawing.Point(25, 97);
+            this.ConsultadataGridView.Location = new System.Drawing.Point(17, 87);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.RowTemplate.Height = 24;
             this.ConsultadataGridView.Size = new System.Drawing.Size(841, 302);
-            this.ConsultadataGridView.TabIndex = 86;
+            this.ConsultadataGridView.TabIndex = 97;
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(502, 66);
+            this.CriteriotextBox.Location = new System.Drawing.Point(494, 56);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(239, 22);
-            this.CriteriotextBox.TabIndex = 85;
-            this.CriteriotextBox.TextChanged += new System.EventHandler(this.CriteriotextBox_TextChanged);
+            this.CriteriotextBox.TabIndex = 96;
             // 
             // FiltrocomboBox
             // 
@@ -133,52 +132,47 @@
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
             "Todo",
-            "Id",
-            "Descripcion",
-            "ProveedorId",
-            "Costo",
-            "Precio",
-            "UsuarioId"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(321, 66);
+            "Id"});
+            this.FiltrocomboBox.Location = new System.Drawing.Point(313, 56);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(166, 24);
-            this.FiltrocomboBox.TabIndex = 84;
+            this.FiltrocomboBox.TabIndex = 95;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(501, 41);
+            this.label4.Location = new System.Drawing.Point(493, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 17);
-            this.label4.TabIndex = 83;
+            this.label4.TabIndex = 94;
             this.label4.Text = "Criterio";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(321, 42);
+            this.label3.Location = new System.Drawing.Point(313, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 17);
-            this.label3.TabIndex = 82;
+            this.label3.TabIndex = 93;
             this.label3.Text = "Filtro";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 41);
+            this.label1.Location = new System.Drawing.Point(2, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 81;
+            this.label1.TabIndex = 92;
             // 
             // Elegirbutton
             // 
             this.Elegirbutton.FlatAppearance.BorderSize = 0;
             this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
-            this.Elegirbutton.Location = new System.Drawing.Point(25, 417);
+            this.Elegirbutton.Location = new System.Drawing.Point(17, 407);
             this.Elegirbutton.Name = "Elegirbutton";
             this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
-            this.Elegirbutton.TabIndex = 89;
+            this.Elegirbutton.TabIndex = 99;
             this.Elegirbutton.UseVisualStyleBackColor = true;
             this.Elegirbutton.Visible = false;
             // 
@@ -187,30 +181,30 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.button1.Location = new System.Drawing.Point(808, 417);
+            this.button1.Location = new System.Drawing.Point(800, 407);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 49);
-            this.button1.TabIndex = 80;
+            this.button1.TabIndex = 91;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Consultarbutton
             // 
             this.Consultarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(757, 59);
+            this.Consultarbutton.Location = new System.Drawing.Point(749, 49);
             this.Consultarbutton.Name = "Consultarbutton";
             this.Consultarbutton.Size = new System.Drawing.Size(109, 33);
-            this.Consultarbutton.TabIndex = 79;
+            this.Consultarbutton.TabIndex = 90;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
-            // cVentas
+            // cEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 485);
+            this.ClientSize = new System.Drawing.Size(882, 469);
             this.Controls.Add(this.Elegirbutton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ConsultadataGridView);
@@ -221,10 +215,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Consultarbutton);
-            this.Name = "cVentas";
+            this.Name = "cEntradas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consultas de Ventas";
-            this.Load += new System.EventHandler(this.CVentas_Load);
+            this.Text = "Consultas de Entradas";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
@@ -235,12 +228,13 @@
 
         #endregion
 
+        private System.Windows.Forms.Button Elegirbutton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker HastadateTimePicker;
+        private System.Windows.Forms.CheckBox FiltroFecha;
         private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox FiltroFecha;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
         private System.Windows.Forms.TextBox CriteriotextBox;
         private System.Windows.Forms.ComboBox FiltrocomboBox;
@@ -249,6 +243,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Consultarbutton;
-        private System.Windows.Forms.Button Elegirbutton;
     }
 }

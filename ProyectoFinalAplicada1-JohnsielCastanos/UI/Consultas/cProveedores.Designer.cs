@@ -222,7 +222,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cProveedores";
-            this.Text = "cProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta de Proveedores";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();

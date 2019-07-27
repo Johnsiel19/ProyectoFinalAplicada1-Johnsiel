@@ -302,7 +302,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "rCobro";
-            this.Text = "rCobro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registros Cobros";
             this.Load += new System.EventHandler(this.RCobro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MontoPagarnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CobroIdnumericUpDown)).EndInit();

@@ -224,7 +224,8 @@
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cProductos";
-            this.Text = "cProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta de Productos";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

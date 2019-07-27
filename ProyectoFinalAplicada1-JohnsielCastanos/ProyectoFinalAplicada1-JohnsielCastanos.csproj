@@ -37,6 +37,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="eCryptography, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Eramake.eCryptography.1.1.6\lib\net45\eCryptography.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -60,11 +63,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\cCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Consultas\cCliente.Designer.cs">
       <DependentUpon>cCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cCobros.Designer.cs">
+      <DependentUpon>cCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cEntradas.Designer.cs">
+      <DependentUpon>cEntradas.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\cProductos.cs">
       <SubType>Form</SubType>
@@ -152,8 +173,17 @@
       <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cCliente.resx">
       <DependentUpon>cCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cCobros.resx">
+      <DependentUpon>cCobros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cEntradas.resx">
+      <DependentUpon>cEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cProductos.resx">
       <DependentUpon>cProductos.cs</DependentUpon>
@@ -270,6 +300,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\one-finger-click-black-hand-symbol_icon-icons.com_64350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersFolder_256x256_icon-icons.com_76750.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_customer_person_13976.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

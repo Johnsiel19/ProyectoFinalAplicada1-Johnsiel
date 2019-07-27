@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace Entidades
 {
@@ -16,6 +17,7 @@ namespace Entidades
         public string Email { get; set; }
         public string NivelUsuario { get; set; }
         public string Usuario { get; set; }
+        [Browsable(false)]
         public string Clave { get; set; }
 
         public DateTime FechaIngreso { get; set; }

@@ -14,13 +14,16 @@ using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos
 {
+   
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(int Id)
         {
             InitializeComponent();
+            IdUsario = Id;
 
         }
+        public int IdUsario { get; set; }
 
         private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -94,6 +97,35 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
         private void EntradasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rEntradas frm = new rEntradas();
+            frm.Show();
+        }
+
+        private void ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Seguro?", "Desea cerra la seccion?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+            {
+                this.Close();
+              
+            }
+        }
+
+        private void ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            var select = MessageBox.Show("¿Seguro?", "Desea cerra la aplicacion?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (select == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void EntradasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cEntradas frm = new cEntradas();
+            frm.Show();
+        }
+
+        private void CobrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cCobros frm = new cCobros();
             frm.Show();
         }
     }

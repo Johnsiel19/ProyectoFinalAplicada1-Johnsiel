@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
+            this.Elegirbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
@@ -170,6 +171,8 @@
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
             this.button1.Location = new System.Drawing.Point(808, 417);
             this.button1.Name = "button1";
@@ -188,14 +191,26 @@
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
-
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
+            // 
+            // Elegirbutton
+            // 
+            this.Elegirbutton.FlatAppearance.BorderSize = 0;
+            this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
+            this.Elegirbutton.Location = new System.Drawing.Point(25, 417);
+            this.Elegirbutton.Name = "Elegirbutton";
+            this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Elegirbutton.TabIndex = 89;
+            this.Elegirbutton.UseVisualStyleBackColor = true;
+            this.Elegirbutton.Visible = false;
             // 
             // cVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 485);
+            this.Controls.Add(this.Elegirbutton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.FiltroFecha);
             this.Controls.Add(this.ConsultadataGridView);
@@ -208,6 +223,7 @@
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cVentas";
             this.Text = "cVentas";
+            this.Load += new System.EventHandler(this.CVentas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
@@ -232,5 +248,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Consultarbutton;
+        private System.Windows.Forms.Button Elegirbutton;
     }
 }

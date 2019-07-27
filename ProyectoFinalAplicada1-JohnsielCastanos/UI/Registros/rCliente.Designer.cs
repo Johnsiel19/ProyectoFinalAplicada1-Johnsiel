@@ -170,7 +170,7 @@
             // TelefonomaskedTextBox
             // 
             this.TelefonomaskedTextBox.Location = new System.Drawing.Point(132, 225);
-            this.TelefonomaskedTextBox.Mask = "000-000-0000";
+            this.TelefonomaskedTextBox.Mask = "(999)000-0000";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
             this.TelefonomaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.TelefonomaskedTextBox.TabIndex = 4;
@@ -179,7 +179,7 @@
             // CelularmaskedTextBox
             // 
             this.CelularmaskedTextBox.Location = new System.Drawing.Point(131, 280);
-            this.CelularmaskedTextBox.Mask = "000-000-0000";
+            this.CelularmaskedTextBox.Mask = "(999)000-0000";
             this.CelularmaskedTextBox.Name = "CelularmaskedTextBox";
             this.CelularmaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.CelularmaskedTextBox.TabIndex = 5;

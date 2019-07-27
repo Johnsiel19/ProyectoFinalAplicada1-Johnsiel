@@ -145,5 +145,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             Consultarbutton_Click(sender, e);
         }
+
+        private void CVentas_Load(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
     }
 }

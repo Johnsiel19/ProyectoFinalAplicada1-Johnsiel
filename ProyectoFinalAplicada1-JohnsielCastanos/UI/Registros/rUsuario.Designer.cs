@@ -174,6 +174,8 @@
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(272, 22);
             this.UsuariotextBox.TabIndex = 4;
+            this.UsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuariotextBox_KeyPress);
+            this.UsuariotextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UsuariotextBox_KeyUp);
             // 
             // EmailtextBox
             // 
@@ -181,6 +183,7 @@
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(271, 22);
             this.EmailtextBox.TabIndex = 2;
+            this.EmailtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailtextBox_KeyPress);
             // 
             // NombretextBox
             // 

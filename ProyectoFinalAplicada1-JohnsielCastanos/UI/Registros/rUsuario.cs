@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
+using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
+using System.Text.RegularExpressions;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
 {
@@ -83,6 +86,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
 
             Resultado = string.Compare(Clave, Confirmar);
 
+            if (string.IsNullOrWhiteSpace(NombretextBox.Text))
+            {
+                errorProvider.SetError(NombretextBox, "La direccion no puede esta vacia");
+                NombretextBox.Focus();
+                paso = false;
+            }
+
             if (Resultado != 0)
             {
                 errorProvider.SetError(ConfirmarClavetextBox, "Clave no coincide!");
@@ -91,21 +101,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             }
 
 
-            if (NombretextBox.Text == string.Empty)
-            {
-                errorProvider.SetError(NombretextBox, "El campo Nombre no puede estar vacio");
-                NombretextBox.Focus();
-                paso = false;
-            }
-
-            if (EmailtextBox.Text == string.Empty)
-            {
-                errorProvider.SetError(EmailtextBox, "El campo Email no puede estar vacio");
-                EmailtextBox.Focus();
-                paso = false;
-
-            }
-      
             if (FechaIngresodateTimePicker.Value > DateTime.Now)
             {
                 errorProvider.SetError(FechaIngresodateTimePicker, "La fecha Debe ser igual a hoy");
@@ -114,9 +109,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
 
             }
 
-        
-
-
             if (NivelUsuariocomboBox.Text == string.Empty)
             {
                 errorProvider.SetError(NivelUsuariocomboBox, "El campo Nivel de Usuario no puede estar vacio");
@@ -124,14 +116,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 paso = false;
 
             }
-
-            if (UsuariotextBox.Text == string.Empty)
+            if (string.IsNullOrWhiteSpace(UsuariotextBox.Text))
             {
-                errorProvider.SetError(UsuariotextBox, "El campo Usuario no puede estar vacio");
+                errorProvider.SetError(UsuariotextBox, "La direccion no puede esta vacia");
                 UsuariotextBox.Focus();
                 paso = false;
-
             }
+
+
 
             if (ClavetextBox.Text == string.Empty)
             {
@@ -148,19 +140,39 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 paso = false;
 
             }
-            if (UsuarioIdnumericUpDown.Value == 0)
+            if (ValidarEmail(EmailtextBox.Text) == false)
             {
-                if (db.NoDuplicadoUsuario(UsuariotextBox.Text))
-                {
-                    errorProvider.SetError(UsuariotextBox, "El nombre del usuario no debe ser igual a ningun otro");
-                    paso = false;
-
-                }
+                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                EmailtextBox.Focus();
+                paso = false;
             }
-            
+
 
             return paso;
 
+        }
+          
+ 
+      
+        private Boolean ValidarEmail(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -238,24 +250,67 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             int.TryParse(UsuarioIdnumericUpDown.Text, out id);
             Limpiar();
 
-            usuario = db.Buscar(id);
-
-            if (usuario != null)
+            if (UsuarioIdnumericUpDown.Value == 0)
             {
 
-                LlenaCampo(usuario);
+                cUsuario frm = new cUsuario();
+                frm.Show();
+                /* cliente = db.Buscar(frm.codigoCliente);
+
+
+
+                 LlenaCampo(cliente);*/
+
+
 
             }
             else
             {
-                MessageBox.Show("El Usuario no existe");
+
+
+                usuario = db.Buscar(id);
+
+                if (usuario != null)
+                {
+
+                    LlenaCampo(usuario);
+
+                }
+                else
+                {
+                    MessageBox.Show("El Usuario no existe");
+                }
+
             }
+
         }
 
         private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void EmailtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void UsuariotextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void UsuariotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

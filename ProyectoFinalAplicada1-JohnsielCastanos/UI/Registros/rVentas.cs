@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Entidades;
 using BLL;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
+using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -128,7 +129,31 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
             bool paso = true;
-   
+
+            if (ClientecomboBox.Text == "")
+            {
+                errorProvider.SetError(ClientecomboBox, "El cliente no puede estar vacio");
+                ClientecomboBox.Focus();
+                paso = false;
+            }
+
+            if (FormaPagocomboBox.Text == "")
+            {
+                errorProvider.SetError(FormaPagocomboBox, "Elija un modo de pago");
+                FormaPagocomboBox.Focus();
+                paso = false;
+            }
+
+            if (detalleDataGridView.RowCount==0)
+            {
+                errorProvider.SetError(detalleDataGridView, "El detalle no debe estar vacio");
+                detalleDataGridView.Focus();
+                paso = false;
+
+            }
+
+
+
 
 
             return paso;
@@ -206,18 +231,38 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse( VentaIdnumericUpDown.Value.ToString(), out id);
             Limpiar();
 
-            venta = db.Buscar(id);
-
-            if (venta != null)
+            if (VentaIdnumericUpDown.Value == 0)
             {
 
-                LlenaCampo(venta);
+                cVentas frm = new cVentas();
+                frm.Show();
+                /* cliente = db.Buscar(frm.codigoCliente);
+
+
+
+                 LlenaCampo(cliente);*/
+
+
 
             }
             else
             {
-                MessageBox.Show("Usuario no existe");
+                venta = db.Buscar(id);
+
+                if (venta != null)
+                {
+
+                    LlenaCampo(venta);
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no existe");
+                }
+
             }
+
+      
         }
 
 
@@ -346,10 +391,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
 
 
-
-
             double import = Convert.ToDouble(PrecionumericUpDown.Value * CantidadnumericUpDown.Value);
-
 
 
             if (detalleDataGridView.DataSource != null)

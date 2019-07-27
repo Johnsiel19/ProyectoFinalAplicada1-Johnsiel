@@ -171,6 +171,8 @@
             // 
             // Elegirbutton
             // 
+            this.Elegirbutton.FlatAppearance.BorderSize = 0;
+            this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
             this.Elegirbutton.Location = new System.Drawing.Point(18, 417);
             this.Elegirbutton.Name = "Elegirbutton";
@@ -182,6 +184,8 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.FlatAppearance.BorderSize = 0;
+            this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
             this.Imprimirbutton.Location = new System.Drawing.Point(801, 416);
             this.Imprimirbutton.Name = "Imprimirbutton";

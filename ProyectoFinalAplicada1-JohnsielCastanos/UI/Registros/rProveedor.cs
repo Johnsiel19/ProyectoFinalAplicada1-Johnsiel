@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using System.Text.RegularExpressions;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -92,14 +94,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             if (TelefonomaskedTextBox.Text == string.Empty)
             {
-                errorProvider.SetError(TelefonomaskedTextBox, "El campo Email no puede estar vacio");
+                errorProvider.SetError(TelefonomaskedTextBox, "El campo telefono no debe estar vacio");
                 TelefonomaskedTextBox.Focus();
                 paso = false;
 
             }
             if (CelularmaskedTextBox.Text == string.Empty)
             {
-                errorProvider.SetError(CelularmaskedTextBox, "El campo Email no puede estar vacio");
+                errorProvider.SetError(CelularmaskedTextBox, "El campo Celufar no debe estar vacio");
                 CelularmaskedTextBox.Focus();
                 paso = false;
 
@@ -121,16 +123,39 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
 
             }
-
-
+            if (ValidarEmail(EmailtextBox.Text) == false)
+            {
+                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                EmailtextBox.Focus();
+                paso = false;
+            }
 
 
             return paso;
 
         }
 
-  
- 
+        private Boolean ValidarEmail(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
@@ -180,18 +205,39 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse(ProveedorIdnumericUpDown.Text, out id);
             Limpiar();
 
-            proveedor = db.Buscar(id);
-
-            if (proveedor != null)
+            if (ProveedorIdnumericUpDown.Value == 0)
             {
 
-                LlenaCampo(proveedor);
+                cProveedores frm = new cProveedores();
+                frm.ShowDialog();
+
+               /* cliente = db.Buscar(frm.codigoCliente);
+
+
+
+                LlenaCampo(cliente);*/
+
+
 
             }
             else
             {
-                MessageBox.Show("El Proveesor no existe");
+
+                proveedor = db.Buscar(id);
+
+                if (proveedor != null)
+                {
+
+                    LlenaCampo(proveedor);
+
+                }
+                else
+                {
+                    MessageBox.Show("El Proveesor no existe");
+                }
             }
+
+          
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

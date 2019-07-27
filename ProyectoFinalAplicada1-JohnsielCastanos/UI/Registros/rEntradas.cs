@@ -85,8 +85,29 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         private bool Validar()
         {
-            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
+     
             bool paso = true;
+
+
+
+            errorProvider.Clear();
+
+            if (ProductocomboBox.Text =="")
+            {
+                errorProvider.SetError(ProductocomboBox, "Elija el producto");
+                ProductocomboBox.Focus();
+                paso = false;
+            }
+
+            if (ProductoEntradanumericUpDown.Value < 1)
+            {
+                errorProvider.SetError(ProductoEntradanumericUpDown, "La entrada debe ser mayor a 1");
+                ProductoEntradanumericUpDown.Focus();
+                paso = false;
+
+            }
+
+    
 
 
             return paso;

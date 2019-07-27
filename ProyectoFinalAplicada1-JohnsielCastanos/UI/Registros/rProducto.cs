@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Entidades;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -93,7 +94,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             bool paso = true;
 
-
+            errorProvider.Clear();
 
             if (DescripciontextBox.Text == string.Empty)
             {
@@ -108,6 +109,51 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 ProveedorcomboBox.Focus();
                 paso = false;
             }
+
+           
+    
+
+
+            if (ProductoItbisnumericUpDown.Value < 0)
+            {
+                errorProvider.SetError(ProductoItbisnumericUpDown, "El rango debe ser de 0% a 18%");
+                ProductoItbisnumericUpDown.Focus();
+                paso = false;
+
+            }
+
+            if (ProductoItbisnumericUpDown.Value > 18)
+            {
+                errorProvider.SetError(ProductoItbisnumericUpDown, "El rango debe ser de 0% a 18%");
+                ProductoItbisnumericUpDown.Focus();
+                paso = false;
+
+            }
+
+            if (CostonumericUpDown.Value < 1)
+            {
+                errorProvider.SetError(CostonumericUpDown, "Seleccione un costo mayor");
+                CostonumericUpDown.Focus();
+                paso = false;
+
+            }
+
+            if (PrecionumericUpDown.Value < 1)
+            {
+                errorProvider.SetError(PrecionumericUpDown, "Seleccione un precio mayor");
+                PrecionumericUpDown.Focus();
+                paso = false;
+
+            }
+            if (PrecionumericUpDown.Value < CostonumericUpDown.Value)
+            {
+                errorProvider.SetError(PrecionumericUpDown, "El precio debe ser mayor o igual al costo");
+                PrecionumericUpDown.Focus();
+                paso = false;
+
+            }
+
+
 
             return paso;
 
@@ -163,19 +209,40 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse(ProductoIdnumericUpDown.Text, out id);
             Limpiar();
 
-            producto = db.Buscar(id);
-
-            if (producto != null)
+            if (ProductoIdnumericUpDown.Value == 0)
             {
 
+                cProductos frm = new cProductos(0);
+                frm.ShowDialog();
+
+               producto = db.Buscar(frm.codigoProducto);
+
+
+
                 LlenaCampo(producto);
+
+
 
             }
             else
             {
-                MessageBox.Show("El Producto no existe");
+
+                producto = db.Buscar(id);
+
+                if (producto != null)
+                {
+
+                    LlenaCampo(producto);
+
+                }
+                else
+                {
+                    MessageBox.Show("El Producto no existe");
+                }
             }
         }
+
+           
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {

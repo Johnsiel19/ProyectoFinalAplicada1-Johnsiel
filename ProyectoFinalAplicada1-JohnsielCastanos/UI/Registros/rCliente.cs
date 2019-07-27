@@ -84,15 +84,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             errorProvider.Clear();
             if (string.IsNullOrWhiteSpace(NombrestextBox.Text))
             {
-                errorProvider.SetError(NombrestextBox, "La direccion no puede esta vacia");
+                errorProvider.SetError(NombrestextBox, "El nombre no puede estar vacio");
                 NombrestextBox.Focus();
                 paso = false;
             }
-
-
-
-
-    
+  
             if (!CedulamaskedTextBox.MaskCompleted)
             {
                 errorProvider.SetError(CedulamaskedTextBox, "No puede estar vacio");

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -18,6 +19,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             InitializeComponent();
             LlenarComboBoxCliente();
+          
+
           
      
     
@@ -100,7 +103,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             cobro.ClienteId = Convert.ToInt32(ClientecomboBox.SelectedValue);
             cobro.VentaId = Convert.ToInt32(VentacomboBox.SelectedValue);
             cobro.MontoPagado = Convert.ToDouble(MontoPagarnumericUpDown.Value);
-            cobro.Observacion = ObservaciontextBox.Text;
+            cobro.Observacion = ObservaciontextBox.Text.Trim();
             cobro.UsuarioId = 0;
             cobro.Fecha = FechadateTimePicker.Value;
             return cobro;
@@ -114,12 +117,27 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         
             MontoPagarnumericUpDown.Value = Convert.ToDecimal( cobro.MontoPagado);
             ObservaciontextBox.Text = cobro.Observacion;
-            FechadateTimePicker.Value = cobro.Fecha;
-            ClientecomboBox.SelectedValue = cobro.ClienteId;
-            VentacomboBox.SelectedValue = cobro.VentaId;
+            VentaFechadateTimePicker.Value = cobro.Fecha;
+
+   
+            RepositorioBase<Clientes> db2 = new RepositorioBase<Clientes>();
+            var listado2 = new List<Clientes>();
+            listado2 = db2.GetList(p => p.ClienteId==cobro.ClienteId);
+            ClientecomboBox.DataSource = listado2;
+            ClientecomboBox.DisplayMember = "Nombre";
+            ClientecomboBox.ValueMember = "ClienteId";
+
             RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
-            
-            if(db.Buscar(cobro.VentaId) != null)
+            var listado = new List<Ventas>();
+            listado = db.GetList(p => p.VentasId == cobro.VentaId);
+            ClientecomboBox.DataSource = listado;
+            ClientecomboBox.DisplayMember = "VentasId";
+            ClientecomboBox.ValueMember = "VentasId";
+
+
+
+
+            if (db.Buscar(cobro.VentaId) != null)
             {
                 var venta = db.Buscar(cobro.VentaId);
                 MontoFacturatextBox.Text = venta.Balance.ToString();
@@ -143,48 +161,26 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             errorProvider.Clear();
             if (string.IsNullOrWhiteSpace(ClientecomboBox.Text))
             {
-                errorProvider.SetError(ClientecomboBox, "La direccion no puede esta vacia");
+                errorProvider.SetError(ClientecomboBox, "El campo clienteno puede esta vacio");
                 ClientecomboBox.Focus();
                 paso = false;
             }
-
-            /*
-
-      
-
-            if (!TelefonomaskedTextBox.MaskCompleted)
+            if (string.IsNullOrWhiteSpace(VentacomboBox.Text))
             {
-                errorProvider.SetError(TelefonomaskedTextBox, "No puede estar vacio");
-                TelefonomaskedTextBox.Focus();
+                errorProvider.SetError(VentacomboBox, "El campo venta no puede esta vacio");
+                VentacomboBox.Focus();
                 paso = false;
             }
-
-
-
-
-            if (FechadateTimePicker.Value > DateTime.Now)
+            if (MontoPagarnumericUpDown.Value < 0)
             {
-                errorProvider.SetError(FechadateTimePicker, "La fecha Debe ser igual a hoy");
-                EmailtextBox.Focus();
+                errorProvider.SetError(MontoPagarnumericUpDown, "Debe elegir un monto a pagar");
+                MontoPagarnumericUpDown.Focus();
                 paso = false;
 
             }
+    
 
 
-            if (string.IsNullOrWhiteSpace(DirecciontextBox.Text))
-            {
-                errorProvider.SetError(DirecciontextBox, "No puede haber espacios en blanco");
-                DirecciontextBox.Focus();
-                paso = false;
-            }
-
-            if (ValidarEmail(EmailtextBox.Text) == false)
-            {
-                errorProvider.SetError(EmailtextBox, "Correo invalido");
-                EmailtextBox.Focus();
-                paso = false;
-            }
-            */
 
 
             return paso;
@@ -249,18 +245,33 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse(CobroIdnumericUpDown.Text, out id);
             Limpiar();
 
-            cobro = db.Buscar(id);
-
-            if (cobro != null)
+            if (CobroIdnumericUpDown.Value == 0)
             {
 
-                LlenaCampo(cobro);
+
 
             }
             else
             {
-                MessageBox.Show("El Cobro no existe");
+
+
+                cobro = db.Buscar(id);
+
+                if (cobro != null)
+                {
+
+                    LlenaCampo(cobro);
+
+                }
+                else
+                {
+                    MessageBox.Show("El Cobro no existe");
+                }
+
+
             }
+
+       
         }
 
         private void Nuevobutton_Click_1(object sender, EventArgs e)
@@ -314,6 +325,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         }
 
-   
+        private void RCobro_Load(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
     }
 }

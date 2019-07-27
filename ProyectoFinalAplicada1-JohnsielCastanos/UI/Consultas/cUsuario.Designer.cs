@@ -40,11 +40,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Consultarbutton = new System.Windows.Forms.Button();
+            this.Elegirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
             this.button1.Location = new System.Drawing.Point(801, 401);
             this.button1.Name = "button1";
@@ -62,7 +65,6 @@
             this.FiltroFecha.TabIndex = 52;
             this.FiltroFecha.Text = "Filtrar Fecha";
             this.FiltroFecha.UseVisualStyleBackColor = true;
-
             // 
             // ConsultadataGridView
             // 
@@ -100,7 +102,6 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(121, 24);
             this.FiltrocomboBox.TabIndex = 49;
-
             // 
             // HastadateTimePicker
             // 
@@ -110,7 +111,6 @@
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(108, 22);
             this.HastadateTimePicker.TabIndex = 48;
-
             // 
             // DesdedateTimePicker
             // 
@@ -120,7 +120,6 @@
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(106, 22);
             this.DesdedateTimePicker.TabIndex = 47;
-
             // 
             // label4
             // 
@@ -130,7 +129,6 @@
             this.label4.Size = new System.Drawing.Size(53, 17);
             this.label4.TabIndex = 46;
             this.label4.Text = "Criterio";
-
             // 
             // label3
             // 
@@ -140,7 +138,6 @@
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 45;
             this.label3.Text = "Filtro";
-
             // 
             // label2
             // 
@@ -150,7 +147,6 @@
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 44;
             this.label2.Text = "Hasta";
-
             // 
             // label1
             // 
@@ -160,7 +156,6 @@
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 43;
             this.label1.Text = "Desde";
-
             // 
             // Consultarbutton
             // 
@@ -175,11 +170,24 @@
             this.Consultarbutton.UseVisualStyleBackColor = true;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
+            // Elegirbutton
+            // 
+            this.Elegirbutton.FlatAppearance.BorderSize = 0;
+            this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
+            this.Elegirbutton.Location = new System.Drawing.Point(18, 407);
+            this.Elegirbutton.Name = "Elegirbutton";
+            this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Elegirbutton.TabIndex = 81;
+            this.Elegirbutton.UseVisualStyleBackColor = true;
+            this.Elegirbutton.Visible = false;
+            // 
             // cUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 468);
+            this.Controls.Add(this.Elegirbutton);
             this.Controls.Add(this.FiltroFecha);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.CriteriotextBox);
@@ -214,5 +222,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Elegirbutton;
     }
 }

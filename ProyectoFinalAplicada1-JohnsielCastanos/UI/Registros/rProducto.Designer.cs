@@ -196,7 +196,7 @@
             // 
             // ExistenciatextBox
             // 
-            this.ExistenciatextBox.Location = new System.Drawing.Point(140, 199);
+            this.ExistenciatextBox.Location = new System.Drawing.Point(137, 200);
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.ReadOnly = true;
             this.ExistenciatextBox.Size = new System.Drawing.Size(100, 22);
@@ -211,7 +211,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.add_insert_plus_1588;
-            this.button1.Location = new System.Drawing.Point(382, 131);
+            this.button1.Location = new System.Drawing.Point(388, 131);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 39);
             this.button1.TabIndex = 54;

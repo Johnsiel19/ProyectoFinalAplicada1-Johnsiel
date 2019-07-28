@@ -134,7 +134,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             if (NoDuplicadoProducto(DescripciontextBox.Text))
             {
-                errorProvider.SetError(DescripciontextBox, "La descripcion ya existe");
+                errorProvider.SetError(DescripciontextBox, "El Cedula ya existe");
                 DescripciontextBox.Focus();
                 paso = false;
 

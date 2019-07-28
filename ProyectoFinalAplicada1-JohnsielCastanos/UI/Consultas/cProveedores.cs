@@ -154,5 +154,20 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
         public int idElegido;
 
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No hay Datos Para Imprimir");
+                return;
+            }
+            else
+            {
+                UsuarioReport reporte = new UsuarioReport(ListaUsuarios);
+                reporte.ShowDialog();
+            }
+
+             public List<Usuarios> ListaUsuarios;
+    }
     }
 }

@@ -161,10 +161,22 @@
     <Compile Include="UI\Registros\rVentas.Designer.cs">
       <DependentUpon>rVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ListadoClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\Reportes\ListadoCobros.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListadoCobros.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ListadoEntradas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoEntradas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\Reportes\ListadoProductos.cs">
@@ -249,9 +261,17 @@
     <EmbeddedResource Include="UI\Registros\rVentas.resx">
       <DependentUpon>rVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoClientes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ListadoCobros.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoCobros.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ListadoEntradas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoEntradas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ListadoProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

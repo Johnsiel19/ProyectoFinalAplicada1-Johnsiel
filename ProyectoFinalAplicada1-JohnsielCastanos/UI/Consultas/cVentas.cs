@@ -170,7 +170,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             
             if (ConsultadataGridView.CurrentRow.Cells["VentasId"] != null)
             {
-                idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["VentasId"].Value.ToString());
+                idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["VentaId"].Value.ToString());
                 Close();
             }
             else

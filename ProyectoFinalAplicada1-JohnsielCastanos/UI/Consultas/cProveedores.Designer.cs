@@ -179,6 +179,7 @@
             this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
             this.Imprimirbutton.TabIndex = 80;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Consultarbutton
             // 

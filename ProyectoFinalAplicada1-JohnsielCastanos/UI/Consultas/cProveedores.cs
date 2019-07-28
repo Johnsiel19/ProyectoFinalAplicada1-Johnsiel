@@ -15,9 +15,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
     public partial class cProveedores : Form
     {
         public List<Proveedores> ListaProveedores;
-        public cProveedores()
+        public cProveedores(int valor)
         {
             InitializeComponent();
+
+            if (valor == 1)
+            {
+
+                Elegirbutton.Visible = true;
+                Imprimirbutton.Visible = false;
+
+            }
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -122,5 +130,29 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             Consultarbutton_Click(sender, e);
         }
+
+        private void CProveedores_Load(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+          
+            if (ConsultadataGridView.CurrentRow.Cells["ProveedorId"] != null)
+            {
+                idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ProveedorId"].Value.ToString());
+                Close();
+            }
+            else
+            {
+
+                MessageBox.Show("Elija un Proveedor");
+
+            }
+        }
+
+        public int idElegido;
+
     }
 }

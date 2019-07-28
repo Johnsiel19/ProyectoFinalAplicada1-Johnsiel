@@ -12,6 +12,7 @@ using BLL;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
 using System.Text.RegularExpressions;
+using DAL;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
 {
@@ -57,8 +58,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             NombretextBox.Text = usuario.Nombre;
             EmailtextBox.Text = usuario.Email;
             NivelUsuariocomboBox.Text = usuario.NivelUsuario;
-            ClavetextBox.Text = usuario.Clave;
-            ConfirmarClavetextBox.Text = usuario.Clave;
+            ClavetextBox.Text = Eramake.eCryptography.Decrypt(usuario.Clave);
+            ConfirmarClavetextBox.Text = Eramake.eCryptography.Decrypt(usuario.Clave); 
             UsuariotextBox.Text = usuario.Usuario;
             FechaIngresodateTimePicker.Value = usuario.FechaIngreso;
 
@@ -146,14 +147,67 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 EmailtextBox.Focus();
                 paso = false;
             }
+            if (NoDuplicadoCorreo(EmailtextBox.Text) == false)
+            {
+                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                EmailtextBox.Focus();
+                paso = false;
+            }
+
+            if (NoDuplicadoUsuario(UsuariotextBox.Text) == false)
+            {
+                errorProvider.SetError(UsuariotextBox, "Correo invalido");
+                UsuariotextBox.Focus();
+                paso = false;
+            }
+
 
 
             return paso;
 
         }
-          
- 
-      
+
+        public static bool NoDuplicadoCorreo(string descripcion)
+        {
+            RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Usuarios.Any(p => p.Email.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+        public static bool NoDuplicadoUsuario(string descripcion)
+        {
+            RepositorioBase<Usuarios> db = new RepositorioBase<Usuarios>();
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Usuarios.Any(p => p.Usuario.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
+
+
         private Boolean ValidarEmail(String email)
         {
             String expresion;
@@ -250,16 +304,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             int.TryParse(UsuarioIdnumericUpDown.Text, out id);
             Limpiar();
 
-            if (UsuarioIdnumericUpDown.Value == 0)
+            if (id== 0)
             {
 
-                cUsuario frm = new cUsuario();
-                frm.Show();
-                /* cliente = db.Buscar(frm.codigoCliente);
+                cUsuario frm = new cUsuario(1);
+                frm.ShowDialog();
+                usuario = db.Buscar(frm.idElegido);
 
-
-
-                 LlenaCampo(cliente);*/
+                 LlenaCampo(usuario);
 
 
 

@@ -205,6 +205,7 @@
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
+            this.Consultarbutton.TextChanged += new System.EventHandler(this.Consultarbutton_TextChanged);
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
             // cProductos
@@ -226,6 +227,7 @@
             this.Name = "cProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Productos";
+            this.Load += new System.EventHandler(this.CProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

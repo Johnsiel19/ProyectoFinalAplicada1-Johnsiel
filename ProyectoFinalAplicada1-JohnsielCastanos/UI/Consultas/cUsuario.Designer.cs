@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.FiltroFecha = new System.Windows.Forms.CheckBox();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
@@ -44,17 +44,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Imprimirbutton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.button1.Location = new System.Drawing.Point(801, 401);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 49);
-            this.button1.TabIndex = 30;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.Imprimirbutton.FlatAppearance.BorderSize = 0;
+            this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
+            this.Imprimirbutton.Location = new System.Drawing.Point(801, 401);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Imprimirbutton.TabIndex = 30;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Button1_Click);
             // 
             // FiltroFecha
             // 
@@ -181,6 +181,7 @@
             this.Elegirbutton.TabIndex = 81;
             this.Elegirbutton.UseVisualStyleBackColor = true;
             this.Elegirbutton.Visible = false;
+            this.Elegirbutton.Click += new System.EventHandler(this.Elegirbutton_Click);
             // 
             // cUsuario
             // 
@@ -198,11 +199,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta  de Usuarios";
+            this.Load += new System.EventHandler(this.CUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,7 +213,7 @@
 
         #endregion
         private System.Windows.Forms.Button Consultarbutton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.CheckBox FiltroFecha;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
         private System.Windows.Forms.TextBox CriteriotextBox;

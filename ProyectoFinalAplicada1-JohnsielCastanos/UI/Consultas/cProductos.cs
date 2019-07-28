@@ -164,7 +164,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         private void Elegirbutton_Click(object sender, EventArgs e)
         {
 
-            Consultarbutton.PerformClick();
+         
                if (ConsultadataGridView.CurrentRow.Cells["ProductoId"] != null)
               {
                   codigoProducto = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ProductoId"].Value.ToString());
@@ -187,6 +187,16 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void CProductos_Load(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
+
+        private void Consultarbutton_TextChanged(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
         }
     }
 }

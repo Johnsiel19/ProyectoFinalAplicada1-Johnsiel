@@ -84,7 +84,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
 
             Ventas venta = new Ventas();
-            venta.VentasId = Convert.ToInt32(VentaIdnumericUpDown.Value);
+            venta.VentaId = Convert.ToInt32(VentaIdnumericUpDown.Value);
             venta.ClienteId = (int)ClientecomboBox.SelectedValue;
             venta.Fecha = FechadateTimePicker.Value;
             venta.Modo = FormaPagocomboBox.Text;
@@ -101,7 +101,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private void LlenaCampo(Ventas v)
         {
 
-            VentaIdnumericUpDown.Value = v.VentasId;
+            VentaIdnumericUpDown.Value = v.VentaId;
             ClientecomboBox.SelectedValue = v.ClienteId;
             FechadateTimePicker.Value = v.Fecha;
             FormaPagocomboBox.Text = v.Modo;
@@ -231,16 +231,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse( VentaIdnumericUpDown.Value.ToString(), out id);
             Limpiar();
 
-            if (VentaIdnumericUpDown.Value == 0)
+            if (id == 0)
             {
 
-                cVentas frm = new cVentas();
-                frm.Show();
-                /* cliente = db.Buscar(frm.codigoCliente);
+                cVentas frm = new cVentas(1);
+                frm.ShowDialog();
+                
+                venta = db.Buscar(frm.idElegido);
 
 
 
-                 LlenaCampo(cliente);*/
+                 LlenaCampo(venta);
 
 
 

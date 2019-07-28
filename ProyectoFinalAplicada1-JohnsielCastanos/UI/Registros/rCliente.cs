@@ -11,6 +11,7 @@ using Entidades;
 using BLL;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 using System.Text.RegularExpressions;
+using DAL;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -66,6 +67,47 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             BalancetextBox.Text = cliente.Balance.ToString();
        
         }
+
+        public static bool NoDuplicadoCorreo(string descripcion)
+        {
+            RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Clientes.Any(p => p.Email.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
+        public static bool NoDuplicadoCedula(string descripcion)
+        {
+            RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Clientes.Any(p => p.Cedula.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
         private bool ExisteEnLaBaseDeDatos()
         {
             RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
@@ -111,7 +153,20 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 TelefonomaskedTextBox.Focus();
                 paso = false;
             }
+            if (NoDuplicadoCorreo(EmailtextBox.Text))
+            {
+                errorProvider.SetError(EmailtextBox, "El Email ya existe");
+                EmailtextBox.Focus();
+                paso = false;
 
+            }
+            if (NoDuplicadoCedula(CedulamaskedTextBox.Text))
+            {
+                errorProvider.SetError(CedulamaskedTextBox, "El Cedula ya existe");
+                CedulamaskedTextBox.Focus();
+                paso = false;
+
+            }
 
 
 
@@ -241,12 +296,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 cCliente frm = new cCliente(1);
                 frm.ShowDialog();
 
-                cliente = db.Buscar(frm.codigoCliente);
+                if (frm.idElegido > 0)
+                {
+                    cliente = db.Buscar(frm.idElegido);
 
 
 
-                LlenaCampo(cliente);
+                    LlenaCampo(cliente);
 
+
+
+                }
 
 
             }

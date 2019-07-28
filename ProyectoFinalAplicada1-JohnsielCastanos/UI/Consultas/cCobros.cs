@@ -15,10 +15,18 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
     public partial class cCobros : Form
     {
         public List<Cobros> ListaCobros;
-        public cCobros()
+        public cCobros(int valor)
         {
             InitializeComponent();
-            CriteriotextBox.Text = "Todo";
+            FiltrocomboBox.Text = "Todo";
+
+            if (valor == 1)
+            {
+
+                Elegirbutton.Visible = true;
+                Imprimirbutton.Visible = false;
+
+            }
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -129,5 +137,27 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                 ConsultadataGridView.DataSource = ListaCobros;
             }
         }
+
+        private void CCobros_Load(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+            
+            if (ConsultadataGridView.CurrentRow.Cells["CobroId"] != null)
+            {
+                idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["CobroId"].Value.ToString());
+                Close();
+            }
+            else
+            {
+
+                MessageBox.Show("Elija un Producto");
+
+            }
+        }
+        public int idElegido { get; set; }
     }
 }

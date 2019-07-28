@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 using Entidades;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
@@ -80,6 +81,27 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
  
 
         }
+
+        public static bool NoDuplicadoProducto(string descripcion)
+        {
+            RepositorioBase<Productos> db = new RepositorioBase<Productos>();
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Productos.Any(p => p.Descripcion.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
         private bool ExisteEnLaBaseDeDatos()
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
@@ -110,8 +132,16 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
             }
 
-           
-    
+            if (NoDuplicadoProducto(DescripciontextBox.Text))
+            {
+                errorProvider.SetError(DescripciontextBox, "La descripcion ya existe");
+                DescripciontextBox.Focus();
+                paso = false;
+
+            }
+
+
+
 
 
             if (ProductoItbisnumericUpDown.Value < 0)
@@ -209,7 +239,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse(ProductoIdnumericUpDown.Text, out id);
             Limpiar();
 
-            if (ProductoIdnumericUpDown.Value == 0)
+            if (id == 0)
             {
 
                 cProductos frm = new cProductos(0);

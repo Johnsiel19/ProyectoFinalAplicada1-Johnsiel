@@ -16,10 +16,19 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
     public partial class cUsuario : Form
     {
         public List<Usuarios> ListaUsuarios;
-        public cUsuario()
+        public cUsuario(int valor)
         {
             InitializeComponent();
             FiltrocomboBox.Text = "Todo";
+
+
+            if (valor == 1)
+            {
+
+                Elegirbutton.Visible = true;
+                Imprimirbutton.Visible = false;
+
+            }
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -142,6 +151,26 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
             Consultarbutton_Click( sender,  e);
         }
 
-      
+        private void CUsuario_Load(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+            
+            if (ConsultadataGridView.CurrentRow.Cells["UsuarioId"] != null)
+            {
+                idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["UsuarioId"].Value.ToString());
+                Close();
+            }
+            else
+            {
+
+                MessageBox.Show("Elija un Usuario");
+
+            }
+        }
+        public int idElegido;
     }
 }

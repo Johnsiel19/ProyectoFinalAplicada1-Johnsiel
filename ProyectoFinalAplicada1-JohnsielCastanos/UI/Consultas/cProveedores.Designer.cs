@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
             this.Elegirbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -169,16 +169,16 @@
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 81;
             // 
-            // button1
+            // Imprimirbutton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.button1.Location = new System.Drawing.Point(811, 430);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 49);
-            this.button1.TabIndex = 80;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.FlatAppearance.BorderSize = 0;
+            this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
+            this.Imprimirbutton.Location = new System.Drawing.Point(811, 430);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Imprimirbutton.TabIndex = 80;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
             // Consultarbutton
             // 
@@ -204,6 +204,7 @@
             this.Elegirbutton.TabIndex = 89;
             this.Elegirbutton.UseVisualStyleBackColor = true;
             this.Elegirbutton.Visible = false;
+            this.Elegirbutton.Click += new System.EventHandler(this.Elegirbutton_Click);
             // 
             // cProveedores
             // 
@@ -219,11 +220,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.Consultarbutton);
             this.Name = "cProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Proveedores";
+            this.Load += new System.EventHandler(this.CProveedores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
@@ -246,7 +248,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Imprimirbutton;
         private System.Windows.Forms.Button Consultarbutton;
         private System.Windows.Forms.Button Elegirbutton;
     }

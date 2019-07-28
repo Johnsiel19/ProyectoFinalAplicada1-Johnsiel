@@ -137,10 +137,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
         private void Elegirbutton_Click(object sender, EventArgs e)
         {
-            Consultarbutton.PerformClick();
+       
             if (ConsultadataGridView.CurrentRow.Cells["ClienteId"] != null)
             {
-                codigoCliente = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ClienteId"].Value.ToString());
+                idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["ClienteId"].Value.ToString());
                 Close();
             }
             else
@@ -151,6 +151,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             }
             
         }
-        public int codigoCliente;
+        public int idElegido;
+
+        private void CCliente_Load(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
     }
 }

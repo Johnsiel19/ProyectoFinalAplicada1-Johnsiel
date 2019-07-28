@@ -15,9 +15,20 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
     public partial class cEntradas : Form
     {
         public List<Entradas> ListaEntradas;
-        public cEntradas()
+        public cEntradas(int valor)
         {
             InitializeComponent();
+            FiltrocomboBox.Text = "Todo";
+
+            if (valor == 1)
+            {
+
+                Elegirbutton.Visible = true;
+                Imprimirbutton.Visible = false;
+
+            }
+
+
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -128,5 +139,33 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                 ConsultadataGridView.DataSource = ListaEntradas;
             }
         }
+
+        private void CEntradas_Load(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
+
+        private void CriteriotextBox_TextChanged(object sender, EventArgs e)
+        {
+            Consultarbutton.PerformClick();
+        }
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+            
+            if (ConsultadataGridView.CurrentRow.Cells["EntradaId"] != null)
+            {
+                CodigoEntrada = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["EntradaId"].Value.ToString());
+                Close();
+            }
+            else
+            {
+
+                MessageBox.Show("Elija una entrada");
+
+            }
+           
+        }
+        public int CodigoEntrada;
     }
 }

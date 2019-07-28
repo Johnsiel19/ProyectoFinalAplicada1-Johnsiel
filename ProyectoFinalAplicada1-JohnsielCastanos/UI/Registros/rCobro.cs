@@ -53,11 +53,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                     string cliente = ClientecomboBox.SelectedValue.ToString();
                     listado = db.GetList(p => p.ClienteId.ToString().Contains(cliente) & p.Balance > 0);
                     VentacomboBox.DataSource = listado;
-                    VentacomboBox.DisplayMember = "VentasId";
-                    VentacomboBox.ValueMember = "VentasId";
+                    VentacomboBox.DisplayMember = "VentaId";
+                    VentacomboBox.ValueMember = "VentaId";
 
                 }
-
+          
 
 
             }
@@ -119,20 +119,21 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             ObservaciontextBox.Text = cobro.Observacion;
             VentaFechadateTimePicker.Value = cobro.Fecha;
 
-   
-            RepositorioBase<Clientes> db2 = new RepositorioBase<Clientes>();
+            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
+            var listado = new List<Ventas>();
+            listado = db.GetList(p => p.VentaId == cobro.VentaId);
+            ClientecomboBox.DataSource = listado;
+            ClientecomboBox.DisplayMember = "VentaId";
+            ClientecomboBox.ValueMember = "VentaId";
+
+           RepositorioBase<Clientes> db2 = new RepositorioBase<Clientes>();
             var listado2 = new List<Clientes>();
-            listado2 = db2.GetList(p => p.ClienteId==cobro.ClienteId);
+            listado2 = db2.GetList(p => p.ClienteId==cobro.VentaId);
             ClientecomboBox.DataSource = listado2;
             ClientecomboBox.DisplayMember = "Nombre";
             ClientecomboBox.ValueMember = "ClienteId";
 
-            RepositorioBase<Ventas> db = new RepositorioBase<Ventas>();
-            var listado = new List<Ventas>();
-            listado = db.GetList(p => p.VentasId == cobro.VentaId);
-            ClientecomboBox.DataSource = listado;
-            ClientecomboBox.DisplayMember = "VentasId";
-            ClientecomboBox.ValueMember = "VentasId";
+          
 
 
 
@@ -245,9 +246,24 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse(CobroIdnumericUpDown.Text, out id);
             Limpiar();
 
-            if (CobroIdnumericUpDown.Value == 0)
+
+            if (id== 0)
             {
 
+                cCobros frm = new cCobros(1);
+                frm.ShowDialog();
+
+                if (frm.idElegido > 0)
+                {
+                    cobro = db.Buscar(frm.idElegido);
+
+
+
+                    LlenaCampo(cobro);
+
+
+
+                }
 
 
             }
@@ -328,6 +344,18 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private void RCobro_Load(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void ClientecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if(ClientecomboBox.SelectedItem as Clientes != null)
+            {
+                Clientes p = ClientecomboBox.SelectedItem as Clientes;
+                BalanceClientetextBox.Text = Convert.ToString(p.Balance);
+
+            }
+          
         }
     }
 }

@@ -15,9 +15,18 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
     public partial class cVentas : Form
     {
         public List<Ventas> ListaVentas;
-        public cVentas()
+        public cVentas(int valor)
         {
             InitializeComponent();
+            FiltrocomboBox.Text = "Todo";
+
+            if (valor == 1)
+            {
+
+                Elegirbutton.Visible = true;
+                Imprimirbutton.Visible = false;
+
+            }
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -39,7 +48,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
                             case "Id":
                                 Criterio = Convert.ToInt32(CriteriotextBox.Text);
-                                listado = db.GetList(p => p.VentasId == Criterio);
+                                listado = db.GetList(p => p.VentaId == Criterio);
                                 break;
                             case "UsuarioId":
                                 Criterio = Convert.ToInt32(CriteriotextBox.Text);
@@ -52,11 +61,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                            
                             case "Balance":
                                 Criterio = Convert.ToInt32(CriteriotextBox.Text);
-                                listado = db.GetList(p => p.VentasId == Criterio);
+                                listado = db.GetList(p => p.Balance == Criterio);
                                 break;
                             case "Monto":
                                 Criterio = Convert.ToInt32(CriteriotextBox.Text);
-                                listado = db.GetList(p => p.VentasId == Criterio);
+                                listado = db.GetList(p => p.Total == Criterio);
                                 break;
 
                             case "Modo":
@@ -100,7 +109,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
                         case "Id":
                             Criterio = Convert.ToInt32(CriteriotextBox.Text);
-                            listado = db.GetList(p => p.VentasId == Criterio);
+                            listado = db.GetList(p => p.VentaId == Criterio);
                             break;
                         case "UsuarioId":
                             Criterio = Convert.ToInt32(CriteriotextBox.Text);
@@ -113,11 +122,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
                         case "Balance":
                             Criterio = Convert.ToInt32(CriteriotextBox.Text);
-                            listado = db.GetList(p => p.VentasId == Criterio);
+                            listado = db.GetList(p => p.Balance == Criterio);
                             break;
                         case "Monto":
                             Criterio = Convert.ToInt32(CriteriotextBox.Text);
-                            listado = db.GetList(p => p.VentasId == Criterio);
+                            listado = db.GetList(p => p.Total == Criterio);
                             break;
 
                         case "Modo":
@@ -150,5 +159,27 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             Consultarbutton.PerformClick();
         }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Elegirbutton_Click(object sender, EventArgs e)
+        {
+            
+            if (ConsultadataGridView.CurrentRow.Cells["VentasId"] != null)
+            {
+                idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["VentasId"].Value.ToString());
+                Close();
+            }
+            else
+            {
+
+                MessageBox.Show("Elija una Venta");
+
+            }
+        }
+        public int idElegido;
     }
 }

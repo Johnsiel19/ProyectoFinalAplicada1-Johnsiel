@@ -34,7 +34,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void UsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cUsuario frm = new cUsuario();
+            cUsuario frm = new cUsuario(0);
             frm.Show();
         }
 
@@ -84,13 +84,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void VentasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cVentas frm = new cVentas();
+            cVentas frm = new cVentas(0);
             frm.Show();
         }
 
         private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cProveedores frm = new cProveedores();
+            cProveedores frm = new cProveedores(0);
             frm.Show();
         }
 
@@ -119,13 +119,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void EntradasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cEntradas frm = new cEntradas();
+            cEntradas frm = new cEntradas(0);
             frm.Show();
         }
 
         private void CobrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cCobros frm = new cCobros();
+            cCobros frm = new cCobros(0);
             frm.Show();
         }
     }

@@ -12,7 +12,7 @@ namespace Entidades
     {
         
         [Key]
-        public int VentasId { get; set; }
+        public int VentaId { get; set; }
         public int ClienteId { get; set; }
         public int UsuarioId { get; set; }
         public string Modo { get; set; }
@@ -27,7 +27,7 @@ namespace Entidades
 
         public Ventas()
         {
-            VentasId = 0;
+            VentaId = 0;
             ClienteId = 0;
             UsuarioId = 0;
             Modo = string.Empty;

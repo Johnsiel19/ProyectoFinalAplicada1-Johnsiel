@@ -11,6 +11,7 @@ using Entidades;
 using BLL;
 using System.Text.RegularExpressions;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
+using DAL;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -130,10 +131,66 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
             }
 
+            if (NoDuplicadoCorreo(EmailtextBox.Text)== false)
+            {
+                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                EmailtextBox.Focus();
+                paso = false;
+            }
+
+            if (NoDuplicadoNombre(NombrestextBox.Text) == false)
+            {
+                errorProvider.SetError(NombrestextBox, "Correo invalido");
+                NombrestextBox.Focus();
+                paso = false;
+            }
+
 
             return paso;
 
         }
+        public static bool NoDuplicadoCorreo(string descripcion)
+        {
+            RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Proveedores.Any(p => p.Email.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
+
+        public static bool NoDuplicadoNombre(string descripcion)
+        {
+            RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
+            bool paso = false;
+            Contexto db2 = new Contexto();
+
+            try
+            {
+                if (db2.Proveedores.Any(p => p.Nombre.Equals(descripcion)))
+                {
+                    paso = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return paso;
+        }
+
+
 
         private Boolean ValidarEmail(String email)
         {
@@ -205,17 +262,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             int.TryParse(ProveedorIdnumericUpDown.Text, out id);
             Limpiar();
 
-            if (ProveedorIdnumericUpDown.Value == 0)
+            if (id== 0)
             {
 
-                cProveedores frm = new cProveedores();
+                cProveedores frm = new cProveedores(1);
                 frm.ShowDialog();
 
-               /* cliente = db.Buscar(frm.codigoCliente);
+                 proveedor = db.Buscar(frm.idElegido);
 
 
 
-                LlenaCampo(cliente);*/
+                LlenaCampo(proveedor);
 
 
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
@@ -188,16 +189,42 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             entrada = db.Buscar(id);
 
-            if (entrada != null)
+            if (id == 0)
             {
 
-                LlenaCampo(entrada);
+                cEntradas frm = new cEntradas(1);
+                frm.ShowDialog();
+
+                if (frm.CodigoEntrada > 0)
+                {
+                    entrada = db.Buscar(frm.CodigoEntrada);
+
+
+
+                    LlenaCampo(entrada);
+
+
+
+                }
+
 
             }
             else
             {
-                MessageBox.Show("Entrada no encontrada");
+
+                if (entrada != null)
+                {
+
+                    LlenaCampo(entrada);
+
+                }
+                else
+                {
+                    MessageBox.Show("Entrada no encontrada");
+                }
+
             }
+          
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

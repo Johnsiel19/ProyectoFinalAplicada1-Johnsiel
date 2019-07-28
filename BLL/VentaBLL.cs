@@ -121,7 +121,7 @@ namespace BLL
             RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
             try
             {
-                var venta = vent.Buscar(ventas.VentasId);
+                var venta = vent.Buscar(ventas.VentaId);
 
                 if (ventas.ClienteId != venta.ClienteId)
                 {
@@ -171,7 +171,7 @@ namespace BLL
             RepositorioBase<Clientes> client = new RepositorioBase<Clientes>();
             double modificado = factura.Total - FactAnt.Total;
 
-            var Cliente = contexto.Clientes.Find(factura.VentasId);
+            var Cliente = contexto.Clientes.Find(factura.VentaId);
             Cliente.Balance += modificado;
             client.Modificar(Cliente);
         }

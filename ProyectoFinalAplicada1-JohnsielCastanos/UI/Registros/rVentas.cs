@@ -60,9 +60,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         }
 
-
-
-
         private void Limpiar()
         {
 
@@ -241,12 +238,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 
                 venta = db.Buscar(frm.idElegido);
 
-
-
                  LlenaCampo(venta);
-
-
-
             }
             else
             {
@@ -254,18 +246,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
                 if (venta != null)
                 {
-
                     LlenaCampo(venta);
-
                 }
                 else
                 {
                     MessageBox.Show("Usuario no existe");
                 }
-
             }
-
-      
         }
 
 
@@ -420,10 +407,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         }
 
-    
-  
-        
-
         private void RemoverLienabutton_Click(object sender, EventArgs e)
         {
 
@@ -456,6 +439,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             rCliente frm = new rCliente(IdUsario);
             frm.ShowDialog();
+            Refresh();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)

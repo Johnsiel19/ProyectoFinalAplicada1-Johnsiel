@@ -220,7 +220,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 return false;
             }
         }
-        //Expresion regural para validar el Email
+    
   
 
         private void Guardarbutton_Click_1(object sender, EventArgs e)

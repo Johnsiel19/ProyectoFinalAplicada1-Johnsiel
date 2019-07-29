@@ -141,10 +141,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Consultas
             }
         }
 
-        private void ConsultadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void CriteriotextBox_TextChanged(object sender, EventArgs e)
         {

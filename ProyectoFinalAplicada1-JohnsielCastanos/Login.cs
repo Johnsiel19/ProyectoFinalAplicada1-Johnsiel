@@ -20,13 +20,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-
-            IniciarSesion();
-        }
-
 
         public void IniciarSesion()
         {
@@ -34,14 +27,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
             RepositorioBase<Usuarios> user = new RepositorioBase<Usuarios>();
             Expression<Func<Usuarios, bool>> Usuario = x => true;
-            List<Usuarios> usuario = new List<Usuarios>();
+    
 
 
             var TUsuario = UsuariotextBox.Text;
             var Tclave = ClavetextBox.Text;
 
-            Usuario = x => x.Usuario.Equals(TUsuario);
-            usuario = user.GetList(Usuario);
+          
+            var usuario = user.GetList(p => true);
 
             if (usuario.Count >0)
             {
@@ -59,9 +52,15 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
                     }
                     else
                     {
-                        MessageBox.Show("Clave incorrecta.");
+                        MessageBox.Show("Clave incorrecta");
                         return;
                     }
+                }
+                else
+                {
+                    MessageBox.Show("El Usuario no existe");
+                    return;
+
                 }
             }
             else
@@ -108,6 +107,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
             form.ShowDialog();
             this.Show();
 
+        }
+
+
+
+        private void Loginbutton_Click(object sender, EventArgs e)
+        {
+            IniciarSesion();
         }
     }
 }

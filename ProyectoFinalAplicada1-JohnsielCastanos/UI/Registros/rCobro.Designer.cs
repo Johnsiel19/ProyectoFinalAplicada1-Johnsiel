@@ -41,10 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.MontoFacturatextBox = new System.Windows.Forms.TextBox();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
             this.VentaFechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,6 +48,10 @@
             this.ObservaciontextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MontoPagarnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CobroIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -60,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 201);
+            this.label3.Location = new System.Drawing.Point(20, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 17);
             this.label3.TabIndex = 109;
@@ -69,19 +69,19 @@
             // VentacomboBox
             // 
             this.VentacomboBox.FormattingEnabled = true;
-            this.VentacomboBox.Location = new System.Drawing.Point(92, 143);
+            this.VentacomboBox.Location = new System.Drawing.Point(92, 144);
             this.VentacomboBox.Name = "VentacomboBox";
             this.VentacomboBox.Size = new System.Drawing.Size(163, 24);
-            this.VentacomboBox.TabIndex = 108;
+            this.VentacomboBox.TabIndex = 2;
             this.VentacomboBox.TextChanged += new System.EventHandler(this.VentacomboBox_TextChanged);
             // 
             // ClientecomboBox
             // 
             this.ClientecomboBox.FormattingEnabled = true;
-            this.ClientecomboBox.Location = new System.Drawing.Point(92, 90);
+            this.ClientecomboBox.Location = new System.Drawing.Point(92, 88);
             this.ClientecomboBox.Name = "ClientecomboBox";
             this.ClientecomboBox.Size = new System.Drawing.Size(163, 24);
-            this.ClientecomboBox.TabIndex = 107;
+            this.ClientecomboBox.TabIndex = 1;
             this.ClientecomboBox.SelectedIndexChanged += new System.EventHandler(this.ClientecomboBox_SelectedIndexChanged);
             this.ClientecomboBox.SelectedValueChanged += new System.EventHandler(this.ClientecomboBox_SelectedValueChanged);
             // 
@@ -97,7 +97,7 @@
             // MontoPagarnumericUpDown
             // 
             this.MontoPagarnumericUpDown.DecimalPlaces = 10;
-            this.MontoPagarnumericUpDown.Location = new System.Drawing.Point(135, 199);
+            this.MontoPagarnumericUpDown.Location = new System.Drawing.Point(135, 203);
             this.MontoPagarnumericUpDown.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -105,19 +105,19 @@
             0});
             this.MontoPagarnumericUpDown.Name = "MontoPagarnumericUpDown";
             this.MontoPagarnumericUpDown.Size = new System.Drawing.Size(120, 22);
-            this.MontoPagarnumericUpDown.TabIndex = 104;
+            this.MontoPagarnumericUpDown.TabIndex = 3;
             // 
             // CobroIdnumericUpDown
             // 
             this.CobroIdnumericUpDown.Location = new System.Drawing.Point(92, 34);
             this.CobroIdnumericUpDown.Name = "CobroIdnumericUpDown";
             this.CobroIdnumericUpDown.Size = new System.Drawing.Size(73, 22);
-            this.CobroIdnumericUpDown.TabIndex = 103;
+            this.CobroIdnumericUpDown.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 150);
+            this.label6.Location = new System.Drawing.Point(21, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 102;
@@ -135,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 93);
+            this.label2.Location = new System.Drawing.Point(20, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 100;
@@ -153,7 +153,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(305, 203);
+            this.label7.Location = new System.Drawing.Point(305, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 17);
             this.label7.TabIndex = 116;
@@ -161,17 +161,73 @@
             // 
             // MontoFacturatextBox
             // 
-            this.MontoFacturatextBox.Location = new System.Drawing.Point(477, 200);
+            this.MontoFacturatextBox.Location = new System.Drawing.Point(477, 204);
             this.MontoFacturatextBox.Name = "MontoFacturatextBox";
             this.MontoFacturatextBox.ReadOnly = true;
             this.MontoFacturatextBox.Size = new System.Drawing.Size(120, 22);
             this.MontoFacturatextBox.TabIndex = 115;
             // 
+            // VentaFechadateTimePicker
+            // 
+            this.VentaFechadateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.VentaFechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.VentaFechadateTimePicker.Location = new System.Drawing.Point(420, 146);
+            this.VentaFechadateTimePicker.Name = "VentaFechadateTimePicker";
+            this.VentaFechadateTimePicker.Size = new System.Drawing.Size(177, 22);
+            this.VentaFechadateTimePicker.TabIndex = 118;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(305, 151);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 17);
+            this.label8.TabIndex = 117;
+            this.label8.Text = "Fecha Factura";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(305, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 17);
+            this.label9.TabIndex = 120;
+            this.label9.Text = "Balance Total";
+            // 
+            // BalanceClientetextBox
+            // 
+            this.BalanceClientetextBox.Location = new System.Drawing.Point(474, 86);
+            this.BalanceClientetextBox.Name = "BalanceClientetextBox";
+            this.BalanceClientetextBox.ReadOnly = true;
+            this.BalanceClientetextBox.Size = new System.Drawing.Size(123, 22);
+            this.BalanceClientetextBox.TabIndex = 119;
+            // 
+            // ObservaciontextBox
+            // 
+            this.ObservaciontextBox.Location = new System.Drawing.Point(135, 260);
+            this.ObservaciontextBox.Multiline = true;
+            this.ObservaciontextBox.Name = "ObservaciontextBox";
+            this.ObservaciontextBox.Size = new System.Drawing.Size(462, 66);
+            this.ObservaciontextBox.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 260);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 17);
+            this.label4.TabIndex = 122;
+            this.label4.Text = "Observacion";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(29, 380);
+            this.Nuevobutton.Location = new System.Drawing.Point(23, 380);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 71);
             this.Nuevobutton.TabIndex = 112;
@@ -186,7 +242,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(184, 22);
+            this.Buscarbutton.Location = new System.Drawing.Point(183, 22);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(45, 44);
             this.Buscarbutton.TabIndex = 114;
@@ -214,67 +270,11 @@
             this.Guardarbutton.Location = new System.Drawing.Point(258, 380);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
-            this.Guardarbutton.TabIndex = 111;
+            this.Guardarbutton.TabIndex = 5;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click_1);
-            // 
-            // VentaFechadateTimePicker
-            // 
-            this.VentaFechadateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.VentaFechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.VentaFechadateTimePicker.Location = new System.Drawing.Point(420, 145);
-            this.VentaFechadateTimePicker.Name = "VentaFechadateTimePicker";
-            this.VentaFechadateTimePicker.Size = new System.Drawing.Size(177, 22);
-            this.VentaFechadateTimePicker.TabIndex = 118;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(305, 150);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 17);
-            this.label8.TabIndex = 117;
-            this.label8.Text = "Fecha Factura";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(305, 95);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 17);
-            this.label9.TabIndex = 120;
-            this.label9.Text = "Balance Total";
-            // 
-            // BalanceClientetextBox
-            // 
-            this.BalanceClientetextBox.Location = new System.Drawing.Point(474, 88);
-            this.BalanceClientetextBox.Name = "BalanceClientetextBox";
-            this.BalanceClientetextBox.ReadOnly = true;
-            this.BalanceClientetextBox.Size = new System.Drawing.Size(123, 22);
-            this.BalanceClientetextBox.TabIndex = 119;
-            // 
-            // ObservaciontextBox
-            // 
-            this.ObservaciontextBox.Location = new System.Drawing.Point(135, 252);
-            this.ObservaciontextBox.Multiline = true;
-            this.ObservaciontextBox.Name = "ObservaciontextBox";
-            this.ObservaciontextBox.Size = new System.Drawing.Size(462, 66);
-            this.ObservaciontextBox.TabIndex = 121;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 252);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 17);
-            this.label4.TabIndex = 122;
-            this.label4.Text = "Observacion";
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // rCobro
             // 

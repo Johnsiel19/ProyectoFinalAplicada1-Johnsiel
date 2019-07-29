@@ -37,11 +37,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.EntradaIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoEntradanumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -71,14 +71,14 @@
             this.ProductocomboBox.Location = new System.Drawing.Point(124, 93);
             this.ProductocomboBox.Name = "ProductocomboBox";
             this.ProductocomboBox.Size = new System.Drawing.Size(230, 24);
-            this.ProductocomboBox.TabIndex = 2;
+            this.ProductocomboBox.TabIndex = 1;
             // 
             // EntradaIdnumericUpDown
             // 
             this.EntradaIdnumericUpDown.Location = new System.Drawing.Point(124, 38);
             this.EntradaIdnumericUpDown.Name = "EntradaIdnumericUpDown";
             this.EntradaIdnumericUpDown.Size = new System.Drawing.Size(92, 22);
-            this.EntradaIdnumericUpDown.TabIndex = 3;
+            this.EntradaIdnumericUpDown.TabIndex = 0;
             // 
             // ProductoEntradanumericUpDown
             // 
@@ -91,7 +91,7 @@
             0});
             this.ProductoEntradanumericUpDown.Name = "ProductoEntradanumericUpDown";
             this.ProductoEntradanumericUpDown.Size = new System.Drawing.Size(92, 22);
-            this.ProductoEntradanumericUpDown.TabIndex = 4;
+            this.ProductoEntradanumericUpDown.TabIndex = 2;
             // 
             // label3
             // 
@@ -109,7 +109,7 @@
             this.FechadateTimePicker.Location = new System.Drawing.Point(124, 208);
             this.FechadateTimePicker.Name = "FechadateTimePicker";
             this.FechadateTimePicker.Size = new System.Drawing.Size(230, 22);
-            this.FechadateTimePicker.TabIndex = 57;
+            this.FechadateTimePicker.TabIndex = 4;
             // 
             // label4
             // 
@@ -119,6 +119,10 @@
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 62;
             this.label4.Text = "Fecha";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // Nuevobutton
             // 
@@ -139,7 +143,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(268, 24);
+            this.Buscarbutton.Location = new System.Drawing.Point(246, 24);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(45, 44);
             this.Buscarbutton.TabIndex = 61;
@@ -167,15 +171,11 @@
             this.Guardarbutton.Location = new System.Drawing.Point(156, 285);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
-            this.Guardarbutton.TabIndex = 58;
+            this.Guardarbutton.TabIndex = 3;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click_1);
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
             // 
             // rEntradas
             // 

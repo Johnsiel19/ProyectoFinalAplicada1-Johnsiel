@@ -20,6 +20,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             this.IdUsario = id;
             InitializeComponent();
             LlenarComboBoxProducto();
+            Limpiar();
         }
         public int IdUsario { get; set; }
 
@@ -34,19 +35,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         }
 
-
-
-
         private void Limpiar()
         {
 
             EntradaIdnumericUpDown.Value = 0;
-  
             ProductocomboBox.Text = null;
-         
             ProductoEntradanumericUpDown.Value = 0;
             FechadateTimePicker.Value = DateTime.Now;
-        
             errorProvider.Clear();
 
         }
@@ -71,9 +66,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             ProductocomboBox.SelectedValue = entrada.ProductoId;
             FechadateTimePicker.Value = entrada.Fecha;
             ProductoEntradanumericUpDown.Text = entrada.Entrada.ToString();
-       
-           
-   
+    
         }
 
 
@@ -89,9 +82,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
      
             bool paso = true;
-
-
-
             errorProvider.Clear();
 
             if (ProductocomboBox.Text =="")
@@ -108,17 +98,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
 
             }
-
-    
-
-
             return paso;
 
         }
 
-
-
-     
         private void Guardarbutton_Click_1(object sender, EventArgs e)
         {
 
@@ -200,15 +183,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 {
                     entrada = db.Buscar(frm.CodigoEntrada);
 
-
-
                     LlenaCampo(entrada);
-
-
-
                 }
-
-
             }
             else
             {
@@ -232,5 +208,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             Limpiar();
         }
+
+   
     }
 }

@@ -176,7 +176,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(249, 21);
+            this.Buscarbutton.Location = new System.Drawing.Point(236, 21);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(42, 42);
             this.Buscarbutton.TabIndex = 9;
@@ -233,7 +233,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Name = "rProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro Proveedor";
+            this.Text = "Registro Proveedores";
             ((System.ComponentModel.ISupportInitialize)(this.ProveedorIdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

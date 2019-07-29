@@ -141,10 +141,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
             }
 
-
-
-
-
             if (ProductoItbisnumericUpDown.Value < 0)
             {
                 errorProvider.SetError(ProductoItbisnumericUpDown, "El rango debe ser de 0% a 18%");
@@ -183,9 +179,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
 
             }
-
-
-
             return paso;
 
         }
@@ -243,16 +236,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             if (id == 0)
             {
 
-                cProductos frm = new cProductos(0);
-                frm.ShowDialog();
-
-               producto = db.Buscar(frm.codigoProducto);
-
-
-
-                LlenaCampo(producto);
-
-
+                 cProductos frm = new cProductos(0);
+                 frm.ShowDialog();
+                 producto = db.Buscar(frm.codigoProducto);
+                 LlenaCampo(producto);
 
             }
             else
@@ -264,7 +251,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 {
 
                     LlenaCampo(producto);
-
                 }
                 else
                 {
@@ -310,6 +296,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             rProveedor frm = new rProveedor(IdUsario);
             frm.ShowDialog();
+            Refresh();
         }
     }
 }

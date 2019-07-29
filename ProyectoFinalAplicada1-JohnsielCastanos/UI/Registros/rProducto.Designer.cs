@@ -70,7 +70,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 25);
+            this.label1.Location = new System.Drawing.Point(26, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 1;
@@ -105,7 +105,7 @@
             // 
             // ProductoIdnumericUpDown
             // 
-            this.ProductoIdnumericUpDown.Location = new System.Drawing.Point(137, 25);
+            this.ProductoIdnumericUpDown.Location = new System.Drawing.Point(137, 28);
             this.ProductoIdnumericUpDown.Name = "ProductoIdnumericUpDown";
             this.ProductoIdnumericUpDown.Size = new System.Drawing.Size(88, 22);
             this.ProductoIdnumericUpDown.TabIndex = 0;
@@ -206,7 +206,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 433);
+            this.label9.Location = new System.Drawing.Point(27, 433);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 17);
             this.label9.TabIndex = 53;
@@ -218,7 +218,7 @@
             this.ExistenciatextBox.Name = "ExistenciatextBox";
             this.ExistenciatextBox.ReadOnly = true;
             this.ExistenciatextBox.Size = new System.Drawing.Size(100, 22);
-            this.ExistenciatextBox.TabIndex = 55;
+            this.ExistenciatextBox.TabIndex = 3;
             // 
             // errorProvider
             // 
@@ -255,7 +255,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(241, 13);
+            this.Buscarbutton.Location = new System.Drawing.Point(241, 16);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(46, 44);
             this.Buscarbutton.TabIndex = 52;
@@ -280,7 +280,7 @@
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(188, 498);
+            this.Guardarbutton.Location = new System.Drawing.Point(207, 498);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
             this.Guardarbutton.TabIndex = 8;
@@ -318,7 +318,7 @@
             this.Controls.Add(this.DescripciontextBox);
             this.Name = "rProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro Producto";
+            this.Text = "Registro Productos";
             ((System.ComponentModel.ISupportInitialize)(this.ProductoIdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CostonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecionumericUpDown)).EndInit();

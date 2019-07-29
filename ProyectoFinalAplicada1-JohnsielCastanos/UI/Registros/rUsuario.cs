@@ -156,7 +156,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 paso = false;
             }
 
-            if (NoDuplicadoUsuario(UsuariotextBox.Text) == false)
+            if (NoDuplicadoUsuario(UsuariotextBox.Text) == true)
             {
                 errorProvider.SetError(UsuariotextBox, "Correo invalido");
                 UsuariotextBox.Focus();
@@ -314,13 +314,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 usuario = db.Buscar(frm.idElegido);
 
                  LlenaCampo(usuario);
-
-
-
             }
             else
             {
-
 
                 usuario = db.Buscar(id);
 
@@ -345,15 +341,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 e.Handled = true;
         }
 
-        private void EmailtextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void UsuariotextBox_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
 
         private void UsuariotextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -366,5 +353,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 e.Handled = true;
             }
         }
+
+      
     }
 }

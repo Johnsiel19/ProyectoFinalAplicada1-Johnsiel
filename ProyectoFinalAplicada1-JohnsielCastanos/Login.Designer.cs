@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginbutton = new System.Windows.Forms.Button();
             this.ClavetextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cachedListadoUsuarios1 = new ProyectoFinalAplicada1_JohnsielCastanos.UI.Reportes.CachedListadoUsuarios();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,19 +49,19 @@
             this.UsuariotextBox.Size = new System.Drawing.Size(272, 34);
             this.UsuariotextBox.TabIndex = 0;
             // 
-            // button1
+            // loginbutton
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(363, 284);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(272, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Log In";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.loginbutton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.loginbutton.FlatAppearance.BorderSize = 0;
+            this.loginbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginbutton.Location = new System.Drawing.Point(363, 284);
+            this.loginbutton.Name = "loginbutton";
+            this.loginbutton.Size = new System.Drawing.Size(272, 44);
+            this.loginbutton.TabIndex = 2;
+            this.loginbutton.Text = "Log In";
+            this.loginbutton.UseVisualStyleBackColor = false;
+            this.loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
             // 
             // ClavetextBox
             // 
@@ -70,7 +70,8 @@
             this.ClavetextBox.Name = "ClavetextBox";
             this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(272, 34);
-            this.ClavetextBox.TabIndex = 2;
+            this.ClavetextBox.TabIndex = 1;
+
             // 
             // label1
             // 
@@ -102,16 +103,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "LogIn";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.user_customer_person_13976;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 81);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 247);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -137,6 +128,16 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Salir";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.user_customer_person_13976;
+            this.pictureBox1.Location = new System.Drawing.Point(38, 81);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(251, 247);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -150,7 +151,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClavetextBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.loginbutton);
             this.Controls.Add(this.UsuariotextBox);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -165,7 +166,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox UsuariotextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginbutton;
         private System.Windows.Forms.TextBox ClavetextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -20,10 +20,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             this.IdUsario = id;
             InitializeComponent();
             LlenarComboBoxCliente();
-          
-
-          
-     
     
         }
         public int IdUsario { get; set; }
@@ -32,16 +28,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         {
             if(CobroIdnumericUpDown.Value == 0)
             {
-
                 RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
                 var listado = new List<Clientes>();
                 listado = db.GetList(p => p.Balance > 0);
                 ClientecomboBox.DataSource = listado;
                 ClientecomboBox.DisplayMember = "Nombre";
                 ClientecomboBox.ValueMember = "ClienteId";
-
             }
-         
         }
 
         private void LlenarComboBoxVenta()
@@ -59,12 +52,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                     VentacomboBox.ValueMember = "VentaId";
 
                 }
-          
-
-
             }
-
-
         }
 
 
@@ -78,15 +66,10 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 venta = db.Buscar(Convert.ToInt32(VentacomboBox.SelectedValue));
                 MontoFacturatextBox.Text = venta.Balance.ToString();
             }
-
         }
-
-
-
 
         private void Limpiar()
         {
-
             CobroIdnumericUpDown.Value = 0;
             ClientecomboBox.Text = string.Empty;
             VentacomboBox.Text = string.Empty;
@@ -109,14 +92,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             cobro.UsuarioId = IdUsario;
             cobro.Fecha = FechadateTimePicker.Value;
             return cobro;
-
         }
 
         private void LlenaCampo(Cobros cobro)
         {
             CobroIdnumericUpDown.Value = cobro.CobroId;
-           
-        
+      
             MontoPagarnumericUpDown.Value = Convert.ToDecimal( cobro.MontoPagado);
             ObservaciontextBox.Text = cobro.Observacion;
             VentaFechadateTimePicker.Value = cobro.Fecha;
@@ -135,11 +116,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             ClientecomboBox.DisplayMember = "Nombre";
             ClientecomboBox.ValueMember = "ClienteId";
 
-          
-
-
-
-
             if (db.Buscar(cobro.VentaId) != null)
             {
                 var venta = db.Buscar(cobro.VentaId);
@@ -147,6 +123,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             }
            
         }
+
         private bool ExisteEnLaBaseDeDatos()
         {
             RepositorioBase<Cobros> db = new RepositorioBase<Cobros>();
@@ -181,10 +158,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
 
             }
-    
-
-
-
 
             return paso;
 
@@ -249,7 +222,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             Limpiar();
 
 
-            if (id== 0)
+            if (id == 0)
             {
 
                 cCobros frm = new cCobros(1);
@@ -259,20 +232,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 {
                     cobro = db.Buscar(frm.idElegido);
 
-
-
                     LlenaCampo(cobro);
-
-
-
                 }
-
-
             }
             else
             {
-
-
                 cobro = db.Buscar(id);
 
                 if (cobro != null)
@@ -285,11 +249,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 {
                     MessageBox.Show("El Cobro no existe");
                 }
-
-
             }
-
-       
         }
 
         private void Nuevobutton_Click_1(object sender, EventArgs e)
@@ -334,12 +294,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 LlenarComboBoxVenta();
                 Clientes p = ClientecomboBox.SelectedItem as Clientes;
                 BalanceClientetextBox.Text = Convert.ToString(p.Balance);
-
-
             }
-
-
-
 
         }
 

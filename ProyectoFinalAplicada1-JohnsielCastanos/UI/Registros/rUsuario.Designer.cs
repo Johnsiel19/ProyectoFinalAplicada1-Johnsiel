@@ -57,7 +57,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 313);
+            this.label8.Location = new System.Drawing.Point(25, 326);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 17);
             this.label8.TabIndex = 49;
@@ -65,7 +65,7 @@
             // 
             // ConfirmarClavetextBox
             // 
-            this.ConfirmarClavetextBox.Location = new System.Drawing.Point(148, 310);
+            this.ConfirmarClavetextBox.Location = new System.Drawing.Point(148, 323);
             this.ConfirmarClavetextBox.Name = "ConfirmarClavetextBox";
             this.ConfirmarClavetextBox.Size = new System.Drawing.Size(272, 22);
             this.ConfirmarClavetextBox.TabIndex = 6;
@@ -77,7 +77,7 @@
             this.NivelUsuariocomboBox.Items.AddRange(new object[] {
             "Usuario",
             "Administrador"});
-            this.NivelUsuariocomboBox.Location = new System.Drawing.Point(148, 168);
+            this.NivelUsuariocomboBox.Location = new System.Drawing.Point(148, 172);
             this.NivelUsuariocomboBox.Name = "NivelUsuariocomboBox";
             this.NivelUsuariocomboBox.Size = new System.Drawing.Size(272, 24);
             this.NivelUsuariocomboBox.TabIndex = 3;
@@ -86,14 +86,14 @@
             // 
             this.FechaIngresodateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaIngresodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaIngresodateTimePicker.Location = new System.Drawing.Point(149, 360);
+            this.FechaIngresodateTimePicker.Location = new System.Drawing.Point(149, 369);
             this.FechaIngresodateTimePicker.Name = "FechaIngresodateTimePicker";
             this.FechaIngresodateTimePicker.Size = new System.Drawing.Size(271, 22);
             this.FechaIngresodateTimePicker.TabIndex = 7;
             // 
             // ClavetextBox
             // 
-            this.ClavetextBox.Location = new System.Drawing.Point(149, 265);
+            this.ClavetextBox.Location = new System.Drawing.Point(149, 275);
             this.ClavetextBox.Name = "ClavetextBox";
             this.ClavetextBox.Size = new System.Drawing.Size(271, 22);
             this.ClavetextBox.TabIndex = 5;
@@ -108,7 +108,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 365);
+            this.label7.Location = new System.Drawing.Point(26, 374);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 17);
             this.label7.TabIndex = 46;
@@ -117,7 +117,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 268);
+            this.label6.Location = new System.Drawing.Point(25, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 17);
             this.label6.TabIndex = 45;
@@ -126,7 +126,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 220);
+            this.label5.Location = new System.Drawing.Point(26, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 44;
@@ -135,7 +135,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 171);
+            this.label4.Location = new System.Drawing.Point(26, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 17);
             this.label4.TabIndex = 41;
@@ -170,12 +170,12 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(148, 217);
+            this.UsuariotextBox.Location = new System.Drawing.Point(148, 227);
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(272, 22);
             this.UsuariotextBox.TabIndex = 4;
+
             this.UsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuariotextBox_KeyPress);
-            this.UsuariotextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UsuariotextBox_KeyUp);
             // 
             // EmailtextBox
             // 
@@ -183,7 +183,6 @@
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(271, 22);
             this.EmailtextBox.TabIndex = 2;
-            this.EmailtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EmailtextBox_KeyPress);
             // 
             // NombretextBox
             // 

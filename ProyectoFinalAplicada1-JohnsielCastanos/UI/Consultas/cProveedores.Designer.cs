@@ -118,6 +118,7 @@
             this.ConsultadataGridView.RowTemplate.Height = 24;
             this.ConsultadataGridView.Size = new System.Drawing.Size(841, 302);
             this.ConsultadataGridView.TabIndex = 86;
+    
             // 
             // CriteriotextBox
             // 

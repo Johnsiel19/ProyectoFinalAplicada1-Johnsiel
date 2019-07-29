@@ -33,9 +33,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             TelefonomaskedTextBox.Text = string.Empty;
             CelularmaskedTextBox.Text = string.Empty;
             errorProvider.Clear();
-
-
-
         }
 
         private Proveedores LlenaClase()
@@ -75,8 +72,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
 
             bool paso = true;
-
-
 
             if (NombrestextBox.Text == string.Empty)
             {
@@ -270,13 +265,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 frm.ShowDialog();
 
                  proveedor = db.Buscar(frm.idElegido);
-
-
-
                 LlenaCampo(proveedor);
-
-
-
             }
             else
             {

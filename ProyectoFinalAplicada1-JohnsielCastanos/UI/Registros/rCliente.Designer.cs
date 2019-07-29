@@ -46,12 +46,12 @@
             this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.BalancetextBox = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BalancetextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClientenumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +86,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 283);
+            this.label6.Location = new System.Drawing.Point(32, 286);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 58;
@@ -95,7 +95,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 230);
+            this.label7.Location = new System.Drawing.Point(32, 231);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 59;
@@ -104,7 +104,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 172);
+            this.label8.Location = new System.Drawing.Point(32, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 17);
             this.label8.TabIndex = 60;
@@ -113,7 +113,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 119);
+            this.label9.Location = new System.Drawing.Point(32, 123);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 17);
             this.label9.TabIndex = 61;
@@ -145,7 +145,7 @@
             // 
             // EmailtextBox
             // 
-            this.EmailtextBox.Location = new System.Drawing.Point(131, 169);
+            this.EmailtextBox.Location = new System.Drawing.Point(131, 173);
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(308, 22);
             this.EmailtextBox.TabIndex = 3;
@@ -160,7 +160,7 @@
             // 
             // CedulamaskedTextBox
             // 
-            this.CedulamaskedTextBox.Location = new System.Drawing.Point(132, 119);
+            this.CedulamaskedTextBox.Location = new System.Drawing.Point(132, 123);
             this.CedulamaskedTextBox.Mask = "000-0000000-0";
             this.CedulamaskedTextBox.Name = "CedulamaskedTextBox";
             this.CedulamaskedTextBox.Size = new System.Drawing.Size(100, 22);
@@ -169,7 +169,7 @@
             // 
             // TelefonomaskedTextBox
             // 
-            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(132, 225);
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(132, 226);
             this.TelefonomaskedTextBox.Mask = "(999)000-0000";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
             this.TelefonomaskedTextBox.Size = new System.Drawing.Size(100, 22);
@@ -178,7 +178,7 @@
             // 
             // CelularmaskedTextBox
             // 
-            this.CelularmaskedTextBox.Location = new System.Drawing.Point(131, 280);
+            this.CelularmaskedTextBox.Location = new System.Drawing.Point(131, 283);
             this.CelularmaskedTextBox.Mask = "(999)000-0000";
             this.CelularmaskedTextBox.Name = "CelularmaskedTextBox";
             this.CelularmaskedTextBox.Size = new System.Drawing.Size(100, 22);
@@ -198,11 +198,28 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 485);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 17);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Balance";
+            // 
+            // BalancetextBox
+            // 
+            this.BalancetextBox.Location = new System.Drawing.Point(131, 485);
+            this.BalancetextBox.Name = "BalancetextBox";
+            this.BalancetextBox.ReadOnly = true;
+            this.BalancetextBox.Size = new System.Drawing.Size(100, 22);
+            this.BalancetextBox.TabIndex = 64;
+            // 
             // Nuevobutton
             // 
             this.Nuevobutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(34, 523);
+            this.Nuevobutton.Location = new System.Drawing.Point(35, 535);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 71);
             this.Nuevobutton.TabIndex = 9;
@@ -217,7 +234,7 @@
             this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Buscarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(258, 15);
+            this.Buscarbutton.Location = new System.Drawing.Point(255, 15);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(45, 44);
             this.Buscarbutton.TabIndex = 52;
@@ -229,7 +246,7 @@
             // 
             this.Eliminarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(359, 523);
+            this.Eliminarbutton.Location = new System.Drawing.Point(359, 535);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 71);
             this.Eliminarbutton.TabIndex = 51;
@@ -242,7 +259,7 @@
             // 
             this.Guardarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.guardar;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(188, 523);
+            this.Guardarbutton.Location = new System.Drawing.Point(188, 535);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 71);
             this.Guardarbutton.TabIndex = 8;
@@ -251,28 +268,11 @@
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click_1);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 475);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 17);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "Balance";
-            // 
-            // BalancetextBox
-            // 
-            this.BalancetextBox.Location = new System.Drawing.Point(131, 475);
-            this.BalancetextBox.Name = "BalancetextBox";
-            this.BalancetextBox.ReadOnly = true;
-            this.BalancetextBox.Size = new System.Drawing.Size(100, 22);
-            this.BalancetextBox.TabIndex = 64;
-            // 
             // rCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 612);
+            this.ClientSize = new System.Drawing.Size(479, 635);
             this.Controls.Add(this.BalancetextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FechadateTimePicker);
@@ -297,7 +297,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Name = "rCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro Cliente";
+            this.Text = "Registro Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.ClientenumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);

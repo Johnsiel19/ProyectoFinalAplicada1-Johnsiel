@@ -170,5 +170,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
          
     }
+
+ 
     }
 }

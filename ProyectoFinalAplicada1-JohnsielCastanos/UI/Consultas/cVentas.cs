@@ -191,5 +191,6 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             }
         }
         public int idElegido;
+
     }
 }

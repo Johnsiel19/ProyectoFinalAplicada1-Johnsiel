@@ -96,6 +96,7 @@
             // 
             // MontoPagarnumericUpDown
             // 
+            this.MontoPagarnumericUpDown.DecimalPlaces = 10;
             this.MontoPagarnumericUpDown.Location = new System.Drawing.Point(135, 199);
             this.MontoPagarnumericUpDown.Maximum = new decimal(new int[] {
             999999,

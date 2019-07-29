@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Reportes;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
@@ -16,6 +17,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
     {
 
         public List<Clientes> ListaClientes;
+
         public cCliente(int valor)
         {
             InitializeComponent();
@@ -157,5 +159,21 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         {
             Consultarbutton.PerformClick();
         }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No hay Datos Para Imprimir");
+                return;
+            }
+            else
+            {
+                ClientesReporte reporte = new ClientesReporte(ListaClientes);
+                reporte.ShowDialog();
+            }
+
+             
+    }
     }
 }

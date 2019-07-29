@@ -180,14 +180,26 @@
             // 
             // PrecionumericUpDown
             // 
+            this.PrecionumericUpDown.DecimalPlaces = 2;
             this.PrecionumericUpDown.Location = new System.Drawing.Point(570, 147);
+            this.PrecionumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
             this.PrecionumericUpDown.Size = new System.Drawing.Size(89, 22);
             this.PrecionumericUpDown.TabIndex = 14;
             // 
             // CantidadnumericUpDown
             // 
+            this.CantidadnumericUpDown.DecimalPlaces = 2;
             this.CantidadnumericUpDown.Location = new System.Drawing.Point(410, 147);
+            this.CantidadnumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(72, 22);
             this.CantidadnumericUpDown.TabIndex = 15;

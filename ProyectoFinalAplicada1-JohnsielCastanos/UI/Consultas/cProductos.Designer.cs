@@ -50,7 +50,7 @@
             // FiltroFecha
             // 
             this.FiltroFecha.AutoSize = true;
-            this.FiltroFecha.Location = new System.Drawing.Point(18, 5);
+            this.FiltroFecha.Location = new System.Drawing.Point(0, 0);
             this.FiltroFecha.Name = "FiltroFecha";
             this.FiltroFecha.Size = new System.Drawing.Size(103, 21);
             this.FiltroFecha.TabIndex = 76;
@@ -72,7 +72,7 @@
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(495, 65);
+            this.CriteriotextBox.Location = new System.Drawing.Point(495, 63);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(239, 22);
             this.CriteriotextBox.TabIndex = 74;
@@ -90,7 +90,7 @@
             "Costo",
             "Precio",
             "UsuarioId"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(314, 65);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(314, 63);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(166, 24);
             this.FiltrocomboBox.TabIndex = 73;
@@ -99,7 +99,7 @@
             // 
             this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(116, 44);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(116, 38);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(108, 22);
             this.HastadateTimePicker.TabIndex = 72;
@@ -108,7 +108,7 @@
             // 
             this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(4, 44);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(4, 39);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(106, 22);
             this.DesdedateTimePicker.TabIndex = 71;
@@ -116,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(494, 40);
+            this.label4.Location = new System.Drawing.Point(492, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 17);
             this.label4.TabIndex = 70;
@@ -125,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(314, 41);
+            this.label3.Location = new System.Drawing.Point(311, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 69;
@@ -161,6 +161,7 @@
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.HastadateTimePicker);
+            this.groupBox1.Controls.Add(this.FiltroFecha);
             this.groupBox1.Controls.Add(this.DesdedateTimePicker);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(18, 24);
@@ -198,9 +199,9 @@
             // 
             this.Consultarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(750, 58);
+            this.Consultarbutton.Location = new System.Drawing.Point(750, 50);
             this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(109, 33);
+            this.Consultarbutton.Size = new System.Drawing.Size(109, 37);
             this.Consultarbutton.TabIndex = 65;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -215,7 +216,6 @@
             this.ClientSize = new System.Drawing.Size(882, 478);
             this.Controls.Add(this.Elegirbutton);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.FiltroFecha);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.CriteriotextBox);
             this.Controls.Add(this.FiltrocomboBox);

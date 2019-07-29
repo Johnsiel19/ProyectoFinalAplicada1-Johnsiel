@@ -40,9 +40,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Elegirbutton = new System.Windows.Forms.Button();
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Consultarbutton = new System.Windows.Forms.Button();
-            this.Elegirbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
@@ -51,18 +51,19 @@
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.HastadateTimePicker);
+            this.groupBox1.Controls.Add(this.FiltroFecha);
             this.groupBox1.Controls.Add(this.DesdedateTimePicker);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(28, 38);
+            this.groupBox1.Location = new System.Drawing.Point(28, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 67);
+            this.groupBox1.Size = new System.Drawing.Size(282, 83);
             this.groupBox1.TabIndex = 88;
             this.groupBox1.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 19);
+            this.label5.Location = new System.Drawing.Point(1, 30);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 17);
             this.label5.TabIndex = 77;
@@ -72,24 +73,24 @@
             // 
             this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(116, 44);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(142, 55);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
-            this.HastadateTimePicker.Size = new System.Drawing.Size(108, 22);
+            this.HastadateTimePicker.Size = new System.Drawing.Size(131, 22);
             this.HastadateTimePicker.TabIndex = 72;
             // 
             // DesdedateTimePicker
             // 
             this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(4, 44);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(4, 55);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
-            this.DesdedateTimePicker.Size = new System.Drawing.Size(106, 22);
+            this.DesdedateTimePicker.Size = new System.Drawing.Size(129, 22);
             this.DesdedateTimePicker.TabIndex = 71;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 19);
+            this.label2.Location = new System.Drawing.Point(113, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 68;
@@ -98,7 +99,7 @@
             // FiltroFecha
             // 
             this.FiltroFecha.AutoSize = true;
-            this.FiltroFecha.Location = new System.Drawing.Point(28, 19);
+            this.FiltroFecha.Location = new System.Drawing.Point(18, 0);
             this.FiltroFecha.Name = "FiltroFecha";
             this.FiltroFecha.Size = new System.Drawing.Size(103, 21);
             this.FiltroFecha.TabIndex = 87;
@@ -111,7 +112,7 @@
             this.ConsultadataGridView.AllowUserToDeleteRows = false;
             this.ConsultadataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultadataGridView.Location = new System.Drawing.Point(28, 110);
+            this.ConsultadataGridView.Location = new System.Drawing.Point(28, 108);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
             this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.RowTemplate.Height = 24;
@@ -120,7 +121,7 @@
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(505, 79);
+            this.CriteriotextBox.Location = new System.Drawing.Point(505, 64);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(239, 22);
             this.CriteriotextBox.TabIndex = 85;
@@ -138,7 +139,7 @@
             "Costo",
             "Precio",
             "UsuarioId"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(324, 79);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(324, 64);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(166, 24);
             this.FiltrocomboBox.TabIndex = 84;
@@ -146,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(504, 54);
+            this.label4.Location = new System.Drawing.Point(502, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 17);
             this.label4.TabIndex = 83;
@@ -155,7 +156,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(324, 55);
+            this.label3.Location = new System.Drawing.Point(321, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 82;
@@ -164,19 +165,34 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 54);
+            this.label1.Location = new System.Drawing.Point(25, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 81;
             // 
+            // Elegirbutton
+            // 
+            this.Elegirbutton.AutoSize = true;
+            this.Elegirbutton.FlatAppearance.BorderSize = 0;
+            this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
+            this.Elegirbutton.Location = new System.Drawing.Point(28, 430);
+            this.Elegirbutton.Name = "Elegirbutton";
+            this.Elegirbutton.Size = new System.Drawing.Size(40, 49);
+            this.Elegirbutton.TabIndex = 89;
+            this.Elegirbutton.UseVisualStyleBackColor = true;
+            this.Elegirbutton.Visible = false;
+            this.Elegirbutton.Click += new System.EventHandler(this.Elegirbutton_Click);
+            // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.AutoSize = true;
             this.Imprimirbutton.FlatAppearance.BorderSize = 0;
             this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.Imprimirbutton.Location = new System.Drawing.Point(811, 430);
+            this.Imprimirbutton.Location = new System.Drawing.Point(827, 430);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Imprimirbutton.Size = new System.Drawing.Size(42, 49);
             this.Imprimirbutton.TabIndex = 80;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
@@ -185,36 +201,22 @@
             // 
             this.Consultarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(760, 72);
+            this.Consultarbutton.Location = new System.Drawing.Point(760, 53);
             this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(109, 33);
+            this.Consultarbutton.Size = new System.Drawing.Size(109, 35);
             this.Consultarbutton.TabIndex = 79;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Consultarbutton.UseVisualStyleBackColor = true;
             this.Consultarbutton.Click += new System.EventHandler(this.Consultarbutton_Click);
             // 
-            // Elegirbutton
-            // 
-            this.Elegirbutton.FlatAppearance.BorderSize = 0;
-            this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
-            this.Elegirbutton.Location = new System.Drawing.Point(28, 430);
-            this.Elegirbutton.Name = "Elegirbutton";
-            this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
-            this.Elegirbutton.TabIndex = 89;
-            this.Elegirbutton.UseVisualStyleBackColor = true;
-            this.Elegirbutton.Visible = false;
-            this.Elegirbutton.Click += new System.EventHandler(this.Elegirbutton_Click);
-            // 
             // cProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 501);
+            this.ClientSize = new System.Drawing.Size(899, 485);
             this.Controls.Add(this.Elegirbutton);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.FiltroFecha);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.CriteriotextBox);
             this.Controls.Add(this.FiltrocomboBox);

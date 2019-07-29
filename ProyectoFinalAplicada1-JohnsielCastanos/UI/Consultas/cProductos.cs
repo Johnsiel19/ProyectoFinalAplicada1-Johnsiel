@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using ProyectoFinalAplicada1_JohnsielCastanos.Reportes;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Reportes;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
     public partial class cProductos : Form
     {
-        public List<Productos> ListaClientes;
+        public List<Productos> listaProductos;
         public cProductos(int valor)
         {
             InitializeComponent();
@@ -91,8 +93,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                         listado = listado.Where(c => c.Fecha.Date >= DesdedateTimePicker.Value.Date && c.Fecha.Date <= HastadateTimePicker.Value.Date).ToList();
                     }
 
-                    ListaClientes = listado;
-                    ConsultadataGridView.DataSource = ListaClientes;
+                    listaProductos = listado;
+                    ConsultadataGridView.DataSource = listaProductos;
 
                 }
                 catch (Exception)
@@ -154,8 +156,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                     listado = db.GetList(p => true);
                 }
 
-                ListaClientes = listado;
-                ConsultadataGridView.DataSource = ListaClientes;
+                listaProductos = listado;
+                ConsultadataGridView.DataSource = listaProductos;
             }
         }
 
@@ -186,8 +188,19 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-           
-        }
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No hay Datos Para Imprimir");
+                return;
+            }
+            else
+            {
+                ProductosReporte reporte = new ProductosReporte(listaProductos);
+                reporte.ShowDialog();
+            }
+
+             
+    }
 
         private void CProductos_Load(object sender, EventArgs e)
         {

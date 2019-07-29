@@ -82,7 +82,13 @@
             // 
             // ProductoEntradanumericUpDown
             // 
+            this.ProductoEntradanumericUpDown.DecimalPlaces = 2;
             this.ProductoEntradanumericUpDown.Location = new System.Drawing.Point(124, 149);
+            this.ProductoEntradanumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.ProductoEntradanumericUpDown.Name = "ProductoEntradanumericUpDown";
             this.ProductoEntradanumericUpDown.Size = new System.Drawing.Size(92, 22);
             this.ProductoEntradanumericUpDown.TabIndex = 4;

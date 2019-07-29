@@ -54,9 +54,9 @@
             this.groupBox1.Controls.Add(this.FiltroFecha);
             this.groupBox1.Controls.Add(this.DesdedateTimePicker);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(17, 15);
+            this.groupBox1.Location = new System.Drawing.Point(17, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(282, 67);
+            this.groupBox1.Size = new System.Drawing.Size(282, 70);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             // 
@@ -73,7 +73,7 @@
             // 
             this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(116, 44);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(137, 41);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(108, 22);
             this.HastadateTimePicker.TabIndex = 72;
@@ -92,7 +92,7 @@
             // 
             this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(4, 44);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(6, 41);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(106, 22);
             this.DesdedateTimePicker.TabIndex = 71;
@@ -100,7 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(113, 19);
+            this.label2.Location = new System.Drawing.Point(113, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 68;
@@ -170,12 +170,13 @@
             // 
             // Elegirbutton
             // 
+            this.Elegirbutton.AutoSize = true;
             this.Elegirbutton.FlatAppearance.BorderSize = 0;
             this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
-            this.Elegirbutton.Location = new System.Drawing.Point(17, 407);
+            this.Elegirbutton.Location = new System.Drawing.Point(17, 412);
             this.Elegirbutton.Name = "Elegirbutton";
-            this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Elegirbutton.Size = new System.Drawing.Size(50, 44);
             this.Elegirbutton.TabIndex = 99;
             this.Elegirbutton.UseVisualStyleBackColor = true;
             this.Elegirbutton.Visible = false;
@@ -183,22 +184,24 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.AutoSize = true;
             this.Imprimirbutton.FlatAppearance.BorderSize = 0;
             this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.Imprimirbutton.Location = new System.Drawing.Point(800, 407);
+            this.Imprimirbutton.Location = new System.Drawing.Point(820, 412);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Imprimirbutton.Size = new System.Drawing.Size(38, 38);
             this.Imprimirbutton.TabIndex = 91;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Consultarbutton
             // 
             this.Consultarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(749, 49);
+            this.Consultarbutton.Location = new System.Drawing.Point(749, 45);
             this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(109, 33);
+            this.Consultarbutton.Size = new System.Drawing.Size(109, 35);
             this.Consultarbutton.TabIndex = 90;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

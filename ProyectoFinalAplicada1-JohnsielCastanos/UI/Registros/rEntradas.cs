@@ -15,12 +15,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
     public partial class rEntradas : Form
     {
-        public rEntradas()
+        public rEntradas(int id)
         {
+            this.IdUsario = id;
             InitializeComponent();
             LlenarComboBoxProducto();
         }
-
+        public int IdUsario { get; set; }
 
         private void LlenarComboBoxProducto()
         {
@@ -57,7 +58,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             entrada.EntradaId = Convert.ToInt32(EntradaIdnumericUpDown.Value);
             entrada.Fecha = FechadateTimePicker.Value;
             entrada.Entrada = Convert.ToDouble(ProductoEntradanumericUpDown.Value);
-            entrada.UsuarioId = 0;
+            entrada.UsuarioId = IdUsario;
             entrada.ProductoId = Convert.ToInt32( ProductocomboBox.SelectedValue );
             return entrada;
 

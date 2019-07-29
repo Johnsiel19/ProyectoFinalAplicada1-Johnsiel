@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Reportes;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
@@ -163,11 +164,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             }
             else
             {
-                UsuarioReport reporte = new UsuarioReport(ListaUsuarios);
+                ProveedoresReporte reporte = new ProveedoresReporte(ListaProveedores);
                 reporte.ShowDialog();
             }
 
-             public List<Usuarios> ListaUsuarios;
+         
     }
     }
 }

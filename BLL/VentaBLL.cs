@@ -97,7 +97,7 @@ namespace BLL
 
             RepositorioBase<Clientes> client = new RepositorioBase<Clientes>();
             RepositorioBase<Ventas> vent = new RepositorioBase<Ventas>();
-            RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
+          
 
       
 
@@ -109,6 +109,16 @@ namespace BLL
             ClientesAnteriores.Balance -= VentasAnteriores.Total;
             client.Modificar(Cliente);
             client.Modificar(ClientesAnteriores);
+
+            var Venta = vent.Buscar(ventas.VentaId);
+            var ventaanterior= vent.Buscar(VentasAnteriores.VentaId);
+
+            Venta.Balance += ventas.Total;
+            ventaanterior.Balance -= VentasAnteriores.Total;
+            vent.Modificar(Venta);
+     
+
+
 
         }
 

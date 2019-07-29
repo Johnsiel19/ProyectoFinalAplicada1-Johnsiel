@@ -27,7 +27,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void UsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuario frm = new rUsuario();
+            rUsuario frm = new rUsuario(IdUsario);
             frm.Show();
 
         }
@@ -40,33 +40,33 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void ClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCliente frm = new rCliente();
+            rCliente frm = new rCliente(IdUsario);
             frm.Show();
         }
 
         private void ProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProducto frm = new rProducto();
+            rProducto frm = new rProducto(IdUsario);
             frm.Show();
             
         }
 
         private void ProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rProveedor frm = new rProveedor();
+            rProveedor frm = new rProveedor(IdUsario);
             frm.Show();
             
         }
 
         private void VentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rVentas frm = new rVentas();
+            rVentas frm = new rVentas(IdUsario);
             frm.Show();
         }
 
         private void CobroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rCobro frm = new rCobro();
+            rCobro frm = new rCobro(IdUsario);
             frm.Show();
         }
 
@@ -96,7 +96,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void EntradasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rEntradas frm = new rEntradas();
+            rEntradas frm = new rEntradas(IdUsario);
             frm.Show();
         }
 
@@ -127,6 +127,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
         {
             cCobros frm = new cCobros(0);
             frm.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+            Application.ExitThread();
         }
     }
 }

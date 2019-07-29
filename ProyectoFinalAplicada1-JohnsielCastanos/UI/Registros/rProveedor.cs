@@ -17,11 +17,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
     public partial class rProveedor : Form
     {
-        public rProveedor()
+        public rProveedor(int id )
         {
+            this.IdUsario = id;
             InitializeComponent();
         }
-
+        public int IdUsario { get; set; }
 
         private void Limpiar()
         {
@@ -45,7 +46,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             proveedor.Email = EmailtextBox.Text;
             proveedor.Celular = CelularmaskedTextBox.Text;
             proveedor.Telefono = TelefonomaskedTextBox.Text;
-            proveedor.UsuarioId = 0;
+            proveedor.UsuarioId = IdUsario;
             proveedor.Fecha = FechadateTimePicker.Value;
             return proveedor;
 

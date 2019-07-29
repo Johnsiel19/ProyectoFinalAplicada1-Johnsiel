@@ -15,8 +15,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
     public partial class rCobro : Form
     {
-        public rCobro()
+        public rCobro(int id)
         {
+            this.IdUsario = id;
             InitializeComponent();
             LlenarComboBoxCliente();
           
@@ -25,6 +26,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
      
     
         }
+        public int IdUsario { get; set; }
 
         private void LlenarComboBoxCliente()
         {
@@ -104,7 +106,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             cobro.VentaId = Convert.ToInt32(VentacomboBox.SelectedValue);
             cobro.MontoPagado = Convert.ToDouble(MontoPagarnumericUpDown.Value);
             cobro.Observacion = ObservaciontextBox.Text.Trim();
-            cobro.UsuarioId = 0;
+            cobro.UsuarioId = IdUsario;
             cobro.Fecha = FechadateTimePicker.Value;
             return cobro;
 

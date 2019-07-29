@@ -17,10 +17,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
     public partial class rCliente : Form
     {
-        public rCliente()
+        public rCliente(int id )
         {
+            this.IdUsario = id;
             InitializeComponent();
         }
+        public int IdUsario { get; set; }
 
 
         private void Limpiar()
@@ -40,6 +42,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         private Clientes LlenaClase()
         {
+           
             Clientes cliente = new Clientes();
             cliente.ClienteId = Convert.ToInt32(ClientenumericUpDown.Value);
             cliente.Nombre = NombrestextBox.Text.Trim();
@@ -48,7 +51,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             cliente.Telefono = TelefonomaskedTextBox.Text;
             cliente.Cedula = CedulamaskedTextBox.Text;
             cliente.Celular = CelularmaskedTextBox.Text;
-            cliente.UsuarioId = 0;
+            cliente.UsuarioId = IdUsario;
             cliente.Fecha = FechadateTimePicker.Value;
             return cliente;
 

@@ -18,10 +18,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
 {
     public partial class rUsuario : Form
     {
-        public rUsuario()
+        public rUsuario(int id)
         {
+            this.IdUsario = id;
             InitializeComponent();
         }
+        public int IdUsario { get; set; }
 
 
         private void Limpiar()

@@ -148,21 +148,39 @@
             // 
             // CostonumericUpDown
             // 
+            this.CostonumericUpDown.DecimalPlaces = 2;
             this.CostonumericUpDown.Location = new System.Drawing.Point(137, 310);
+            this.CostonumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.CostonumericUpDown.Name = "CostonumericUpDown";
             this.CostonumericUpDown.Size = new System.Drawing.Size(88, 22);
             this.CostonumericUpDown.TabIndex = 5;
             // 
             // PrecionumericUpDown
             // 
+            this.PrecionumericUpDown.DecimalPlaces = 2;
             this.PrecionumericUpDown.Location = new System.Drawing.Point(137, 368);
+            this.PrecionumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.PrecionumericUpDown.Name = "PrecionumericUpDown";
             this.PrecionumericUpDown.Size = new System.Drawing.Size(88, 22);
             this.PrecionumericUpDown.TabIndex = 6;
             // 
             // ProductoItbisnumericUpDown
             // 
+            this.ProductoItbisnumericUpDown.DecimalPlaces = 2;
             this.ProductoItbisnumericUpDown.Location = new System.Drawing.Point(137, 253);
+            this.ProductoItbisnumericUpDown.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.ProductoItbisnumericUpDown.Name = "ProductoItbisnumericUpDown";
             this.ProductoItbisnumericUpDown.Size = new System.Drawing.Size(88, 22);
             this.ProductoItbisnumericUpDown.TabIndex = 4;

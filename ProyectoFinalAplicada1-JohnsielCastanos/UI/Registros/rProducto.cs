@@ -16,13 +16,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 {
     public partial class rProducto : Form
     {
-        public rProducto()
+        public rProducto(int id )
         {
+            this.IdUsario = id;
             InitializeComponent();
             LlenarComboBoxProveedores();
             ProveedorcomboBox.Text = null;
         }
-
+        public int IdUsario { get; set; }
         private void LlenarComboBoxProveedores()
         {
             RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
@@ -62,7 +63,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             producto.Costo = Convert.ToDouble( CostonumericUpDown.Value);
             producto.ProductoItbis = Convert.ToInt32(ProductoItbisnumericUpDown.Value);
             producto.ProveedorId = Convert.ToInt32(ProveedorcomboBox.SelectedValue);
-            producto.UsuarioId = 0;
+            producto.UsuarioId = IdUsario;
             producto.Fecha = FechadateTimePicker.Value;
             return producto;
 
@@ -307,7 +308,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            rProveedor frm = new rProveedor();
+            rProveedor frm = new rProveedor(IdUsario);
             frm.ShowDialog();
         }
     }

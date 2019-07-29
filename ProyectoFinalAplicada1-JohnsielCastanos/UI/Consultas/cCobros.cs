@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoFinalAplicada1_JohnsielCastanos.Reportes;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Reportes;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
@@ -60,7 +62,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                                 listado = db.GetList(p => p.VentaId == VentaId);
                                 break;
 
-                            case "Monto Pagado":
+                            case "MontoPagado":
                                 int MontoPagado = Convert.ToInt32(CriteriotextBox.Text);
                                 listado = db.GetList(p => p.MontoPagado == MontoPagado);
                                 break;
@@ -117,7 +119,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
                             listado = db.GetList(p => p.VentaId == VentaId);
                             break;
 
-                        case "Monto Pagado":
+                        case "MontoPagado":
                             int MontoPagado = Convert.ToInt32(CriteriotextBox.Text);
                             listado = db.GetList(p => p.MontoPagado == MontoPagado);
                             break;
@@ -159,5 +161,21 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
             }
         }
         public int idElegido { get; set; }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No hay Datos Para Imprimir");
+                return;
+            }
+            else
+            {
+                CobrosReporte reporte = new CobrosReporte(ListaCobros);
+                reporte.ShowDialog();
+            }
+
+            
+         }
     }
 }

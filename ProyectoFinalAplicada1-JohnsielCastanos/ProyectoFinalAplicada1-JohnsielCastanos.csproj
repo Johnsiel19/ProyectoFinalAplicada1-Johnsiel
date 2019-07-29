@@ -161,6 +161,24 @@
     <Compile Include="UI\Registros\rVentas.Designer.cs">
       <DependentUpon>rVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Reportes\ClientesReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ClientesReporte.Designer.cs">
+      <DependentUpon>ClientesReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\CobrosReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\CobrosReporte.Designer.cs">
+      <DependentUpon>CobrosReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\EntradasReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\EntradasReporte.Designer.cs">
+      <DependentUpon>EntradasReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Reportes\ListadoClientes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,17 +209,41 @@
       <DependentUpon>ListadoProveesores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UI\Reportes\UsuarioReport.cs">
+    <Compile Include="UI\Reportes\ListadoVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ProductosReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Reportes\UsuarioReport.Designer.cs">
-      <DependentUpon>UsuarioReport.cs</DependentUpon>
+    <Compile Include="UI\Reportes\ProductosReporte.Designer.cs">
+      <DependentUpon>ProductosReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\ProveedoresReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\ProveedoresReporte.Designer.cs">
+      <DependentUpon>ProveedoresReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Reportes\UsuarioReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\UsuarioReporte.Designer.cs">
+      <DependentUpon>UsuarioReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Reportes\ListadoUsuarios.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListadoUsuarios.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\VentasReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Reportes\VentasReporte.Designer.cs">
+      <DependentUpon>VentasReporte.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -261,6 +303,15 @@
     <EmbeddedResource Include="UI\Registros\rVentas.resx">
       <DependentUpon>rVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ClientesReporte.resx">
+      <DependentUpon>ClientesReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\CobrosReporte.resx">
+      <DependentUpon>CobrosReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\EntradasReporte.resx">
+      <DependentUpon>EntradasReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ListadoClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoClientes.cs</LastGenOutput>
@@ -281,12 +332,25 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoProveesores.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Reportes\UsuarioReport.resx">
-      <DependentUpon>UsuarioReport.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Reportes\ListadoVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoVentas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ProductosReporte.resx">
+      <DependentUpon>ProductosReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\ProveedoresReporte.resx">
+      <DependentUpon>ProveedoresReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\UsuarioReporte.resx">
+      <DependentUpon>UsuarioReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reportes\ListadoUsuarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListadoUsuarios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Reportes\VentasReporte.resx">
+      <DependentUpon>VentasReporte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -363,6 +427,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_customer_person_13976.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ferreteria.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

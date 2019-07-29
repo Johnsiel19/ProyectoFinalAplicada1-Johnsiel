@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using Entidades;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Reportes;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
@@ -162,7 +163,16 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
-
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No hay Datos Para Imprimir");
+                return;
+            }
+            else
+            {
+                VentasReporte reporte = new VentasReporte(ListaVentas);
+                reporte.ShowDialog();
+            }
         }
 
         private void Elegirbutton_Click(object sender, EventArgs e)

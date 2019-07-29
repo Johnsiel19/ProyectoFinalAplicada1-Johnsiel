@@ -54,7 +54,7 @@
             this.groupBox1.Controls.Add(this.FiltroFecha);
             this.groupBox1.Controls.Add(this.DesdedateTimePicker);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(17, 20);
+            this.groupBox1.Location = new System.Drawing.Point(17, 17);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(282, 67);
             this.groupBox1.TabIndex = 98;
@@ -73,9 +73,9 @@
             // 
             this.HastadateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastadateTimePicker.Location = new System.Drawing.Point(116, 44);
+            this.HastadateTimePicker.Location = new System.Drawing.Point(138, 41);
             this.HastadateTimePicker.Name = "HastadateTimePicker";
-            this.HastadateTimePicker.Size = new System.Drawing.Size(108, 22);
+            this.HastadateTimePicker.Size = new System.Drawing.Size(138, 22);
             this.HastadateTimePicker.TabIndex = 72;
             // 
             // FiltroFecha
@@ -92,9 +92,9 @@
             // 
             this.DesdedateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdedateTimePicker.Location = new System.Drawing.Point(4, 44);
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(4, 41);
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
-            this.DesdedateTimePicker.Size = new System.Drawing.Size(106, 22);
+            this.DesdedateTimePicker.Size = new System.Drawing.Size(128, 22);
             this.DesdedateTimePicker.TabIndex = 71;
             // 
             // label2
@@ -121,7 +121,7 @@
             // 
             // CriteriotextBox
             // 
-            this.CriteriotextBox.Location = new System.Drawing.Point(494, 61);
+            this.CriteriotextBox.Location = new System.Drawing.Point(494, 58);
             this.CriteriotextBox.Name = "CriteriotextBox";
             this.CriteriotextBox.Size = new System.Drawing.Size(239, 22);
             this.CriteriotextBox.TabIndex = 96;
@@ -138,7 +138,7 @@
             "Costo",
             "Precio",
             "UsuarioId"});
-            this.FiltrocomboBox.Location = new System.Drawing.Point(313, 61);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(313, 58);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(166, 24);
             this.FiltrocomboBox.TabIndex = 95;
@@ -146,7 +146,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(493, 36);
+            this.label4.Location = new System.Drawing.Point(491, 36);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 17);
             this.label4.TabIndex = 94;
@@ -155,7 +155,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(313, 37);
+            this.label3.Location = new System.Drawing.Point(310, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 17);
             this.label3.TabIndex = 93;
@@ -171,12 +171,13 @@
             // 
             // Elegirbutton
             // 
+            this.Elegirbutton.AutoSize = true;
             this.Elegirbutton.FlatAppearance.BorderSize = 0;
             this.Elegirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Elegirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.one_finger_click_black_hand_symbol_icon_icons_com_64350;
             this.Elegirbutton.Location = new System.Drawing.Point(17, 412);
             this.Elegirbutton.Name = "Elegirbutton";
-            this.Elegirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Elegirbutton.Size = new System.Drawing.Size(40, 49);
             this.Elegirbutton.TabIndex = 99;
             this.Elegirbutton.UseVisualStyleBackColor = true;
             this.Elegirbutton.Visible = false;
@@ -184,22 +185,24 @@
             // 
             // Imprimirbutton
             // 
+            this.Imprimirbutton.AutoSize = true;
             this.Imprimirbutton.FlatAppearance.BorderSize = 0;
             this.Imprimirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Imprimirbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.print_102332;
-            this.Imprimirbutton.Location = new System.Drawing.Point(800, 412);
+            this.Imprimirbutton.Location = new System.Drawing.Point(816, 412);
             this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(58, 49);
+            this.Imprimirbutton.Size = new System.Drawing.Size(42, 49);
             this.Imprimirbutton.TabIndex = 91;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
             // 
             // Consultarbutton
             // 
             this.Consultarbutton.Image = global::ProyectoFinalAplicada1_JohnsielCastanos.Properties.Resources.search_locate_find_13974;
             this.Consultarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Consultarbutton.Location = new System.Drawing.Point(749, 54);
+            this.Consultarbutton.Location = new System.Drawing.Point(749, 45);
             this.Consultarbutton.Name = "Consultarbutton";
-            this.Consultarbutton.Size = new System.Drawing.Size(109, 33);
+            this.Consultarbutton.Size = new System.Drawing.Size(109, 35);
             this.Consultarbutton.TabIndex = 90;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

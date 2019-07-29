@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI.Reportes;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
 {
@@ -167,5 +168,20 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
            
         }
         public int CodigoEntrada;
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if (ConsultadataGridView.RowCount == 0)
+            {
+                MessageBox.Show("No hay Datos Para Imprimir");
+                return;
+            }
+            else
+            {
+                EntradasReporte reporte = new EntradasReporte(ListaEntradas);
+                reporte.ShowDialog();
+            }
+
+        }
     }
 }

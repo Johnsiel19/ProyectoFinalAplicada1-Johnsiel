@@ -18,8 +18,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
     {
 
         public List<VentasDetalle> Detalle;
-        public rVentas()
+        public rVentas(int id)
         {
+            this.IdUsario = id;
             InitializeComponent();
             LlenarComboBoxCliente();
             LlenarComboBoxProducto();
@@ -27,6 +28,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             FuncionDeInicio();
 
         }
+        public int IdUsario { get; set; }
 
         private void FuncionDeInicio()
         {
@@ -368,6 +370,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 return;
 
             }
+         
             if (producto.Existencia - Convert.ToDouble(CantidadnumericUpDown.Value) < 0)
             {
                 errorProvider.SetError(CantidadnumericUpDown, "El almacen del producto no es suficiente ");
@@ -451,7 +454,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            rCliente frm = new rCliente();
+            rCliente frm = new rCliente(IdUsario);
             frm.ShowDialog();
         }
 

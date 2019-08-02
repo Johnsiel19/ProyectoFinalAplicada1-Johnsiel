@@ -1,22 +1,22 @@
 # ProyectoFinalAplicada1-Johnsiel
 
-Saludos, Este un sistemas de Ventas de una ferreteria, El cual tiene los beneficios de registro de clientes, 
-Usuarios, proveedores, Productos, Entradas, ventas y por consiguiente su cobro.
+Saludos, Este un sistema de Ventas de una ferretería, El cual tiene los beneficios de registro de Clientes, 
+Usuarios, proveedores, Productos, Entradas, Ventas y por consiguiente su Cobro.
 
-Por otra parte tambien es posible con sultas cada unos de los registros que se han hecho, todos sin y con rangos de
-fecha. Y lo mas importante es posible Imprimir dicha informació en reportes.
+Por otra parte, también es posible consultas cada uno de los registros que se han hecho, todos sin y con rangos de
+fecha. Y lo más importante es posible Imprimir dicha información en reportes.
 
-Este sistema esta completamente resteado y con 100% consfiable su uso, ya que el manejo de las ventas y entradas de un
+Este sistema está completamente resteado y con 100% confiable su uso, ya que el manejo de las ventas y entradas de un
 sistema es muy importante y debe ser garantizado.
 
 Este es un Proyecto Creado por:
                 <b>Johnsiel Castaños Hernández</b>
                
 A la vez en la entrega del Proyecto Final de la asignatura Programación Aplicada I de la carrera de Ingeniería de Sistemas
-de la Universidas Catolica Nordestana(UCNE), San Francisco de Macorís, Republica Dominicana.
+de la Universidad Católica Nordestana (UCNE), San Francisco de Macorís, Republica Dominicana.
 
 Todos los archivos dentro de este repositorio se publican bajo la Licencia MIT (OSI).
-Este proyecto ha adoptado el Código de conducta de código abierto de Microsoft . Para obtener más información, consulte las 
+Este proyecto ha adoptado el Código de conducta de código abierto de Microsoft. Para obtener más información, consulte las 
 Preguntas frecuentes sobre el Código de conducta o comuníquese con opencode@microsoft.com si tiene preguntas o comentarios
 adicionales.
 

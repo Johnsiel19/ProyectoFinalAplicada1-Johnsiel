@@ -61,9 +61,10 @@ namespace BLL
             RepositorioBase<Productos> prod = new RepositorioBase<Productos>();
             RepositorioBase<Clientes> client = new RepositorioBase<Clientes>();
 
+
             try
             {
-                var venta = db.Ventas.Find(id);
+                Ventas venta =db.Ventas.Find(id);
                 var cliente = client.Buscar(venta.ClienteId);
                 cliente.Balance = cliente.Balance - venta.Total;
                 client.Modificar(cliente);
@@ -77,8 +78,12 @@ namespace BLL
                 }
 
 
-                db.Entry(venta).State = EntityState.Deleted;
-                paso = (db.SaveChanges() > 0);
+                db.Ventas.Remove(venta);
+                if (db.SaveChanges() > 0)
+                {
+                    paso = true;
+
+                }
             }
             catch (Exception)
             {

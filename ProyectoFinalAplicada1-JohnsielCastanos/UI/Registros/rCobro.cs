@@ -119,6 +119,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             if (db.Buscar(cobro.VentaId) != null)
             {
                 var venta = db.Buscar(cobro.VentaId);
+                VentacomboBox.Text = venta.VentaId.ToString();
                 MontoFacturatextBox.Text = venta.Balance.ToString();
             }
            

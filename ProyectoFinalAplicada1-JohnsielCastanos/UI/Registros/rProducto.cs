@@ -71,7 +71,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         private void LlenaCampo(Productos producto)
         {
-            ProductoIdnumericUpDown.Value = producto.UsuarioId;
+            ProductoIdnumericUpDown.Value = producto.ProductoId;
             DescripciontextBox.Text = producto.Descripcion.Trim();
             ExistenciatextBox.Text = producto.Existencia.ToString();
             PrecionumericUpDown.Value = Convert.ToDecimal( producto.Precio);
@@ -83,23 +83,42 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
         }
 
-        public static bool NoDuplicadoProducto(string descripcion)
+        public bool NoDuplicadoProducto(string descripcion, int id)
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
             bool paso = false;
             Contexto db2 = new Contexto();
 
-            try
+            Productos producto = new Productos();
+            if (id > 0)
             {
-                if (db2.Productos.Any(p => p.Descripcion.Equals(descripcion)))
+
+                var Producto = db.Buscar(id);
+
+                if (Producto.Descripcion != descripcion)
                 {
-                    paso = true;
+                    try
+                    {
+                        if (db2.Productos.Any(p => p.Descripcion.Equals(descripcion)))
+                        {
+                            paso = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+
+
                 }
+
+
+
             }
-            catch (Exception)
-            {
-                throw;
-            }
+
+
+
+
             return paso;
         }
 
@@ -133,9 +152,9 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
             }
 
-            if (NoDuplicadoProducto(DescripciontextBox.Text))
+            if (NoDuplicadoProducto(DescripciontextBox.Text, (int)ProductoIdnumericUpDown.Value)==true)
             {
-                errorProvider.SetError(DescripciontextBox, "El Cedula ya existe");
+                errorProvider.SetError(DescripciontextBox, "El producto ya existe");
                 DescripciontextBox.Focus();
                 paso = false;
 
@@ -238,8 +257,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
                  cProductos frm = new cProductos(0);
                  frm.ShowDialog();
-                 producto = db.Buscar(frm.codigoProducto);
-                 LlenaCampo(producto);
+                if (frm.codigoProducto > 0)
+                {
+                    producto = db.Buscar(frm.codigoProducto);
+                    LlenaCampo(producto);
+
+                }
+                
 
             }
             else

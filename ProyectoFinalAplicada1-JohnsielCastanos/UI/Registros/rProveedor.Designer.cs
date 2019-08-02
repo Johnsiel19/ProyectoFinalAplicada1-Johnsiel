@@ -128,6 +128,7 @@
             this.NombrestextBox.Name = "NombrestextBox";
             this.NombrestextBox.Size = new System.Drawing.Size(261, 22);
             this.NombrestextBox.TabIndex = 1;
+            this.NombrestextBox.TextChanged += new System.EventHandler(this.NombrestextBox_TextChanged);
             this.NombrestextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombrestextBox_KeyPress);
             // 
             // ProveedorIdnumericUpDown

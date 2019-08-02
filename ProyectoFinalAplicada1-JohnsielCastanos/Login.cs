@@ -100,20 +100,22 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
             Limpiar();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            MainForm form = new MainForm(0);
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
-
-        }
-
+     
 
 
         private void Loginbutton_Click(object sender, EventArgs e)
         {
             IniciarSesion();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+            MainForm form = new MainForm(0);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+
         }
     }
 }

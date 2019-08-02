@@ -149,16 +149,16 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
                 EmailtextBox.Focus();
                 paso = false;
             }
-            if (NoDuplicadoCorreo(EmailtextBox.Text) == false)
+            if (NoDuplicadoCorreo(EmailtextBox.Text, (int)UsuarioIdnumericUpDown.Value) == true)
             {
-                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                errorProvider.SetError(EmailtextBox, "Usuario Ya existe");
                 EmailtextBox.Focus();
                 paso = false;
             }
 
-            if (NoDuplicadoUsuario(UsuariotextBox.Text) == true)
+            if (NoDuplicadoUsuario(UsuariotextBox.Text, (int)UsuarioIdnumericUpDown.Value) == true)
             {
-                errorProvider.SetError(UsuariotextBox, "Correo invalido");
+                errorProvider.SetError(UsuariotextBox, "Usuario Ya existe");
                 UsuariotextBox.Focus();
                 paso = false;
             }
@@ -168,43 +168,60 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
             return paso;
 
         }
-
-        public static bool NoDuplicadoCorreo(string descripcion)
+        public bool NoDuplicadoCorreo(string descripcion, int id)
         {
-            RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
+            RepositorioBase<Usuarios> db = new RepositorioBase<Usuarios>();
             bool paso = false;
+           
             Contexto db2 = new Contexto();
 
-            try
+
+            if (id > 0)
             {
-                if (db2.Usuarios.Any(p => p.Email.Equals(descripcion)))
+                var correo = db.Buscar(id);
+
+
+                if (correo.Email != descripcion)
                 {
-                    paso = true;
+                    try
+                    {
+                        if (db2.Clientes.Any(p => p.Email.Equals(descripcion)))
+                        {
+                            paso = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                throw;
             }
             return paso;
         }
-        public static bool NoDuplicadoUsuario(string descripcion)
+
+        public  bool NoDuplicadoUsuario(string descripcion, int id)
         {
             RepositorioBase<Usuarios> db = new RepositorioBase<Usuarios>();
             bool paso = false;
             Contexto db2 = new Contexto();
+            var correo = db.Buscar(id);
 
-            try
+            if (correo.Usuario != descripcion)
             {
-                if (db2.Usuarios.Any(p => p.Usuario.Equals(descripcion)))
+                try
                 {
-                    paso = true;
+                    if (db2.Usuarios.Any(p => p.Usuario.Equals(descripcion)))
+                    {
+                        paso = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
                 }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            
+          
             return paso;
         }
 
@@ -311,9 +328,15 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.Registros
 
                 cUsuario frm = new cUsuario(1);
                 frm.ShowDialog();
-                usuario = db.Buscar(frm.idElegido);
+                if (frm.idElegido > 0)
+                {
+                    usuario = db.Buscar(frm.idElegido);
 
-                 LlenaCampo(usuario);
+                    LlenaCampo(usuario);
+
+                }
+
+                
             }
             else
             {

@@ -11,6 +11,7 @@ using ProyectoFinalAplicada1_JohnsielCastanos.Registros;
 using ProyectoFinalAplicada1_JohnsielCastanos.Consultas;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros;
 using ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas;
+using ProyectoFinalAplicada1_JohnsielCastanos.UI;
 
 namespace ProyectoFinalAplicada1_JohnsielCastanos
 {
@@ -112,9 +113,12 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
 
         private void ToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            var select = MessageBox.Show("¿Seguro?", "Desea cerra la aplicacion?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            var select = MessageBox.Show("¿Seguro?", "Desea cerra la seccion?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (select == DialogResult.Yes)
-                Application.Exit();
+            {
+                this.Close();
+
+            }
         }
 
         private void EntradasToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -133,6 +137,17 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos
         {
 
             Application.ExitThread();
+        }
+
+        private void AcercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About frm = new About();
+            frm.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

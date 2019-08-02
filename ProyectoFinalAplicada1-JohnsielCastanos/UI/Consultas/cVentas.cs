@@ -178,7 +178,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         private void Elegirbutton_Click(object sender, EventArgs e)
         {
             
-            if (ConsultadataGridView.CurrentRow.Cells["VentasId"] != null)
+            if (ConsultadataGridView.CurrentRow.Cells["VentaId"] != null)
             {
                 idElegido = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells["VentaId"].Value.ToString());
                 Close();

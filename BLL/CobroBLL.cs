@@ -63,7 +63,7 @@ namespace BLL
                 cliente.Balance = cliente.Balance + (cobro.MontoPagado - anterior.MontoPagado);
                 client.Modificar(cliente);
 
-                var Venta = vent.Buscar(cobro.ClienteId);
+                var Venta = vent.Buscar(cobro.VentaId);
                 Venta.Balance = Venta.Balance + (cobro.MontoPagado - anterior.MontoPagado);
                 vent.Modificar(Venta);
 

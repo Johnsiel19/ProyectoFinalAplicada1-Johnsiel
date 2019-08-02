@@ -71,44 +71,73 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
        
         }
 
-        public static bool NoDuplicadoCorreo(string descripcion)
+        public  bool NoDuplicadoCorreo(string descripcion, int id)
         {
             RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
             bool paso = false;
+            Clientes cliente = new Clientes();
             Contexto db2 = new Contexto();
 
-            try
+            if (id > 0)
             {
-                if (db2.Clientes.Any(p => p.Email.Equals(descripcion)))
+                var corre = db.Buscar(id);
+
+                if (corre.Email != EmailtextBox.Text)
                 {
-                    paso = true;
+                    try
+                    {
+                        if (db2.Clientes.Any(p => p.Email.Equals(descripcion)))
+                        {
+                            paso = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+
                 }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+
+
             return paso;
         }
 
-        public static bool NoDuplicadoCedula(string descripcion)
+        public bool NoDuplicadoCedula(string descripcio, int id)
         {
             RepositorioBase<Clientes> db = new RepositorioBase<Clientes>();
             bool paso = false;
             Contexto db2 = new Contexto();
+            Clientes cliente = new Clientes();
 
-            try
+            if (id > 0)
             {
-                if (db2.Clientes.Any(p => p.Cedula.Equals(descripcion)))
+                var corre = db.Buscar(id);
+
+                if (corre.Cedula != descripcio)
                 {
-                    paso = true;
+
+                    try
+                    {
+                        if (db2.Clientes.Any(p => p.Cedula.Equals(descripcio)))
+                        {
+                            paso = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+
+
+
                 }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+         
+    
             return paso;
+
+
         }
 
         private bool ExisteEnLaBaseDeDatos()
@@ -156,14 +185,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 TelefonomaskedTextBox.Focus();
                 paso = false;
             }
-            if (NoDuplicadoCorreo(EmailtextBox.Text))
+            if (NoDuplicadoCorreo(EmailtextBox.Text, (int)ClientenumericUpDown.Value)== true)
             {
                 errorProvider.SetError(EmailtextBox, "El Email ya existe");
                 EmailtextBox.Focus();
                 paso = false;
 
             }
-            if (NoDuplicadoCedula(CedulamaskedTextBox.Text))
+            if (NoDuplicadoCedula(CedulamaskedTextBox.Text, (int)ClientenumericUpDown.Value)==true)
             {
                 errorProvider.SetError(CedulamaskedTextBox, "El Cedula ya existe");
                 CedulamaskedTextBox.Focus();

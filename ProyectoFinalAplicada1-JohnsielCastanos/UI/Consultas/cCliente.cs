@@ -21,7 +21,8 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Consultas
         public cCliente(int valor)
         {
             InitializeComponent();
-            FiltrocomboBox.Text = null;
+            FiltrocomboBox.Text = "Todo";
+            
 
             if (valor == 1)
             {

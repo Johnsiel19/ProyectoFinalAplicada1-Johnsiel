@@ -67,6 +67,7 @@
             // 
             this.ConfirmarClavetextBox.Location = new System.Drawing.Point(148, 323);
             this.ConfirmarClavetextBox.Name = "ConfirmarClavetextBox";
+            this.ConfirmarClavetextBox.PasswordChar = '*';
             this.ConfirmarClavetextBox.Size = new System.Drawing.Size(272, 22);
             this.ConfirmarClavetextBox.TabIndex = 6;
             // 
@@ -95,6 +96,7 @@
             // 
             this.ClavetextBox.Location = new System.Drawing.Point(149, 275);
             this.ClavetextBox.Name = "ClavetextBox";
+            this.ClavetextBox.PasswordChar = '*';
             this.ClavetextBox.Size = new System.Drawing.Size(271, 22);
             this.ClavetextBox.TabIndex = 5;
             // 
@@ -174,7 +176,6 @@
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(272, 22);
             this.UsuariotextBox.TabIndex = 4;
-
             this.UsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuariotextBox_KeyPress);
             // 
             // EmailtextBox

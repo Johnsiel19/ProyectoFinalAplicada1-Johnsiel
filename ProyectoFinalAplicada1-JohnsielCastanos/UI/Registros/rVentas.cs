@@ -202,7 +202,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 if (VentaIdnumericUpDown.Value > 0)
                 {
-                    if (VentaBLL.Eliminar((int)VentaIdnumericUpDown.Value))
+                    if (VentaBLL.Eliminar(Convert.ToInt32( VentaIdnumericUpDown.Value)))
                     {
                         MessageBox.Show("Eliminado", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
@@ -235,10 +235,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
                 cVentas frm = new cVentas(1);
                 frm.ShowDialog();
-                
-                venta = db.Buscar(frm.idElegido);
+                if (frm.idElegido > 0)
+                {
+                    venta = db.Buscar(frm.idElegido);
 
-                 LlenaCampo(venta);
+                    LlenaCampo(venta);
+
+                }
+               
             }
             else
             {
@@ -338,8 +342,16 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
         private void AgragraAlGrid_Click(object sender, EventArgs e)
         {
             RepositorioBase<Productos> db = new RepositorioBase<Productos>();
+            Productos producto;
+            if (ProductocomboBox.Text == "")
+            {
+                return;
+              
+                
 
-            Productos producto = db.Buscar((int)ProductocomboBox.SelectedValue);
+            }
+            producto = db.Buscar((int)ProductocomboBox.SelectedValue);
+
             if (ProductocomboBox.Text == "")
             {
                 errorProvider.SetError(ProductocomboBox, "Debe elegir un Producto");
@@ -406,6 +418,7 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             CalcularTotal();
 
         }
+
 
         private void RemoverLienabutton_Click(object sender, EventArgs e)
         {

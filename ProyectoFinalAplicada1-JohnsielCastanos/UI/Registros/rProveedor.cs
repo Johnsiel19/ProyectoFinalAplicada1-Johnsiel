@@ -127,14 +127,14 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
                 paso = false;
             }
 
-            if (NoDuplicadoCorreo(EmailtextBox.Text)== false)
+            if (NoDuplicadoCorreo(EmailtextBox.Text, (int)ProveedorIdnumericUpDown.Value) == true)
             {
-                errorProvider.SetError(EmailtextBox, "Correo invalido");
+                errorProvider.SetError(EmailtextBox, "El Email ya existe");
                 EmailtextBox.Focus();
                 paso = false;
-            }
 
-            if (NoDuplicadoNombre(NombrestextBox.Text) == false)
+            }
+            if (NoDuplicadoNombre(NombrestextBox.Text, (int)ProveedorIdnumericUpDown.Value) == true)
             {
                 errorProvider.SetError(NombrestextBox, "Correo invalido");
                 NombrestextBox.Focus();
@@ -145,44 +145,68 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             return paso;
 
         }
-        public static bool NoDuplicadoCorreo(string descripcion)
+        public bool NoDuplicadoCorreo(string descripcion, int id)
         {
             RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
             bool paso = false;
+            Proveedores proveedores = new Proveedores();
             Contexto db2 = new Contexto();
 
-            try
+
+            if (id > 0)
             {
-                if (db2.Proveedores.Any(p => p.Email.Equals(descripcion)))
+                var correo = db.Buscar(id);
+
+                if (correo.Email != descripcion)
                 {
-                    paso = true;
+                    try
+                    {
+                        if (db2.Clientes.Any(p => p.Email.Equals(descripcion)))
+                        {
+                            paso = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                throw;
             }
             return paso;
         }
 
 
-        public static bool NoDuplicadoNombre(string descripcion)
+        public static bool NoDuplicadoNombre(string descripcion, int Id)
         {
             RepositorioBase<Proveedores> db = new RepositorioBase<Proveedores>();
             bool paso = false;
+            Proveedores proveedores = new Proveedores();
             Contexto db2 = new Contexto();
 
-            try
+
+            if (Id > 0)
             {
-                if (db2.Proveedores.Any(p => p.Nombre.Equals(descripcion)))
+                var nombre = db.Buscar(Id);
+                if (nombre.Nombre != descripcion)
                 {
-                    paso = true;
+                    try
+                    {
+                        if (db2.Clientes.Any(p => p.Nombre.Equals(descripcion)))
+                        {
+                            paso = true;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+
                 }
+
             }
-            catch (Exception)
-            {
-                throw;
-            }
+       
+
+    
             return paso;
         }
 
@@ -263,9 +287,13 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
 
                 cProveedores frm = new cProveedores(1);
                 frm.ShowDialog();
+                if (frm.idElegido> 0)
+                {
+                    proveedor = db.Buscar(frm.idElegido);
+                    LlenaCampo(proveedor);
 
-                 proveedor = db.Buscar(frm.idElegido);
-                LlenaCampo(proveedor);
+                }
+                
             }
             else
             {
@@ -333,6 +361,11 @@ namespace ProyectoFinalAplicada1_JohnsielCastanos.UI.Registros
             {
                 e.Handled = true;
             }
+        }
+
+        private void NombrestextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
